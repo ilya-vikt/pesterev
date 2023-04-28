@@ -8,9 +8,20 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  font-family: 'Roboto', sans-serif;
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+
+  @include fhd {
+    @include responsive-font(1920, 1180, 20, 14);
+  }
+
+  @include tablet {
+    font-size: 14px;
+  }
 }
 
 .wrapper {

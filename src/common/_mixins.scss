@@ -11,7 +11,7 @@
 }
 
 @mixin tablet {
-  @media (max-width: (1441px)) {
+  @media (max-width: (1180px)) {
     @content;
   }
 }
@@ -48,7 +48,12 @@
   }
 }
 
-@mixin responsive-font($minViewportWidth, $maxViewportWidth, $minFontSize, $maxFontSize) {
+@mixin responsive-font(
+  $maxViewportWidth,
+  $minViewportWidth,
+  $maxFontSize,
+  $minFontSize
+) {
   font-size: calc(
     #{$maxFontSize + px} + (#{$maxFontSize} - #{$minFontSize}) / (
         #{$maxViewportWidth} - #{$minViewportWidth}

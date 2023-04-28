@@ -1,0 +1,113 @@
+.txt-1 {
+  font-size: 65px;
+
+  @include fhd {
+    @include responsive-font(1920, 1180, 65, 40);
+  }
+
+  @include tablet {
+    font-size: 40px;
+  }
+}
+
+.txt-2 {
+  font-size: 50px;
+
+  @include fhd {
+    //FIXME: В макете непонятный конечный размер, выяснить какой размер шрифта должен быть на 1180
+    @include responsive-font(1920, 1180, 50, 40);
+  }
+
+  @include tablet {
+    font-size: 40px;
+  }
+}
+
+.txt-3 {
+  font-size: 30px;
+
+  @include fhd {
+    //FIXME: В макете непонятный конечный размер, выяснить какой размер шрифта должен быть на 1180
+    @include responsive-font(1920, 1180, 30, 40);
+  }
+
+  @include tablet {
+    font-size: 40px;
+  }
+}
+
+.txt-4 {
+  font-size: 26px;
+
+  @include fhd {
+    @include responsive-font(1920, 1180, 26, 17);
+  }
+
+  @include tablet {
+    font-size: 17px;
+  }
+}
+
+.txt-4-b {
+  font-size: 26px;
+  font-weight: 700px;
+
+  @include fhd {
+    @include responsive-font(1920, 1180, 26, 17);
+  }
+
+  @include tablet {
+    font-size: 17px;
+  }
+}
+
+.txt-4-c {
+  font-size: 26px;
+  text-decoration: line-through;
+
+  //WARN: В макете на разрешении 1180 размер шрифта указан как 14, но по логике должен быть 17. Уточнить у дизайнера
+  @include fhd {
+    @include responsive-font(1920, 1180, 26, 17);
+  }
+
+  @include tablet {
+    font-size: 17px;
+  }
+}
+.txt-5 {
+  font-size: 20px;
+
+  @include fhd {
+    @include responsive-font(1920, 1180, 20, 14);
+  }
+
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
+.txt-5-b {
+  font-weight: 700px;
+  font-size: 20px;
+
+  @include fhd {
+    @include responsive-font(1920, 1180, 20, 14);
+  }
+
+  @include tablet {
+    font-size: 14px;
+  }
+}
+
+.txt-5-c {
+  font-size: 20px;
+  text-decoration: line-through;
+
+  @include fhd {
+    @include responsive-font(1920, 1180, 20, 14);
+  }
+
+  @include tablet {
+    font-size: 14px;
+  }
+}
