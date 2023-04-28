@@ -1,0 +1,70 @@
+@mixin ultra-width {
+  @media (min-width: (1921px)) {
+    @content;
+  }
+}
+
+@mixin fhd {
+  @media (max-width: (1920px)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: (1441px)) {
+    @content;
+  }
+}
+
+@mixin small-tablet {
+  @media (max-width: (960px)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin small-mobile {
+  @media (max-width: (414px)) {
+    @content;
+  }
+}
+
+@mixin small-height {
+  @media (max-height: $mobile-height-min) {
+    @content;
+  }
+}
+
+@mixin mouse-hover {
+  @media (hover: hover) {
+    &:hover:not(button[disabled]) {
+      @content;
+    }
+  }
+}
+
+@mixin responsive-font($minViewportWidth, $maxViewportWidth, $minFontSize, $maxFontSize) {
+  font-size: calc(
+    #{$maxFontSize + px} + (#{$maxFontSize} - #{$minFontSize}) / (
+        #{$maxViewportWidth} - #{$minViewportWidth}
+      ) * (100vw - #{$maxViewportWidth + px})
+  );
+}
+
+@mixin iv-scale($transition: '', $transform: '', $scaleratio: 0.97) {
+  transition: #{$transition}, transform 150ms ease-in 20ms;
+  transform: #{$transform} scale3d(1, 1, 1);
+
+  &:active {
+    transition: #{$transition}, transform 80ms ease-out;
+    transform: scale3d($scaleratio, $scaleratio, 1);
+    @content;
+  }
+}
+
+$mobile-height-min: 640px;
