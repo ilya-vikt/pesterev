@@ -1,4 +1,6 @@
 import webpack from 'webpack-stream';
+import path from 'path';
+
 export const js = () => {
   return app.gulp
     .src(app.path.src.js, { sourcemaps: app.isDev })
@@ -18,6 +20,9 @@ export const js = () => {
         },
         resolve: {
           extensions: ['.ts', '.js'],
+          alias: {
+            '@': path.resolve('src/'),
+          },
         },
         module: {
           rules: [
