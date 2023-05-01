@@ -53,5 +53,8 @@
   "browserslist": [
     "> 0.25%",
     "not dead"
-  ]
+  ],
+  "dependencies": {
+    "swiper": "^9.2.4"
+  }
 }
