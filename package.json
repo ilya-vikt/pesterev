@@ -25,7 +25,7 @@
     "gulp-autoprefixer": "latest",
     "gulp-clean-css": "latest",
     "gulp-file-include": "latest",
-    "gulp-fonter": "latest",
+    "gulp-fonter-2": "^0.3.0",
     "gulp-group-css-media-queries": "latest",
     "gulp-if": "latest",
     "gulp-imagemin": "latest",

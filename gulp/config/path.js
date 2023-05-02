@@ -16,7 +16,6 @@ export const path = {
     sprite: `${buildFolder}/icons/`,
   },
   src: {
-    assets: `${srcFolder}/assets/**/*.*`,
     assetsFolder: `${srcFolder}/assets`,
     html: `${srcFolder}/*.html`,
     scss: `${srcFolder}/style.scss`,
@@ -46,5 +45,4 @@ export const path = {
   srcFolder,
   rootFolder,
   ftp: ``,
-  tempFolder: `${srcFolder}/temp`,
 };

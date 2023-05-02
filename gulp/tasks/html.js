@@ -18,6 +18,8 @@ export const html = () => {
       })
     )
     .pipe(app.plugins.replace(/@img\//g, 'img/'))
+    .pipe(app.plugins.replace(/@assets\//g, 'assets/'))
+    .pipe(app.plugins.replace(/@\//g, 'src/'))
     .pipe(
       app.plugins.if(
         app.isBuild,

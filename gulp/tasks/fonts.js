@@ -1,7 +1,7 @@
 import fs from 'fs';
 import Path from 'path';
 import { readdir } from 'fs/promises';
-import fonter from 'gulp-fonter';
+import fonter from 'gulp-fonter-2';
 import ttf2woff2 from 'gulp-ttf2woff2';
 import { deleteAsync } from 'del';
 
@@ -40,14 +40,29 @@ export const ttfToWoff = () => {
         formats: ['woff'],
       })
     )
-    .pipe(app.gulp.dest(`${app.path.tempFolder}/fonts/`))
-    .pipe(app.gulp.src(`${app.path.src.fonts}/*.ttf`))
-    .pipe(ttf2woff2())
-    .pipe(app.gulp.dest(`${app.path.tempFolder}/fonts/`));
+    .pipe(app.gulp.dest(`${app.path.src.assetsFolder}/fonts/`));
 };
 
-export async function clearTempFontFolder() {
-  await deleteAsync(`${app.path.tempFolder}/fonts`);
+export const ttfToWoff2 = () => {
+  return app.gulp
+    .src(`${app.path.src.fonts}/*.ttf`, {})
+    .pipe(
+      app.plugins.plumber(
+        app.plugins.notify.onError({
+          title: 'FONTS',
+          message: 'Error: <%= error.message %>',
+        })
+      )
+    )
+    .pipe(ttf2woff2())
+    .pipe(app.gulp.dest(`${app.path.src.assetsFolder}/fonts/`));
+};
+
+export async function clearFontFolder() {
+  await deleteAsync([
+    `${app.path.src.assetsFolder}/fonts/*.woff`,
+    `${app.path.src.assetsFolder}/fonts/*.woff2`,
+  ]);
 }
 
 export const fontsStyle = async () => {
@@ -80,8 +95,7 @@ export const fontsStyle = async () => {
     );
   } else {
     try {
-      const fontFiles = await readdir(`${app.path.tempFolder}/fonts`);
-      //const uniqFiles = new Set(fontFiles.map((fontFile) => Path.parse(fontFile).name.toLowerCase())); to lowercase ???
+      const fontFiles = await readdir(`${app.path.src.assetsFolder}/fonts`);
       const uniqFiles = new Set(
         fontFiles.map((fontFile) => Path.parse(fontFile).name)
       );

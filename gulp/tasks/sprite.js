@@ -15,13 +15,13 @@ export const sprite = () => {
       svgSprite({
         mode: {
           stack: {
-            dest: `sprite`,
+            dest: '',
             sprite: `sprite.svg`,
-            example: true,
+            example: false,
             rootviewbox: false,
           },
         },
       })
     )
-    .pipe(app.gulp.dest(app.path.tempFolder));
+    .pipe(app.gulp.dest(app.path.src.assetsFolder));
 };
