@@ -1,0 +1,49 @@
+<!-- BUG: При использовании loop наблюдаются прыжки слайдов -->
+<section class="main-hero hero">
+  <div class="container main-hero__container">
+    <swiper-container
+      class="main-hero__slider"
+      slides-per-view="1"
+      speed="1000"
+      loop="true"
+    >
+      <swiper-slide class="main-hero__slide"
+        ><img
+          class="main-hero__img"
+          src="@img/main/hero-slider/slider-hero-1.jpg"
+          alt="слайд 1"
+      /></swiper-slide>
+      <swiper-slide class="main-hero__slide"
+        ><img
+          class="main-hero__img"
+          src="@img/main/hero-slider/slider-hero-2.jpg"
+          alt="слайд 2"
+      /></swiper-slide>
+      <swiper-slide class="main-hero__slide"
+        ><img
+          class="main-hero__img"
+          src="@img/main/hero-slider/slider-hero-2.jpg"
+          alt="слайд 2"
+      /></swiper-slide>
+      <swiper-slide class="main-hero__slide"
+        ><img
+          class="main-hero__img"
+          src="@img/main/hero-slider/slider-hero-2.jpg"
+          alt="слайд 2"
+      /></swiper-slide>
+      <swiper-slide class="main-hero__slide"
+        ><img
+          class="main-hero__img"
+          src="@img/main/hero-slider/slider-hero-2.jpg"
+          src="@assets/"
+          alt="слайд 2"
+      /></swiper-slide>
+    </swiper-container>
+
+    <div class="main-hero__top">
+      <h1 class="main-hero__title txt-1">Александр Пестерев</h1>
+      @@include('components/share/socials/socials.html', {class:
+      'main-hero__socials'})
+    </div>
+  </div>
+</section>

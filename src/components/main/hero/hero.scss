@@ -1,0 +1,91 @@
+.main-hero {
+  --padding: 40px;
+  padding-top: var(--padding, 40px);
+  padding-bottom: var(--padding, 40px);
+  &__container,
+  &__slider {
+    height: 100%;
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lemonchiffon;
+    padding-left: 140px;
+    padding-right: 140px;
+
+    @include fhd {
+      padding-left: #{responsive(1920, 1180, 140, 80)};
+      padding-right: #{responsive(1920, 1180, 140, 80)};
+    }
+
+    @include tablet {
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+  }
+
+  &__img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  &__top {
+    display: flex;
+    position: fixed;
+    top: var(--padding, 40px);
+    max-width: 1920px;
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 80px;
+    justify-content: space-between;
+    z-index: 1;
+    pointer-events: none;
+
+    @include fhd {
+      padding-left: #{responsive(1920, 1180, 80, 40)};
+      padding-right: #{responsive(1920, 1180, 80, 40)};
+    }
+
+    @include tablet {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+
+  &__title {
+    max-width: 400px;
+    padding-top: 30px;
+
+    @include fhd {
+      padding-top: #{responsive(1920, 1180, 30, 20)};
+    }
+
+    @include tablet {
+      padding-top: 20px;
+    }
+  }
+
+  &__socials {
+    padding-top: 40px;
+    pointer-events: all;
+
+    @include fhd {
+      padding-top: #{responsive(1920, 1180, 40, 20)};
+    }
+
+    @include tablet {
+      padding-top: 20px;
+    }
+  }
+
+  @include fhd {
+    --padding: #{responsive(1920, 1180, 40, 20)};
+  }
+
+  @include tablet {
+    --padding: 20px;
+  }
+}
