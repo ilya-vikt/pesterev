@@ -1,0 +1,44 @@
+.socials {
+  display: flex;
+
+  &__item {
+  }
+
+  &__link {
+    display: flex;
+    width: 46px;
+    height: 46px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: $cl-black;
+    border-radius: 50%;
+
+    svg {
+      fill: $cl-white;
+      width: 30px;
+      height: 30px;
+
+      @include fhd {
+        width: #{responsive(1920, 1180, 30, 25)};
+        height: #{responsive(1920, 1180, 30, 25)};
+      }
+
+      @include tablet {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    @include fhd {
+      width: #{responsive(1920, 1180, 46, 31)};
+      height: #{responsive(1920, 1180, 46, 31)};
+    }
+
+    @include tablet {
+      width: 31px;
+      height: 31px;
+    }
+  }
+}
