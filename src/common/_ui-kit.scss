@@ -1,5 +1,6 @@
 .txt-1 {
   font-size: 65px;
+  text-transform: uppercase;
 
   @include fhd {
     @include responsive-font(1920, 1180, 65, 40);
