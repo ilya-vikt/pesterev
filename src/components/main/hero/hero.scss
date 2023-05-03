@@ -1,10 +1,18 @@
 .main-hero {
   --padding: 40px;
+  --padding-h: 80px;
+  --padding-b: 40px;
   padding-top: var(--padding, 40px);
   padding-bottom: var(--padding, 40px);
+
   &__container,
+  &__content,
   &__slider {
     height: 100%;
+  }
+
+  &__content {
+    position: relative;
   }
 
   &__slide {
@@ -32,27 +40,29 @@
     object-fit: contain;
   }
 
-  &__top {
+  &__slider-btns {
+    position: absolute;
+    right: var(--padding-h, 80px);
+    bottom: var(--padding-b, 40px);
+    z-index: 1;
+    pointer-events: all;
+  }
+
+  &__top,
+  &__bottom {
     display: flex;
-    position: fixed;
-    top: var(--padding, 40px);
+    padding-left: var(--padding-h, 80px);
+    padding-right: var(--padding-h, 80px);
     max-width: 1920px;
     width: 100%;
-    padding-left: 80px;
-    padding-right: 80px;
     justify-content: space-between;
-    z-index: 1;
+    z-index: 2;
     pointer-events: none;
+  }
 
-    @include fhd {
-      padding-left: #{responsive(1920, 1180, 80, 40)};
-      padding-right: #{responsive(1920, 1180, 80, 40)};
-    }
-
-    @include tablet {
-      padding-left: 40px;
-      padding-right: 40px;
-    }
+  &__top {
+    position: fixed;
+    top: var(--padding, 40px);
   }
 
   &__title {
@@ -81,11 +91,24 @@
     }
   }
 
+  &__bottom {
+    position: fixed;
+    bottom: calc(var(--padding, 40px) + var(--padding-b, 40px));
+  }
+
+  &__bottom-socials {
+    display: none;
+  }
+
   @include fhd {
     --padding: #{responsive(1920, 1180, 40, 20)};
+    --padding-h: #{responsive(1920, 1180, 80, 40)};
+    --padding-b: #{responsive(1920, 1180, 40, 14)};
   }
 
   @include tablet {
     --padding: 20px;
+    --padding-h: 40px;
+    --padding-b: 14px;
   }
 }

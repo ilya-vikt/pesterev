@@ -1,49 +1,71 @@
 <!-- BUG: При использовании loop наблюдаются прыжки слайдов -->
 <section class="main-hero hero">
   <div class="container main-hero__container">
-    <swiper-container
-      class="main-hero__slider"
-      slides-per-view="1"
-      speed="1000"
-      loop="true"
-    >
-      <swiper-slide class="main-hero__slide"
-        ><img
-          class="main-hero__img"
-          src="@img/main/hero-slider/slider-hero-1.jpg"
-          alt="слайд 1"
-      /></swiper-slide>
-      <swiper-slide class="main-hero__slide"
-        ><img
-          class="main-hero__img"
-          src="@img/main/hero-slider/slider-hero-2.jpg"
-          alt="слайд 2"
-      /></swiper-slide>
-      <swiper-slide class="main-hero__slide"
-        ><img
-          class="main-hero__img"
-          src="@img/main/hero-slider/slider-hero-2.jpg"
-          alt="слайд 2"
-      /></swiper-slide>
-      <swiper-slide class="main-hero__slide"
-        ><img
-          class="main-hero__img"
-          src="@img/main/hero-slider/slider-hero-2.jpg"
-          alt="слайд 2"
-      /></swiper-slide>
-      <swiper-slide class="main-hero__slide"
-        ><img
-          class="main-hero__img"
-          src="@img/main/hero-slider/slider-hero-2.jpg"
-          src="@assets/"
-          alt="слайд 2"
-      /></swiper-slide>
-    </swiper-container>
+    <div class="main-hero__content">
+      <swiper-container
+        class="main-hero__slider"
+        slides-per-view="1"
+        speed="1000"
+        loop="true"
+      >
+        <swiper-slide class="main-hero__slide"
+          ><img
+            class="main-hero__img"
+            src="@img/main/hero-slider/slider-hero-1.jpg"
+            alt="слайд 1"
+        /></swiper-slide>
+        <swiper-slide class="main-hero__slide"
+          ><img
+            class="main-hero__img"
+            src="@img/main/hero-slider/slider-hero-2.jpg"
+            alt="слайд 2"
+        /></swiper-slide>
+        <swiper-slide class="main-hero__slide"
+          ><img
+            class="main-hero__img"
+            src="@img/main/hero-slider/slider-hero-2.jpg"
+            alt="слайд 2"
+        /></swiper-slide>
+        <swiper-slide class="main-hero__slide"
+          ><img
+            class="main-hero__img"
+            src="@img/main/hero-slider/slider-hero-2.jpg"
+            alt="слайд 2"
+        /></swiper-slide>
+        <swiper-slide class="main-hero__slide"
+          ><img
+            class="main-hero__img"
+            src="@img/main/hero-slider/slider-hero-2.jpg"
+            src="@assets/"
+            alt="слайд 2"
+        /></swiper-slide>
+      </swiper-container>
+      @@include('components/share/slider-btns/slider-btns.html', {class:
+      'main-hero__slider-btns'})
+    </div>
 
     <div class="main-hero__top">
       <h1 class="main-hero__title txt-1">Александр Пестерев</h1>
       @@include('components/share/socials/socials.html', {class:
       'main-hero__socials'})
+    </div>
+    <div class="main-hero__bottom">
+      <ul class="main-hero__menu">
+        <li class="main-hero__item main-hero__item--active">
+          <a class="main-hero__lnk txt-3" href="#">Проекты</a>
+        </li>
+        <li class="main-hero__item">
+          <a class="main-hero__lnk txt-3" href="#">Об авторе</a>
+        </li>
+        <li class="main-hero__item">
+          <a class="main-hero__lnk txt-3" href="#">Контакты</a>
+        </li>
+        <li class="main-hero__item">
+          <a class="main-hero__lnk txt-3" href="#">Купить</a>
+        </li>
+      </ul>
+      @@include('components/share/socials/socials.html', {class:
+      'main-hero__bottom-socials'})
     </div>
   </div>
 </section>
