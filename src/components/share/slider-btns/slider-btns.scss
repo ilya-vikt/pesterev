@@ -1,0 +1,29 @@
+.slider-btns {
+  display: inline-flex;
+
+  svg {
+    color: $cl-black;
+    transition: color $animation;
+    width: 30px;
+    height: 20px;
+  }
+
+  &__prev,
+  &__next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    transform: translate(-8px, 10px);
+    @include mouse-hover {
+      svg {
+        color: $cl-red;
+      }
+    }
+  }
+
+  &__prev {
+    margin-right: 5px;
+  }
+}
