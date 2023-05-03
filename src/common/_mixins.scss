@@ -36,8 +36,8 @@
   }
 }
 
-@mixin small-height {
-  @media (max-height: $mobile-height-min) {
+@mixin min-height {
+  @media (max-height: $min-height) {
     @content;
   }
 }
