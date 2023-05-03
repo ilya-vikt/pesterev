@@ -14,6 +14,7 @@
     align-items: center;
     background-color: $cl-black;
     border-radius: 50%;
+    transition: background-color $animation;
 
     svg {
       fill: $cl-white;
@@ -39,6 +40,10 @@
     @include tablet {
       width: 31px;
       height: 31px;
+    }
+
+    @include mouse-hover {
+      background-color: $cl-red;
     }
   }
 }
