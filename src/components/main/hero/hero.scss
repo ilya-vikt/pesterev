@@ -4,6 +4,7 @@
   --padding-b: 40px;
   padding-top: var(--padding, 40px);
   padding-bottom: var(--padding, 40px);
+  min-height: $min-height;
 
   &__container,
   &__content,
@@ -94,6 +95,10 @@
   &__bottom {
     position: fixed;
     bottom: calc(var(--padding, 40px) + var(--padding-b, 40px));
+
+    @include min-height {
+      position: absolute;
+    }
   }
 
   &__bottom-socials {
