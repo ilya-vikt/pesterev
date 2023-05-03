@@ -105,6 +105,44 @@
     display: none;
   }
 
+  &__menu {
+    pointer-events: all;
+    user-select: none;
+  }
+
+  &__item {
+    position: relative;
+    &::before {
+      content: '/';
+      position: absolute;
+      @extend .txt-3;
+      opacity: 0;
+      transition: opacity $animation;
+    }
+  }
+
+  &__item--active {
+    pointer-events: none;
+
+    &::before {
+      opacity: 1;
+      transition: opacity $animation 40ms;
+    }
+    .main-hero__lnk {
+      transform: translateX(20px);
+      transition: color $animation, transform $animation;
+    }
+  }
+
+  &__lnk {
+    display: inline-block;
+    transition: color $animation, transform $animation 40ms;
+
+    @include mouse-hover {
+      color: $cl-red;
+    }
+  }
+
   @include fhd {
     --padding: #{responsive(1920, 1180, 40, 20)};
     --padding-h: #{responsive(1920, 1180, 80, 40)};
