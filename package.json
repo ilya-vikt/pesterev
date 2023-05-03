@@ -55,6 +55,6 @@
     "not dead"
   ],
   "dependencies": {
-    "swiper": "^9.2.4"
+    "swiper": "^8.4.7"
   }
 }

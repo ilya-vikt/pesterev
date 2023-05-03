@@ -2,44 +2,25 @@
 <section class="main-hero hero">
   <div class="container main-hero__container">
     <div class="main-hero__content">
-      <swiper-container
-        class="main-hero__slider"
-        slides-per-view="1"
-        speed="1000"
-        loop="true"
-      >
-        <swiper-slide class="main-hero__slide"
-          ><img
-            class="main-hero__img"
-            src="@img/main/hero-slider/slider-hero-1.jpg"
-            alt="слайд 1"
-        /></swiper-slide>
-        <swiper-slide class="main-hero__slide"
-          ><img
-            class="main-hero__img"
-            src="@img/main/hero-slider/slider-hero-2.jpg"
-            alt="слайд 2"
-        /></swiper-slide>
-        <swiper-slide class="main-hero__slide"
-          ><img
-            class="main-hero__img"
-            src="@img/main/hero-slider/slider-hero-2.jpg"
-            alt="слайд 2"
-        /></swiper-slide>
-        <swiper-slide class="main-hero__slide"
-          ><img
-            class="main-hero__img"
-            src="@img/main/hero-slider/slider-hero-2.jpg"
-            alt="слайд 2"
-        /></swiper-slide>
-        <swiper-slide class="main-hero__slide"
-          ><img
-            class="main-hero__img"
-            src="@img/main/hero-slider/slider-hero-2.jpg"
-            src="@assets/"
-            alt="слайд 2"
-        /></swiper-slide>
-      </swiper-container>
+      <div class="swiper main-hero__slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide main-hero__slide">
+            <img
+              class="main-hero__img"
+              src="@img/main/hero-slider/slider-hero-1.jpg"
+              alt="слайд 1"
+            />
+          </div>
+          <div class="swiper-slide main-hero__slide">
+            <img
+              class="main-hero__img"
+              src="@img/main/hero-slider/slider-hero-2.jpg"
+              alt="слайд 2"
+            />
+          </div>
+        </div>
+      </div>
+
       @@include('components/share/slider-btns/slider-btns.html', {class:
       'main-hero__slider-btns'})
     </div>
