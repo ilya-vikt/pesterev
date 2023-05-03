@@ -47,6 +47,10 @@
     bottom: var(--padding-b, 40px);
     z-index: 1;
     pointer-events: all;
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__top,
