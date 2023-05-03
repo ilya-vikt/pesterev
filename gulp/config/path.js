@@ -37,7 +37,11 @@ export const path = {
       `${srcFolder}/components/**/*.scss`,
       `${srcFolder}/style.scss`,
     ],
-    js: `${srcFolder}/ts/**/*.ts`,
+    js: [
+      `${srcFolder}/ts/**/*.ts`,
+      `${srcFolder}/components/**/*.ts`,
+      `${srcFolder}/common/**/*.ts`,
+    ],
     images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp,svg,ico}`,
   },
   clean: buildFolder,
