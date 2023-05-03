@@ -6,6 +6,16 @@
     transition: color $animation;
     width: 30px;
     height: 20px;
+
+    @include fhd {
+      width: #{responsive(1920, 1180, 30, 20)};
+      height: #{responsive(1920, 1180, 20, 14)};
+    }
+
+    @include tablet {
+      width: 20px;
+      height: 14px;
+    }
   }
 
   &__prev,
@@ -15,7 +25,17 @@
     align-items: center;
     width: 40px;
     height: 40px;
-    transform: translate(-8px, 10px);
+    transform: translate(8px, 10px);
+
+    @include fhd {
+      width: #{responsive(1920, 1180, 40, 35)};
+      height: #{responsive(1920, 1180, 40, 35)};
+    }
+
+    @include tablet {
+      width: 35px;
+      height: 35px;
+    }
     @include mouse-hover {
       svg {
         color: $cl-red;
