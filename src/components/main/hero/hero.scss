@@ -111,6 +111,7 @@
   &__bottom {
     position: fixed;
     bottom: calc(var(--padding, 40px) + var(--padding-b, 40px));
+    align-items: flex-end;
 
     @include min-height {
       position: absolute;
