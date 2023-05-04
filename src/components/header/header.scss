@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  height: 250px;
+  background-color: rgba(#008080, 0.5);
+  width: 100%;
+  pointer-events: none;
+
+  &__container {
+    padding: 80px;
+    padding-bottom: 0;
+
+    @include fhd {
+      padding: #{responsive(1920, 1180, 80, 40)};
+      padding-bottom: 0;
+    }
+
+    @include tablet {
+      padding: 40px;
+      padding-bottom: 0;
+    }
+  }
+
+  @include fhd {
+    height: #{responsive(1920, 1180, 250, 170)};
+  }
+
+  @include tablet {
+    height: 170px;
+  }
+}
