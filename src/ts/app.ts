@@ -1,4 +1,7 @@
 import { mainInit } from '@/components/main/main-page';
+import { globalInit } from '@ts/global-init';
+
+globalInit();
 
 const pageName: string | null =
   document.getElementById('config-data')?.dataset.pageName || null;
