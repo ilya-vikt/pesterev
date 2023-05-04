@@ -22,6 +22,7 @@ export const js = () => {
           extensions: ['.ts', '.js'],
           alias: {
             '@': path.resolve('src/'),
+            '@ts': path.resolve('src/ts'),
           },
         },
         module: {
