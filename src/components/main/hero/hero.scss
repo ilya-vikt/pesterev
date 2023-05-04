@@ -106,6 +106,10 @@
     @include tablet {
       padding-top: 20px;
     }
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__bottom {
