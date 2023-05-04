@@ -24,11 +24,10 @@ body {
   }
 }
 
-.wrapper {
+.scrollbar-compensation {
   width: 100vw;
   padding-right: var(--scrollbar-width, 0);
 }
-
 .no-scroll {
   overflow: hidden;
 }
@@ -56,7 +55,7 @@ body {
 .hero {
   position: absolute;
   left: 0;
-  right: 0;
   top: 0;
   bottom: 0;
+  @extend .scrollbar-compensation;
 }

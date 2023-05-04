@@ -1,6 +1,5 @@
-:root {
-  @include fhd {
-  }
+body {
+  --scrollbar-width: 0;
 }
 
 $cl-white: #fff;

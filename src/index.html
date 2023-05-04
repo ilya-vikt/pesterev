@@ -3,7 +3,11 @@
   @@include('common/head.html', { "title": "Главная" })
   <body>
     <script defer src="./js/app.min.js"></script>
-    <div id="config-data" class="wrapper" data-page-name="main">
+    <div
+      id="config-data"
+      class="wrapper scrollbar-compensation"
+      data-page-name="main"
+    >
       @@include('components/header/header.html', {})
       <main class="main">@@include('components/main/hero/hero.html', {})</main>
       @@include('components/footer/footer.html', {})
