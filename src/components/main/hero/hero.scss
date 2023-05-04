@@ -33,6 +33,11 @@
       padding-left: 80px;
       padding-right: 80px;
     }
+
+    @include small-tablet {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
   &__img {
