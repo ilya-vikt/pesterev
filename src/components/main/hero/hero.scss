@@ -3,7 +3,6 @@
   --padding-h: 80px;
   padding-top: var(--padding-v, 40px);
   padding-bottom: var(--padding-v, 40px);
-  min-height: $min-height;
 
   &__container,
   &__content,
@@ -11,14 +10,27 @@
     height: 100%;
   }
 
+  &__container {
+    background-color: thistle;
+    position: relative;
+
+    @include small-tablet {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
   &__content {
     position: relative;
+    background-color: tomato;
+    width: 100%;
+    overflow: hidden;
   }
 
   &__slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: lemonchiffon;
     padding-left: 140px;
     padding-right: 140px;
@@ -29,19 +41,22 @@
     }
 
     @include tablet {
+      padding-top: 20px;
+      padding-bottom: 20px;
       padding-left: 80px;
       padding-right: 80px;
     }
 
     @include small-tablet {
-      padding-left: 40px;
-      padding-right: 40px;
+      padding-left: var(--padding-h, 40px);
+      padding-right: var(--padding-h, 40px);
     }
   }
 
   &__img {
     height: 100%;
     width: auto;
+    margin: 0 auto;
     object-fit: contain;
   }
 
@@ -60,13 +75,15 @@
   &__top,
   &__bottom {
     position: fixed;
-    display: flex;
     padding-left: var(--padding-h, 80px);
     padding-right: calc(var(--padding-h, 80px) + var(--scrollbar-width, 0));
     max-width: 1920px;
-    justify-content: space-between;
     z-index: 2;
     pointer-events: none;
+
+    @include small-tablet {
+      position: relative;
+    }
   }
 
   &__top {
@@ -74,12 +91,16 @@
     padding-top: var(--padding-v, 40px);
 
     @include small-tablet {
+      top: auto;
+      padding-bottom: 20px;
+      padding-top: 0;
+
       &::after {
         content: '';
         position: absolute;
         bottom: 0;
-        left: 40px;
-        right: calc(40px + var(--scrollbar-width, 0));
+        left: var(--padding-h, 40px);
+        right: calc(var(--padding-h, 40px) + var(--scrollbar-width, 0));
         height: 2px;
         background-color: $cl-black;
       }
@@ -91,12 +112,20 @@
   }
 
   &__bottom {
+    display: flex;
     bottom: var(--padding-v, 40px);
     padding-bottom: var(--padding-v, 40px);
     align-items: flex-end;
+    justify-content: space-between;
 
-    @include min-height {
+    @include small-tablet {
+      bottom: auto;
+      padding-bottom: 0;
+    }
+
+    @include min-height-wide {
       position: absolute;
+      padding-bottom: 0;
     }
   }
 
@@ -111,6 +140,7 @@
   &__menu {
     pointer-events: all;
     user-select: none;
+    margin-right: 10px;
   }
 
   &__item {
@@ -159,5 +189,16 @@
   @include tablet {
     --padding-v: 20px;
     --padding-h: 40px;
+  }
+
+  //WARN: уточнить почему на tablet padding-v 20, а на small-tabet опять 40
+  @include small-tablet {
+    --padding-v: 40px;
+    --padding-h: 40px;
+  }
+
+  @include mobile {
+    --padding-v: 20px;
+    --padding-h: 20px;
   }
 }
