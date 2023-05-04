@@ -1,9 +1,8 @@
 .main-hero {
-  --padding: 40px;
+  --padding-v: 40px;
   --padding-h: 80px;
-  --padding-b: 40px;
-  padding-top: var(--padding, 40px);
-  padding-bottom: var(--padding, 40px);
+  padding-top: var(--padding-v, 40px);
+  padding-bottom: var(--padding-v, 40px);
   min-height: $min-height;
 
   &__container,
@@ -49,7 +48,7 @@
   &__slider-btns {
     position: absolute;
     right: var(--padding-h, 80px);
-    bottom: var(--padding-b, 40px);
+    bottom: var(--padding-v, 40px);
     z-index: 1;
     pointer-events: all;
 
@@ -72,7 +71,8 @@
 
   &__top {
     position: fixed;
-    top: var(--padding, 40px);
+    top: var(--padding-v, 40px);
+    padding-top: var(--padding-v, 40px);
 
     @include small-tablet {
       &::after {
@@ -89,28 +89,10 @@
 
   &__title {
     max-width: 400px;
-    padding-top: 30px;
-
-    @include fhd {
-      padding-top: #{responsive(1920, 1180, 30, 20)};
-    }
-
-    @include tablet {
-      padding-top: 20px;
-    }
   }
 
   &__socials {
-    padding-top: 40px;
     pointer-events: all;
-
-    @include fhd {
-      padding-top: #{responsive(1920, 1180, 40, 20)};
-    }
-
-    @include tablet {
-      padding-top: 20px;
-    }
 
     @include small-tablet {
       display: none;
@@ -119,7 +101,8 @@
 
   &__bottom {
     position: fixed;
-    bottom: calc(var(--padding, 40px) + var(--padding-b, 40px));
+    bottom: var(--padding-v, 40px);
+    padding-bottom: var(--padding-v, 40px);
     align-items: flex-end;
 
     @include min-height {
@@ -174,14 +157,12 @@
   }
 
   @include fhd {
-    --padding: #{responsive(1920, 1180, 40, 20)};
+    --padding-v: #{responsive(1920, 1180, 40, 20)};
     --padding-h: #{responsive(1920, 1180, 80, 40)};
-    --padding-b: #{responsive(1920, 1180, 40, 14)};
   }
 
   @include tablet {
-    --padding: 20px;
+    --padding-v: 20px;
     --padding-h: 40px;
-    --padding-b: 14px;
   }
 }
