@@ -68,6 +68,18 @@
   &__top {
     position: fixed;
     top: var(--padding, 40px);
+
+    @include small-tablet {
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: var(--padding-h, 80px);
+        right: var(--padding-h, 80px);
+        height: 2px;
+        background-color: $cl-black;
+      }
+    }
   }
 
   &__title {
