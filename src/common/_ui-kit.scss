@@ -1,6 +1,7 @@
 .txt-1 {
   font-size: 65px;
   text-transform: uppercase;
+  line-height: 1;
 
   @include fhd {
     @include responsive-font(1920, 1180, 65, 40);
@@ -27,6 +28,7 @@
 .txt-3 {
   font-size: 30px;
   text-transform: uppercase;
+  line-height: 1;
 
   @include fhd {
     //FIXME: В макете непонятный конечный размер, выяснить какой размер шрифта должен быть на 1180
