@@ -32,11 +32,11 @@
 
   @include fhd {
     //FIXME: В макете непонятный конечный размер, выяснить какой размер шрифта должен быть на 1180
-    @include responsive-font(1920, 1180, 30, 40);
+    @include responsive-font(1920, 1180, 30, 18);
   }
 
   @include tablet {
-    font-size: 40px;
+    font-size: 18px;
   }
 }
 
