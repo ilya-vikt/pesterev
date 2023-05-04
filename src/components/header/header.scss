@@ -8,6 +8,8 @@
   pointer-events: none;
 
   &__container {
+    display: flex;
+    justify-content: flex-end;
     padding: 80px;
     padding-bottom: 0;
 
@@ -19,6 +21,14 @@
     @include tablet {
       padding: 40px;
       padding-bottom: 0;
+    }
+  }
+
+  &__socials {
+    pointer-events: all;
+
+    @include small-tablet {
+      display: none;
     }
   }
 

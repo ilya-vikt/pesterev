@@ -91,14 +91,6 @@
     max-width: 400px;
   }
 
-  &__socials {
-    pointer-events: all;
-
-    @include small-tablet {
-      display: none;
-    }
-  }
-
   &__bottom {
     position: fixed;
     bottom: var(--padding-v, 40px);
