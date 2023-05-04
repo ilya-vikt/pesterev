@@ -59,6 +59,7 @@
 
   &__top,
   &__bottom {
+    position: fixed;
     display: flex;
     padding-left: var(--padding-h, 80px);
     padding-right: var(--padding-h, 80px);
@@ -70,7 +71,6 @@
   }
 
   &__top {
-    position: fixed;
     top: var(--padding-v, 40px);
     padding-top: var(--padding-v, 40px);
 
@@ -92,7 +92,6 @@
   }
 
   &__bottom {
-    position: fixed;
     bottom: var(--padding-v, 40px);
     padding-bottom: var(--padding-v, 40px);
     align-items: flex-end;
