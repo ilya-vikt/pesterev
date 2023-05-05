@@ -121,6 +121,7 @@
     @include small-tablet {
       bottom: auto;
       padding-bottom: 0;
+      pointer-events: all;
     }
 
     @include min-height-wide {
