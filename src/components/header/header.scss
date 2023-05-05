@@ -22,6 +22,11 @@
       padding: 40px;
       padding-bottom: 0;
     }
+
+    @include mobile {
+      padding: 20px;
+      padding-bottom: 0;
+    }
   }
 
   &__socials {
