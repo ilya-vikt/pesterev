@@ -37,6 +37,46 @@
     }
   }
 
+  &__btn {
+    position: fixed;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 40px;
+    padding: 12px 5px;
+    pointer-events: all;
+    transform: translate(5px, -10px);
+
+    &--active {
+      .header__bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+      .header__bar:nth-child(2) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+
+    @include small-tablet {
+      display: flex;
+    }
+
+    @include mouse-hover {
+      .header__bar {
+        background-color: $cl-red;
+      }
+    }
+  }
+
+  &__bar {
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    transition: transform $animation, background-color $animation;
+    pointer-events: none;
+  }
+
   @include fhd {
     height: #{responsive(1920, 1180, 250, 170)};
   }
