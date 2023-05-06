@@ -9,7 +9,9 @@
       data-page-name="main"
     >
       @@include('components/header/header.html', {})
-      <main class="main">@@include('components/main/hero/hero.html', {})</main>
+      <main id="main" class="main">
+        @@include('components/main/hero/hero.html', {})
+      </main>
       @@include('components/footer/footer.html', {})
     </div>
   </body>

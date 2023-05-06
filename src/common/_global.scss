@@ -26,6 +26,10 @@ body {
   }
 }
 
+.blur {
+  filter: blur(50px);
+}
+
 .scrollbar-compensation {
   width: 100vw;
   padding-right: var(--scrollbar-width, 0);
@@ -62,4 +66,8 @@ body {
   max-height: 100vh;
   min-height: $min-height;
   @extend .scrollbar-compensation;
+}
+
+.main {
+  transition: filter $animation;
 }

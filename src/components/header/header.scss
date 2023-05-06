@@ -1,9 +1,8 @@
 .header {
   position: fixed;
-  z-index: 2;
+  z-index: 3;
   top: 0;
   height: 250px;
-  background-color: rgba(#008080, 0.5);
   width: 100vw;
   pointer-events: none;
 
@@ -83,5 +82,15 @@
 
   @include tablet {
     height: 170px;
+  }
+}
+
+.menu--active {
+  & ~ .header__socials {
+    display: none;
+  }
+
+  & ~ .header__btn {
+    display: flex;
   }
 }
