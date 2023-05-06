@@ -1,0 +1,49 @@
+.menu {
+  position: fixed;
+  visibility: hidden;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  transition: opacity $animation, visibility 0s linear $delay;
+  pointer-events: all;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    padding: 40px;
+    min-height: 100%;
+  }
+
+  &__list {
+    margin-top: auto;
+    margin-bottom: 80px;
+    line-height: 1;
+  }
+
+  &__link {
+    display: block;
+    padding: 5px;
+    transition: color $animation;
+    user-select: none;
+    text-align: center;
+
+    @include mouse-hover {
+      color: $cl-red;
+    }
+  }
+
+  &__social {
+    margin-bottom: auto;
+  }
+
+  &--active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity $animation, visibility 0s linear;
+  }
+}
