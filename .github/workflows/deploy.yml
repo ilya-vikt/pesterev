@@ -3,7 +3,7 @@ name: Deploy to FTP Server
 on:
   push:
     branches:
-      - main,
+      - main
     paths-ignore:
       - '.github/workflows/*'
   workflow_dispatch:
@@ -35,5 +35,5 @@ jobs:
           host: ${{ 'u99503wk.beget.tech' }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
           username: ${{ secrets.ART_FTP_USERNAME }} # FTP username
           password: ${{ secrets.ART_FTP_PASSWORD }} # FTP password
-          cleanup: false # optional, remove existing files inside FTP remote folder
+          cleanup: true # optional, remove existing files inside FTP remote folder
           passive: true # optional
