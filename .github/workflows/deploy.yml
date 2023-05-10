@@ -32,7 +32,7 @@ jobs:
         uses: sand4rt/ftp-deployer@v1.7
         with:
           sftp: false # optional
-          host: ${{ u99503wk.beget.tech }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
+          host: ${{ 'u99503wk.beget.tech' }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
           username: ${{ secrets.ART_FTP_USERNAME }} # FTP username
           password: ${{ secrets.ART_FTP_PASSWORD }} # FTP password
           cleanup: false # optional, remove existing files inside FTP remote folder
