@@ -1,0 +1,39 @@
+name: Deploy to FTP Server
+
+on:
+  push:
+    branches:
+      - main,
+    paths-ignore:
+      - '.github/workflows/*'
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.19.0'
+
+      - name: Install dependencies
+        run: |
+          npm ci --no-audit --prefer-offline
+          npm install -g ftp-upload
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        with:
+          server: 'u99503wk.beget.tech'
+          username: ${{ secrets.ART_FTP_USERNAME }}
+          password: ${{ secrets.ART_FTP_PASSWORD }}
+          remote-dir: '.'
+          local-dir: './dist/'
+          fail-on-warnings: true
