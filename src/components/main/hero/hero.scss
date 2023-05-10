@@ -200,3 +200,8 @@
     --padding-h: 20px;
   }
 }
+
+p {
+  padding-top: max(100vh, $min-height);
+  padding-left: 30%;
+}
