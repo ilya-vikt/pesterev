@@ -30,6 +30,11 @@
         width: 25px;
         height: 25px;
       }
+
+      @include small-tablet {
+        width: 30px;
+        height: 30px;
+      }
     }
 
     @include fhd {
@@ -40,6 +45,11 @@
     @include tablet {
       width: 31px;
       height: 31px;
+    }
+
+    @include small-tablet {
+      width: 46px;
+      height: 46px;
     }
 
     @include mouse-hover {
