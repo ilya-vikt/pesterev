@@ -29,11 +29,11 @@ jobs:
         run: npm run build
 
       - name: Upload to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        uses: sand4rt/ftp-deployer@v1.7
         with:
-          server: 'u99503wk.beget.tech'
-          username: ${{ secrets.ART_FTP_USERNAME }}
-          password: ${{ secrets.ART_FTP_PASSWORD }}
-          remote-dir: '.'
-          local-dir: './dist/'
-          fail-on-warnings: true
+          sftp: false # optional
+          host: ${{ u99503wk.beget.tech }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
+          username: ${{ secrets.ART_FTP_USERNAME }} # FTP username
+          password: ${{ secrets.ART_FTP_PASSWORD }} # FTP password
+          cleanup: false # optional, remove existing files inside FTP remote folder
+          passive: true # optional
