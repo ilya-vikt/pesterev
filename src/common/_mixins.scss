@@ -12,6 +12,12 @@
   }
 }
 
+@mixin notebook {
+  @media (max-width: (1440px)) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: (1180px)) {
     @content;
