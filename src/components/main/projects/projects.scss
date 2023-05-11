@@ -1,0 +1,22 @@
+.main-projects {
+  margin-top: 100vh;
+
+  &__container {
+    padding-left: 33.33%;
+  }
+
+  &__list {
+    margin-bottom: 80px;
+  }
+
+  &__item {
+    height: 420px;
+
+    &:not(:last-child) {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__lnk {
+  }
+}
