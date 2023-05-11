@@ -44,6 +44,14 @@
   }
 
   &__prev {
-    margin-right: 5px;
+    margin-right: 20px;
+
+    @include fhd {
+      margin-right: #{responsive(1920, 1440, 20, 6)};
+    }
+
+    @include notebook {
+      margin-right: 6px;
+    }
   }
 }
