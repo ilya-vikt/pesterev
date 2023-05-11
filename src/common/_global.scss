@@ -74,3 +74,19 @@ body {
 .main {
   transition: filter $animation;
 }
+
+.section-inner {
+  padding-top: 250px;
+  padding-right: 80px;
+  padding-left: 33.33%;
+
+  @include fhd {
+    padding-top: #{responsive(1920, 1180, 250, 170)};
+    padding-right: #{responsive(1920, 1180, 80, 40)};
+  }
+
+  @include small-tablet {
+    padding-top: 170px;
+    padding-right: 40px;
+  }
+}
