@@ -18,5 +18,34 @@
   }
 
   &__lnk {
+    color: $cl-black;
+    transition: color $animation;
+
+    span {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    svg {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-top: -1px;
+      vertical-align: middle;
+
+      @include fhd {
+        width: #{responsive(1920, 1180, 20, 14)};
+        height: #{responsive(1920, 1180, 20, 14)};
+      }
+
+      @include tablet {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
+    @include mouse-hover {
+      color: $cl-red;
+    }
   }
 }
