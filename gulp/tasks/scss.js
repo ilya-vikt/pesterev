@@ -20,13 +20,14 @@ export const scss = () => {
           })
         )
       )
-      .pipe(app.plugins.replace(/@img\//g, '../img/'))
       .pipe(app.plugins.replace(/~/g, '../node_modules/'))
       .pipe(
         sass({
           outputStyle: 'expanded',
         })
       )
+      .pipe(app.plugins.replace(/@img\//g, '../img/'))
+      .pipe(app.plugins.replace(/@assets\//g, '../assets/'))
       .pipe(groupCssMediaQueries())
       .pipe(
         app.plugins.if(
