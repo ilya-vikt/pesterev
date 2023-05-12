@@ -103,3 +103,23 @@ body {
     padding-left: 20px;
   }
 }
+
+.after-hero {
+  padding-top: 210px;
+
+  @include fhd {
+    padding-top: #{responsive(1920, 1180, 210, 150)};
+  }
+
+  @include tablet {
+    padding-top: 150px;
+  }
+
+  @include small-tablet {
+    padding-top: 130px;
+  }
+
+  @include mobile {
+    padding-top: 150px;
+  }
+}
