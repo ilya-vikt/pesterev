@@ -37,6 +37,22 @@
   &__descr {
     padding: 40px;
     padding-right: 0;
+    position: relative;
+    @include mobile {
+      &::after {
+        content: '';
+        width: 25px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-image: url('@assets/sprite.svg#arrow_right_xs');
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 20px, 14px;
+        display: block;
+      }
+    }
   }
 
   &__title {
