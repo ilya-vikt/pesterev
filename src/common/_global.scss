@@ -78,7 +78,7 @@ body {
 .section-inner {
   --padding-h: 80px;
   padding-top: 250px;
-  padding-right: 80px;
+  padding-right: var(--padding-h);
   padding-left: calc(
     33.33% + var(--padding-h) * 0.3333
   ); // 100% - 2 * 80px / 3 + 80px
@@ -90,11 +90,11 @@ body {
 
   @include tablet {
     padding-left: 260px;
+    --padding-h: 40px;
   }
 
   @include small-tablet {
     padding-top: 170px;
-    padding-right: 40px;
     padding-left: 40px;
   }
 
