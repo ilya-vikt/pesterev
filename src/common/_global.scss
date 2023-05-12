@@ -76,17 +76,30 @@ body {
 }
 
 .section-inner {
+  --padding-h: 80px;
   padding-top: 250px;
   padding-right: 80px;
-  padding-left: 33.33%;
+  padding-left: calc(
+    33.33% + var(--padding-h) * 0.3333
+  ); // 100% - 2 * 80px / 3 + 80px
 
   @include fhd {
     padding-top: #{responsive(1920, 1180, 250, 170)};
-    padding-right: #{responsive(1920, 1180, 80, 40)};
+    --padding-h: #{responsive(1920, 1180, 80, 40)};
+  }
+
+  @include tablet {
+    padding-left: 260px;
   }
 
   @include small-tablet {
     padding-top: 170px;
     padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  @include mobile {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
