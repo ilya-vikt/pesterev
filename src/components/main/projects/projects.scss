@@ -1,5 +1,5 @@
 .main-projects {
-  margin-top: 100vh;
+  margin-top: max(100vh, $min-height);
 
   &__container {
     padding-left: 33.33%;
