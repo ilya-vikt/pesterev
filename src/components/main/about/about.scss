@@ -1,0 +1,37 @@
+.main-about {
+  padding-bottom: 60px;
+
+  &__title {
+    margin-bottom: 80px;
+  }
+
+  &__gallery {
+    position: relative;
+    margin-bottom: 120px;
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  &__gallery-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: $cl-red;
+    background-image: url('@assets/sprite.svg#plus_s');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30px 30px;
+    transition: background-color $animation;
+
+    @include mouse-hover {
+      background-color: $cl-white;
+    }
+  }
+}
