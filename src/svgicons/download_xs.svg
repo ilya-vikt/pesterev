@@ -1,4 +1,4 @@
 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 1.25342V13.4617L8 14.9617L1 13.4617L1 1.25342L8 2.65322L15 1.25342Z" stroke="black" stroke-width="2"/>
-<line x1="8" y1="2" x2="8" y2="14.8" stroke="black" stroke-width="2"/>
+	<path d="M15 1.25342V13.4617L8 14.9617L1 13.4617L1 1.25342L8 2.65322L15 1.25342Z" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
+	<line x1="8" y1="2" x2="8" y2="14.8" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke" />
 </svg>
