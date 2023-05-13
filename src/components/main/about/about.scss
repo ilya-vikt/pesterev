@@ -34,4 +34,20 @@
       background-color: $cl-white;
     }
   }
+
+  &__text {
+    margin-bottom: 80px;
+    width: 50%;
+
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+
+  &__file {
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
 }
