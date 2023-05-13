@@ -120,3 +120,24 @@
     font-size: 14px;
   }
 }
+
+.link {
+  display: inline-block;
+  padding-top: 5px;
+  margin-top: -5px;
+  color: $cl-black;
+  transition: color $animation;
+
+  span {
+    margin-right: 10px;
+  }
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  @include mouse-hover {
+    color: $cl-red;
+  }
+}
