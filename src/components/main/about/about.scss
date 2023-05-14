@@ -1,13 +1,8 @@
 .main-about {
   padding-bottom: 60px;
 
-  &__title {
-    margin-bottom: 80px;
-  }
-
   &__gallery {
     position: relative;
-    margin-bottom: 120px;
     padding-top: 56.25%;
 
     img {
@@ -25,14 +20,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     background-color: $cl-red;
     background-image: url('@assets/sprite.svg#plus_s');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 30px 30px;
+    background-size: 50px;
     transition: background-color $animation, opacity $animation, visibility 0s;
 
     @include mouse-hover {
@@ -49,6 +44,18 @@
       transition: background-color $animation, opacity $animation,
         visibility 0s linear $delay;
     }
+
+    @include fhd {
+      width: #{responsive(1920, 1180, 160, 120)};
+      height: #{responsive(1920, 1180, 160, 120)};
+      background-size: #{responsive(1920, 1180, 50, 30)};
+    }
+
+    @include tablet {
+      width: 120px;
+      height: 120px;
+      background-size: 30px;
+    }
   }
 
   &__text {
@@ -58,13 +65,39 @@
     p:not(:last-child) {
       margin-bottom: 1em;
     }
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 80, 40)};
+    }
+
+    @include tablet {
+      margin-bottom: 40px;
+      width: 100%;
+      padding-right: 220px;
+    }
+
+    @include small-tablet {
+      padding-right: 0;
+      padding-left: 220px;
+    }
+
+    @include mobile {
+      padding-left: 0;
+    }
   }
 
   &__file {
-    margin-bottom: 80px;
     svg {
       width: 18px;
       height: 18px;
+    }
+
+    @include small-tablet {
+      padding-left: 220px;
+    }
+
+    @include mobile {
+      padding-left: 0;
     }
   }
 
