@@ -1,5 +1,6 @@
 import Swiper, { Navigation } from 'swiper';
 import type { SwiperOptions } from 'swiper/types';
+import { initPlayer } from '@/components/main/about/about';
 
 export const mainInit = () => {
   const swiperConfig: SwiperOptions = {
@@ -26,3 +27,5 @@ export const mainInit = () => {
         .classList.add('main-hero__item--active');
     });
 };
+
+initPlayer();

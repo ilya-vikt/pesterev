@@ -61,9 +61,29 @@
   }
 
   &__file {
+    margin-bottom: 80px;
     svg {
       width: 18px;
       height: 18px;
+    }
+  }
+
+  &__video {
+    position: relative;
+    padding-top: 56.25%;
+    user-select: none;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    &--playing iframe {
+      pointer-events: all;
     }
   }
 }
