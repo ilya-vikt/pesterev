@@ -8,3 +8,15 @@ export function scrollBarWidth() {
   document.body.style.setProperty('--scrollbar-width', `${scrollWidth}px`);
   t_div.remove();
 }
+
+export function autoResize(id: string) {
+  function setHeight() {
+    this.rows = this.value.split('\n').length;
+  }
+
+  const textarea = document.getElementById(id) as HTMLTextAreaElement | null;
+  if (!textarea) return;
+  textarea.style.overflowY = 'hidden';
+  textarea.rows = 1;
+  textarea.addEventListener('input', setHeight, false);
+}
