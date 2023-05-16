@@ -89,7 +89,8 @@ body {
   }
 
   @include tablet {
-    padding-left: 260px;
+    //TODO: Узнать какой должен быть паддинг. Если сделать 260 как в макете, то h1 будет ездить через текст, сделал оптимально 300
+    padding-left: 300px;
     --padding-h: 40px;
   }
 
@@ -133,5 +134,28 @@ body {
 
   @include tablet {
     margin-bottom: 80px;
+  }
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+.justify-type-2 {
+  width: 50%;
+
+  @include tablet {
+    width: 100%;
+    //TODO: Узнать какой должен быть паддинг. Если сделать 260 как в макете, то h1 будет ездить через текст, сделал оптимально 300
+    padding-right: 260px;
+  }
+
+  @include small-tablet {
+    padding-right: 0;
+    padding-left: 220px;
+  }
+
+  @include mobile {
+    padding-left: 0;
   }
 }
