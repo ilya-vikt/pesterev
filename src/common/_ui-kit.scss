@@ -141,3 +141,35 @@
     color: $cl-red;
   }
 }
+
+.input {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border: none;
+  border-bottom: 2px solid $cl-black;
+  background-color: transparent;
+  transition: background-color $animation, border-color $animation;
+  outline-offset: 2px;
+
+  &::placeholder {
+    color: $cl-grey;
+  }
+
+  @include mouse-hover {
+    background-color: $cl-light-grey;
+  }
+
+  &.input.input:focus {
+    border-bottom-color: $cl-blue;
+    background-color: transparent;
+    outline-color: transparent;
+  }
+}
+
+form.check .input.input:invalid {
+  border-bottom-color: $cl-red;
+}
+
+textarea {
+  resize: none;
+}
