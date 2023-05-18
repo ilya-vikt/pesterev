@@ -11,7 +11,8 @@ export function scrollBarWidth() {
 
 export function autoResize(id: string) {
   function setHeight() {
-    this.rows = this.value.split('\n').length;
+    this.style.height = 'auto';
+    this.style.height = this.scrollHeight + 'px';
   }
 
   const textarea = document.getElementById(id) as HTMLTextAreaElement | null;
