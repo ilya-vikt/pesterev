@@ -34,11 +34,13 @@ export const path = {
     ],
     scss: [
       `${srcFolder}/common/**/*.scss`,
+      `${srcFolder}/libs/**/*.scss`,
       `${srcFolder}/components/**/*.scss`,
       `${srcFolder}/style.scss`,
     ],
     js: [
       `${srcFolder}/ts/**/*.ts`,
+      `${srcFolder}/libs/**/*.ts`,
       `${srcFolder}/components/**/*.ts`,
       `${srcFolder}/common/**/*.ts`,
     ],
