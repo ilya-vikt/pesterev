@@ -1,3 +1,6 @@
+import { createLightBox } from '@/libs/lightbox/lightbox';
+import type { GalleryData } from '@/libs/lightbox/lightbox';
+
 import {
   KinescopePlayer,
   KinescopeCreateOptions,
@@ -8,6 +11,21 @@ declare global {
     videoUrl: string;
   }
 }
+
+const mockImg: GalleryData = {
+  resolutions: [640, 1920],
+  stub: './assets/stub.png',
+  images: [
+    {
+      640: 'https://dummyimage.com/640x480/000/fefefe.png',
+      1920: 'https://dummyimage.com/1920x1080/000/fefefe.png',
+    },
+    {
+      640: 'https://dummyimage.com/640x480/6b256b/fff.png',
+      1920: 'https://dummyimage.com/1920x1080/6b256b/fff.png',
+    },
+  ],
+};
 
 export const initPlayer = () => {
   const playerWrapper = document.getElementById('player-wrapper');
@@ -36,4 +54,12 @@ export const initPlayer = () => {
       });
     }
   );
+};
+
+export const initGallery = () => {
+  document.getElementById('gallery-btn')?.addEventListener('click', () => {
+    console.log('gallery');
+
+    createLightBox(mockImg, 0);
+  });
 };
