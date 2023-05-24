@@ -1,0 +1,173 @@
+.lightbox {
+  --padding-h: 80px;
+  user-select: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  backdrop-filter: blur(50px);
+
+  &__container {
+    position: relative;
+    height: 100%;
+    padding: 40px 0;
+    opacity: 0;
+
+    @include fhd {
+      padding: #{responsive(1920, 1180, 40, 20)} 0;
+    }
+
+    @include tablet {
+      padding: 20px 0;
+    }
+  }
+
+  &__slider {
+    height: 100%;
+  }
+
+  &__slide {
+    --padding-slide: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 calc(var(--padding-h) + var(--padding-slide));
+
+    img {
+      object-fit: contain;
+      height: 100%;
+      max-height: 90vh;
+    }
+
+    &--zoomed {
+      cursor: grab;
+      &:active {
+        cursor: grabbing;
+      }
+    }
+
+    @include fhd {
+      --padding-slide: #{responsive(1920, 1180, 60, 40)};
+    }
+
+    @include tablet {
+      --padding-slide: 40px;
+    }
+
+    @include mobile {
+      --padding-slide: 30px;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding-left: var(--padding-h);
+    padding-right: var(--padding-h);
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  &__prev,
+  &__next {
+    pointer-events: all;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+
+    svg {
+      width: 30px;
+      height: 20px;
+
+      @include fhd {
+        width: #{responsive(1920, 1180, 30, 20)};
+        height: #{responsive(1920, 1180, 20, 14)};
+      }
+
+      @include tablet {
+        width: 20px;
+        height: 14px;
+      }
+    }
+  }
+
+  &__prev {
+    margin-left: -5px;
+  }
+
+  &__next {
+    margin-right: -5px;
+  }
+
+  &__close {
+    position: absolute;
+    right: var(--padding-h);
+    top: 80px;
+    z-index: 3;
+    padding: 5px;
+    margin-right: -5px;
+    margin-top: -5px;
+
+    svg {
+      width: 30px;
+      height: 30px;
+
+      @include fhd {
+        width: #{responsive(1920, 1180, 30, 20)};
+        height: #{responsive(1920, 1180, 30, 20)};
+      }
+
+      @include tablet {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    @include fhd {
+      top: #{responsive(1920, 1180, 80, 40)};
+    }
+
+    @include tablet {
+      top: 40px;
+    }
+
+    @include mobile {
+      top: 20;
+    }
+  }
+
+  &__close,
+  &__prev,
+  &__next {
+    color: $cl-black;
+    transition: color $animation;
+
+    @include mouse-hover {
+      color: $cl-red;
+    }
+  }
+
+  @include fhd {
+    --padding-h: #{responsive(1920, 1180, 80, 40)};
+  }
+
+  @include tablet {
+    --padding-h: 40px;
+  }
+
+  @include mobile {
+    --padding-h: 20px;
+  }
+  &--visible .lightbox__container {
+    opacity: 1;
+  }
+}

@@ -1,6 +1,6 @@
 import Swiper, { Navigation } from 'swiper';
 import type { SwiperOptions } from 'swiper/types';
-import { initPlayer } from '@/components/main/about/about';
+import { initPlayer, initGallery } from '@/components/main/about/about';
 import { initContactsForm } from '@/components/main/contacts/contacts';
 
 export const mainInit = () => {
@@ -27,6 +27,8 @@ export const mainInit = () => {
         .closest('.main-hero__item')
         .classList.add('main-hero__item--active');
     });
+
+  initGallery();
   initPlayer();
   initContactsForm();
 };

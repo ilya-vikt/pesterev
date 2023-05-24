@@ -142,6 +142,29 @@
   }
 }
 
+.loader-spinner {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid $cl-black;
+  border-top-color: transparent;
+
+  @keyframes loader-animation {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+
+  animation-name: loader-animation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
 .input {
   padding-top: 30px;
   padding-bottom: 30px;
