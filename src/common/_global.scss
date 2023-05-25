@@ -25,10 +25,6 @@ body {
   }
 }
 
-.blur {
-  filter: blur(50px);
-}
-
 .need-blur {
   transition: filter $animation;
 }

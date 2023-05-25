@@ -1,0 +1,27 @@
+.start-animation {
+  & [ani-blur] {
+    filter: blur(100px);
+  }
+
+  & [ani-blur-and-zoom] {
+    filter: blur(100px);
+    transform: scale(1.2);
+  }
+}
+
+.animating {
+  & [ani-blur] {
+    transition: filter 500ms ease-out;
+    filter: blur(0);
+  }
+
+  & [ani-blur-and-zoom] {
+    transition: filter 2s ease-out 1s, transform 2s ease-out 1s;
+    filter: blur(0);
+    transform: scale(1);
+  }
+
+  & [delay-500ms] {
+    transition-delay: 500ms;
+  }
+}

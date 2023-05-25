@@ -1,0 +1,11 @@
+<div id="preloader" class="preloader">
+  <div class="preloader__spinner"></div>
+</div>
+<script>
+  document.body.classList.add('no-scroll');
+  setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    preloader && preloader.remove();
+    document.body.classList.remove('no-scroll');
+  }, 300000);
+</script>
