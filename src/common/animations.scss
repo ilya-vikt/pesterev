@@ -11,7 +11,7 @@
 
 .animating {
   & [ani-blur] {
-    transition: filter 500ms ease-out;
+    transition: filter 1s ease-out;
     filter: blur(0);
   }
 
