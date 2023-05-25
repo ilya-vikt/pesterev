@@ -94,3 +94,7 @@
     display: flex;
   }
 }
+
+.start-animation .header__btn {
+  pointer-events: none;
+}

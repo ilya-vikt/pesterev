@@ -13,7 +13,7 @@ function removePreloader() {
 
     setTimeout(() => {
       document.body.classList.remove('start-animation', 'animating');
-    }, 5000);
+    }, 3000);
   }, 500);
 }
 
