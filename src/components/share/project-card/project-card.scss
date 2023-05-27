@@ -54,18 +54,28 @@
     padding: 40px;
     padding-right: 0;
     overflow: hidden;
-    position: relative;
 
     @include fhd {
       padding: #{responsive(1920, 1180, 40, 30)};
+      padding-right: 0;
     }
 
     @include tablet {
       padding: 30px;
+      padding-right: 0;
     }
 
     @include mobile {
       padding: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    position: relative;
+
+    @include mobile {
+      margin-bottom: 10px;
       padding-right: 20px;
 
       &::after {
@@ -81,14 +91,6 @@
         background-size: 20px, 14px;
         display: block;
       }
-    }
-  }
-
-  &__title {
-    margin-bottom: 20px;
-
-    @include mobile {
-      margin-bottom: 10px;
     }
   }
 
