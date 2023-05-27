@@ -106,22 +106,14 @@ body {
 }
 
 .after-hero {
-  padding-top: 210px;
+  padding-top: 250px;
 
   @include fhd {
-    padding-top: #{responsive(1920, 1180, 210, 150)};
+    padding-top: #{responsive(1920, 1180, 250, 170)};
   }
 
   @include tablet {
-    padding-top: 150px;
-  }
-
-  @include small-tablet {
-    padding-top: 130px;
-  }
-
-  @include mobile {
-    padding-top: 150px;
+    padding-top: 170px;
   }
 }
 
