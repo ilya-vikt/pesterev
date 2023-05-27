@@ -1,20 +1,9 @@
-import Swiper, { Navigation } from 'swiper';
-import type { SwiperOptions } from 'swiper/types';
+import { initSlider } from './hero/hero';
 import { initPlayer, initGallery } from '@/components/main/about/about';
 import { initContactsForm } from '@/components/main/contacts/contacts';
 
-export const mainInit = () => {
-  const swiperConfig: SwiperOptions = {
-    slidesPerView: 1,
-    navigation: {
-      prevEl: '.slider-btns__prev',
-      nextEl: '.slider-btns__next',
-    },
-    loop: true,
   };
 
-  Swiper.use([Navigation]);
-  new Swiper('.main-hero__slider', swiperConfig);
 
   document
     .querySelector('.main-hero__menu')
@@ -28,6 +17,8 @@ export const mainInit = () => {
         .classList.add('main-hero__item--active');
     });
 
+export const mainInit = () => {
+  initSlider();
   initGallery();
   initPlayer();
   initContactsForm();
