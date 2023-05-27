@@ -1,23 +1,77 @@
 import { initSlider } from './hero/hero';
 import { initPlayer, initGallery } from '@/components/main/about/about';
 import { initContactsForm } from '@/components/main/contacts/contacts';
+import { smothScrollTo } from '@/ts/modules/functions';
 
+const initHeroMenu = () => {
+  const getHashFromLnk = (lnk: HTMLLinkElement): string => {
+    return new URL((lnk as HTMLLinkElement).href).hash;
   };
 
+  const heroMenu = document.getElementById('hero-menu');
+  if (!heroMenu) return;
+  const blockMap: Record<string, HTMLElement> = {};
+  const menuMap: Record<string, HTMLElement> = {};
 
-  document
-    .querySelector('.main-hero__menu')
-    ?.addEventListener('click', ({ target }) => {
-      if ((target as HTMLElement).tagName !== 'A') return;
-      document
-        .querySelector('.main-hero__item--active')
-        ?.classList.remove('main-hero__item--active');
-      (target as HTMLElement)
-        .closest('.main-hero__item')
-        .classList.add('main-hero__item--active');
-    });
+  Array.from(heroMenu.getElementsByTagName('A')).forEach((el) => {
+    const href = getHashFromLnk(el as HTMLLinkElement);
+    if (!href) return;
+    const block = document.querySelector(href) as HTMLElement;
+    blockMap[href] = block;
+    menuMap[href] = el.closest('.main-hero__item') as HTMLElement;
+  });
+
+  heroMenu.addEventListener('click', (e) => {
+    const lnk = e.target as HTMLElement;
+    if (lnk.tagName !== 'A') return;
+    e.preventDefault();
+    const href = getHashFromLnk(lnk as HTMLLinkElement);
+
+    if (!blockMap[href]) return;
+    const paddingTop = parseInt(
+      getComputedStyle(blockMap[href]).getPropertyValue('padding-top')
+    );
+    const y =
+      blockMap[href].getBoundingClientRect().top +
+      window.pageYOffset +
+      paddingTop / 2;
+    smothScrollTo(y);
+  });
+
+  //Intersection Observer
+  let activeMenuItem: HTMLElement | null = null;
+
+  const setActiveMenuItem = (id: string): void => {
+    const activeClass = 'main-hero__item--active';
+    const hash = '#' + id;
+    activeMenuItem && activeMenuItem.classList.remove(activeClass);
+    if (!menuMap[hash]) return;
+    menuMap[hash].classList.add(activeClass);
+    activeMenuItem = menuMap[hash];
+  };
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveMenuItem(entry.target.id);
+        }
+      });
+    },
+    {
+      rootMargin: '-30% 0px -69.99% 0px',
+    }
+  );
+
+  for (const key in blockMap) {
+    const value = blockMap[key];
+    observer.observe(value);
+  }
+  observer.observe(document.getElementById('hero'));
+};
 
 export const mainInit = () => {
+  initHeroMenu();
   initSlider();
   initGallery();
   initPlayer();
