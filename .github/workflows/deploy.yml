@@ -30,8 +30,8 @@ jobs:
 
       - name: Create Password protect
         run: |
-          echo -e '\n# Beget FileManager Auth rules\n AuthName "Protected area, need authorization"\n AuthType Basic\n AuthUserFile /home/u/u99503wk/u99503wk.beget.tech/public_html/.htpasswd\n require valid-user' > .htaccess
-          echo 'art:{SHA}+HVNY0HimfsP4hhJc+vvEkeObFQ=' > .htpasswd
+          echo -e '\n# Beget FileManager Auth rules\n AuthName "Protected area, need authorization"\n AuthType Basic\n AuthUserFile /home/u/u99503wk/u99503wk.beget.tech/public_html/.htpasswd\n require valid-user' > ./dist/.htaccess
+          echo 'art:{SHA}+HVNY0HimfsP4hhJc+vvEkeObFQ=' > ./dist/.htpasswd
 
       - name: Upload to FTP server
         uses: sand4rt/ftp-deployer@v1.7
