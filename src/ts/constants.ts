@@ -1,0 +1,1 @@
+export const START_ANIMATION_DURATION = 1000;

@@ -1,32 +1,34 @@
+$duration: 500ms;
 .start-animation {
   & [ani-blur] {
-    filter: blur(100px);
+    filter: blur(200px);
   }
 
   & [ani-blur-slow] {
-    filter: blur(100px);
+    filter: blur(200px);
   }
 
   & [ani-blur-and-zoom] {
-    filter: blur(100px);
+    filter: blur(200px);
     transform: scale(0.8);
   }
 }
 
 .animating {
   & [ani-blur] {
-    transition: filter 1s ease-out;
+    transition: filter 500ms ease-out;
     filter: blur(0);
   }
 
   & [ani-blur-and-zoom] {
-    transition: filter 2s ease-out 1s, transform 2s ease-out 1s;
+    transition: filter $duration ease-out 500ms,
+      transform $duration ease-out 500ms;
     filter: blur(0);
     transform: scale(1);
   }
 
   & [ani-blur-slow] {
-    transition: filter 2s ease-out 1s;
+    transition: filter $duration ease-out 500ms;
     filter: blur(0);
   }
 

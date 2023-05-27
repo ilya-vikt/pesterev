@@ -1,3 +1,5 @@
+import { START_ANIMATION_DURATION } from '@/ts/constants';
+
 function removePreloader() {
   const preloader = document.getElementById('preloader');
   if (!preloader) return;
@@ -5,15 +7,15 @@ function removePreloader() {
   setTimeout(() => {
     document.body.classList.remove('no-scroll');
     document.body.classList.add('start-animation');
-    preloader.remove();
 
     setTimeout(() => {
+      preloader.remove();
       document.body.classList.add('animating');
     }, 50);
 
     setTimeout(() => {
       document.body.classList.remove('start-animation', 'animating');
-    }, 3000);
+    }, START_ANIMATION_DURATION);
   }, 500);
 }
 
