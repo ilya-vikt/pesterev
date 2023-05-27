@@ -52,6 +52,10 @@ body {
   clip: rect(0 0 0 0);
 }
 
+.blur {
+  filter: blur(50px);
+}
+
 .container {
   max-width: 1920px;
   margin: 0 auto;
