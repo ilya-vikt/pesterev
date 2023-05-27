@@ -29,7 +29,7 @@
         margin-bottom: 40px;
       }
 
-      @include mobile {
+      @include small-mobile {
         margin-bottom: 20px;
       }
     }
