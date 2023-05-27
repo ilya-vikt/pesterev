@@ -1,40 +1,44 @@
-$duration: 500ms;
+$duration: 1000ms;
+
 .start-animation {
   & [ani-blur] {
-    filter: blur(200px);
+    filter: blur(150px);
     transform: translate3d(0, 0, 0);
+    opacity: 0;
   }
 
   & [ani-blur-slow] {
-    filter: blur(200px);
+    filter: blur(150px);
+    opacity: 0;
     transform: translate3d(0, 0, 0);
   }
 
   & [ani-blur-and-zoom] {
-    filter: blur(200px);
-    transform: scale3d(0.8, 0.8, 0);
+    filter: blur(150px);
+    opacity: 0;
+    transform: scale3d(0.6, 0.6, 0);
   }
 }
 
 .animating {
   & [ani-blur] {
-    transition: filter 500ms ease-out;
+    transition: filter 500ms ease-out, opacity 500ms ease-out;
     filter: blur(0);
+    opacity: 1;
   }
 
   & [ani-blur-and-zoom] {
     transition: filter $duration ease-out 500ms,
-      transform $duration ease-out 500ms;
+      transform $duration ease-out 500ms, opacity $duration ease-out 500ms;
     filter: blur(0);
-    transform: scale(1);
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
   }
 
   & [ani-blur-slow] {
-    transition: filter $duration ease-out 500ms;
+    transition: filter $duration ease-out 500ms,
+      opacity $duration ease-out 500ms;
+    opacity: 1;
     filter: blur(0);
-  }
-
-  & [delay-500ms] {
-    transition-delay: 500ms;
   }
 }
