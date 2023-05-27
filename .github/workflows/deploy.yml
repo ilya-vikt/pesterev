@@ -28,10 +28,13 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Create Password protect
-        run: |
-          echo -e '\n# Beget FileManager Auth rules\n AuthName "Protected area, need authorization"\n AuthType Basic\n AuthUserFile /home/u/u99503wk/u99503wk.beget.tech/public_html/.htpasswd\n require valid-user' > .htaccess
-          echo 'art:{SHA}+HVNY0HimfsP4hhJc+vvEkeObFQ=' > .htpasswd
+      - name: Cleanup FTP folder
+        uses: taylorgibb/ftp-clean@v2.0.3
+        with:
+          host: ${{ 'u99503wk.beget.tech' }}
+          user: ${{ secrets.ART_FTP_USERNAME }}
+          password: ${{ secrets.ART_FTP_PASSWORD }}
+          exclude: '[".htaccess", ".htpasswd"]'
 
       - name: Upload to FTP server
         uses: sand4rt/ftp-deployer@v1.7
@@ -40,6 +43,5 @@ jobs:
           host: ${{ 'u99503wk.beget.tech' }} # e.g. ftp.host.com or sftp.host.com (without ftp:// or ftps://)
           username: ${{ secrets.ART_FTP_USERNAME }} # FTP username
           password: ${{ secrets.ART_FTP_PASSWORD }} # FTP password
-          cleanup: true # optional, remove existing files inside FTP remote folder
+          cleanup: false # optional, remove existing files inside FTP remote folder
           passive: true # optional
-          include: '["./.htpasswd", "./.htaccess"]'
