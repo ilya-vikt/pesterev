@@ -2,15 +2,17 @@ $duration: 500ms;
 .start-animation {
   & [ani-blur] {
     filter: blur(200px);
+    transform: translate3d(0, 0, 0);
   }
 
   & [ani-blur-slow] {
     filter: blur(200px);
+    transform: translate3d(0, 0, 0);
   }
 
   & [ani-blur-and-zoom] {
     filter: blur(200px);
-    transform: scale(0.8);
+    transform: scale3d(0.8, 0.8, 0);
   }
 }
 
