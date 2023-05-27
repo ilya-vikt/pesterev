@@ -35,15 +35,6 @@
       color: $cl-black;
     }
 
-    @include mouse-hover {
-      img {
-        transform: translateX(50px);
-      }
-      svg {
-        opacity: 1;
-      }
-    }
-
     @include mobile {
       margin-bottom: 20px;
       flex: none;
@@ -96,5 +87,14 @@
 
   @include mobile {
     flex-direction: column;
+  }
+
+  @include mouse-hover {
+    img {
+      transform: translateX(50px);
+    }
+    svg {
+      opacity: 1;
+    }
   }
 }
