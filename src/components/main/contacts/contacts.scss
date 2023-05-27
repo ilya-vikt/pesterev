@@ -32,6 +32,17 @@
     &:last-child {
       padding-bottom: 0;
     }
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+      @include fhd {
+        margin-bottom: #{responsive(1920, 1180, 10, 0)};
+      }
+
+      @include tablet {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__form {
