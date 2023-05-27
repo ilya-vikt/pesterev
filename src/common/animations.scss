@@ -28,16 +28,17 @@ $duration: 1000ms;
   }
 
   & [ani-blur-and-zoom] {
-    transition: filter $duration ease-out 500ms,
-      transform $duration ease-out 500ms, opacity $duration ease-out 500ms;
+    transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
+      transform $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
+      opacity $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms;
     filter: blur(0);
     opacity: 1;
     transform: scale3d(1, 1, 1);
   }
 
   & [ani-blur-slow] {
-    transition: filter $duration ease-out 500ms,
-      opacity $duration ease-out 500ms;
+    transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
+      opacity $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms;
     opacity: 1;
     filter: blur(0);
   }
