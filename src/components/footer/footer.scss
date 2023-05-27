@@ -1,0 +1,52 @@
+.footer {
+  height: 190px;
+  padding-bottom: 80px;
+
+  &__container {
+    display: flex;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 80px;
+
+    @include fhd {
+      padding-right: #{responsive(1920, 1180, 80, 40)};
+    }
+
+    @include tablet {
+      padding-right: 40px;
+    }
+
+    @include mobile {
+      padding-right: 20px;
+    }
+  }
+
+  &__btn {
+    padding: 5px 10px;
+    transform: translate(10px, 5px);
+
+    svg {
+      width: 20px;
+      height: 30px;
+      transition: color $animation;
+      color: $cl-black;
+    }
+
+    @include mouse-hover {
+      svg {
+        color: $cl-red;
+      }
+    }
+  }
+
+  @include fhd {
+    padding-bottom: #{responsive(1920, 1180, 80, 40)};
+    height: #{responsive(1920, 1180, 190, 110)};
+  }
+
+  @include tablet {
+    padding-bottom: 40px;
+    height: 110px;
+  }
+}
