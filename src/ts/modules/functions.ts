@@ -1,4 +1,4 @@
-export function scrollBarWidth() {
+export function scrollBarWidth(): void {
   const t_div = document.createElement('div');
   t_div.style.overflowY = 'scroll';
   t_div.style.width = '50px';
@@ -9,20 +9,21 @@ export function scrollBarWidth() {
   t_div.remove();
 }
 
-export function autoResize(id: string) {
-  function setHeight() {
-    this.style.height = 'auto';
-    this.style.height = this.scrollHeight + 'px';
+export function autoResize(id: string): void {
+  function setHeight(textarea: HTMLTextAreaElement): void {
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
   }
 
   const textarea = document.getElementById(id) as HTMLTextAreaElement | null;
   if (!textarea) return;
-  textarea.style.overflowY = 'hidden';
   textarea.rows = 1;
-  textarea.addEventListener('input', setHeight, false);
+  textarea.style.overflowY = 'hidden';
+  textarea.addEventListener('input', () => setHeight(textarea));
+  setTimeout(setHeight, 100, textarea);
 }
 
-export function smothScrollTo(to: number = 0, duration: number = 700) {
+export function smothScrollTo(to: number = 0, duration: number = 700): void {
   const element = document.scrollingElement || document.documentElement;
   const start = element.scrollTop;
   const change = to - start;
