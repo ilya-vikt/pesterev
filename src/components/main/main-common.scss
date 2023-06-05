@@ -1,0 +1,13 @@
+.main-projects,
+.main-about,
+.main-contacts {
+  padding-top: 250px;
+
+  @include fhd {
+    padding-top: #{responsive(1920, 1180, 250, 170)};
+  }
+
+  @include tablet {
+    padding-top: 170px;
+  }
+}
