@@ -15,13 +15,20 @@ body {
   font-weight: 400;
   line-height: 1.2;
   color: $cl-black;
+  --padding-section: 80px;
 
   @include fhd {
     @include responsive-font(1920, 1180, 20, 14);
+    --padding-section: #{responsive(1920, 1180, 80, 40)};
   }
 
   @include tablet {
+    --padding-section: 40px;
     font-size: 14px;
+  }
+
+  @include mobile {
+    --padding-section: 20px;
   }
 }
 
@@ -33,6 +40,7 @@ body {
   width: 100vw;
   padding-right: var(--scrollbar-width, 0);
 }
+
 .no-scroll {
   overflow: hidden;
 }
@@ -68,53 +76,57 @@ body {
   bottom: 0;
   max-height: 100vh;
   min-height: $min-height;
+
   @extend .scrollbar-compensation;
+}
+
+.header-compensation {
+  padding-top: 250px;
+
+  @include fhd {
+    padding-top: #{responsive(1920, 1180, 250, 170)};
+  }
+
+  @include tablet {
+    padding-top: 40px;
+  }
+
+  @include mobile {
+    padding-top: 20px;
+  }
 }
 
 .main {
   transition: filter $animation;
 }
 
-.section-inner {
-  --padding-h: 80px;
-  padding-top: 250px;
-  padding-right: var(--padding-h);
-  padding-left: calc(
-    33.33% + var(--padding-h) * 0.3333
-  ); // 100% - 2 * 80px / 3 + 80px
+.padding-h {
+  padding-left: var(--padding-section);
+  padding-right: var(--padding-section);
+}
 
-  @include fhd {
-    padding-top: #{responsive(1920, 1180, 250, 170)};
-    --padding-h: #{responsive(1920, 1180, 80, 40)};
-  }
+.layout-hero {
+  margin-left: 33.33%;
 
   @include tablet {
-    //TODO: Узнать какой должен быть паддинг. Если сделать 260 как в макете, то h1 будет ездить через текст, сделал оптимально 300
-    padding-left: 300px;
-    --padding-h: 40px;
-  }
-
-  @include small-tablet {
-    padding-top: 170px;
-    padding-left: 40px;
-  }
-
-  @include mobile {
-    --padding-h: 20px;
-    padding-left: 20px;
+    margin-left: 0;
   }
 }
 
-.after-hero {
-  padding-top: 250px;
-
-  @include fhd {
-    padding-top: #{responsive(1920, 1180, 250, 170)};
-  }
+.layout {
+  margin-left: 33.33%;
 
   @include tablet {
-    padding-top: 170px;
+    margin-left: 260px;
   }
+
+  @include small-tablet {
+    margin-left: 0;
+  }
+}
+
+.hero-compensation {
+  margin-top: max(100vh, $min-height);
 }
 
 .gap-bottom {
@@ -133,7 +145,7 @@ body {
   line-height: 1;
 }
 
-.justify-type-2 {
+.align-txt {
   width: 50%;
 
   @include tablet {
