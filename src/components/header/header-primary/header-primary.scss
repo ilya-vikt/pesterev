@@ -1,0 +1,14 @@
+.header-primary {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+
+  &__container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__socials {
+    pointer-events: all;
+  }
+}

@@ -1,36 +1,10 @@
 .header {
-  position: fixed;
   z-index: 3;
-  top: 0;
   height: 250px;
   width: 100vw;
-  pointer-events: none;
-
-  &__container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 80px;
-    padding-bottom: 0;
-
-    @include fhd {
-      padding: #{responsive(1920, 1180, 80, 40)};
-      padding-bottom: 0;
-    }
-
-    @include tablet {
-      padding: 40px;
-      padding-bottom: 0;
-    }
-
-    @include mobile {
-      padding: 20px;
-      padding-bottom: 0;
-    }
-  }
+  padding-top: var(--padding-section);
 
   &__socials {
-    pointer-events: all;
-
     @include small-tablet {
       display: none;
     }

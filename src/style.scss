@@ -10,7 +10,8 @@
 @import '~swiper/swiper.scss';
 @import 'libs/lightbox/lightbox';
 
-@import 'components/header/header';
+@import 'components/header/header-common';
+@import 'components/header/header-primary/header-primary';
 @import 'components/footer/footer';
 
 //share
