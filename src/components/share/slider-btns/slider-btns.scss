@@ -25,7 +25,7 @@
     align-items: center;
     width: 40px;
     height: 40px;
-    transform: translate(8px, 10px);
+    transform: translate(-8px, 10px);
 
     @include fhd {
       width: #{responsive(1920, 1180, 40, 35)};
@@ -52,6 +52,13 @@
 
     @include notebook {
       margin-right: 6px;
+    }
+  }
+
+  &--align-right {
+    .slider-btns__prev,
+    .slider-btns__next {
+      transform: translate(8px, 10px);
     }
   }
 }
