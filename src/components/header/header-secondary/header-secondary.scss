@@ -1,0 +1,79 @@
+.header-secondary {
+  &__navigate {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__back {
+    position: fixed;
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+      width: 30px;
+      height: 20px;
+
+      @include fhd {
+        width: #{responsive(1920, 1180, 30, 20)};
+        height: #{responsive(1920, 1180, 20, 14)};
+      }
+
+      @include tablet {
+        width: 20px;
+        height: 14px;
+      }
+    }
+
+    @include tablet {
+      position: static;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__menu {
+    display: flex;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__link {
+    color: $cl-grey;
+  }
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__right {
+    justify-self: right;
+  }
+
+  &__socials {
+    position: fixed;
+    z-index: 2;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__btn {
+    @include tablet {
+      display: flex;
+    }
+  }
+}

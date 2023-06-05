@@ -1,0 +1,42 @@
+<header class="header header-secondary scrollbar-compensation" ani-blur>
+  <div class="container padding-h">
+    <nav class="header-secondary__navigate">
+      <!-- prettier-ignore -->
+      <div class="header-secondary__left">
+      <a class="header-secondary__back header-secondary__back link" href="#">
+        <svg width="30" height="20">
+          <use href="@assets/sprite.svg#arrow_left_xs"></use>
+        </svg>
+        <span>Назад</span>
+      </a>
+    </div>
+
+      <!-- prettier-ignore-end -->
+      <ul class="header-secondary__menu">
+        <li class="header-secondary__item txt-5">
+          <a href="#" class="header-secondary__link link">Проекты</a>
+        </li>
+        <li class="header-secondary__item txt-5">
+          <a href="#" class="header-secondary__link link">О художнике</a>
+        </li>
+        <li class="header-secondary__item txt-5">
+          <a href="#" class="header-secondary__link link">Контакты</a>
+        </li>
+        <li class="header-secondary__item txt-5">
+          <a href="#" class="header-secondary__link link">Магазин</a>
+        </li>
+      </ul>
+      <div class="header-secondary__right">
+        @@include('components/menu/menu.html', {})
+        <button id="menu-btn" class="header__btn header-secondary__btn">
+          <span class="header__bar"></span>
+          <span class="header__bar"></span>
+          <span class="sr-only">Главное меню</span>
+        </button>
+
+        @@include('components/share/socials/socials.html', {class:
+        'header-secondary__socials'})
+      </div>
+    </nav>
+  </div>
+</header>
