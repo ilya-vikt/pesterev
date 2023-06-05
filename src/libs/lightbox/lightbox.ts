@@ -35,12 +35,12 @@ function createMarkup(data: GalleryData) {
   </button>
   <div class="lightbox__slider swiper">
     <div class="lightbox__controls">
-      <button class="lightbox__prev btn btn-slider"><span class="sr-only">Предыдущий слайд</span>
+      <button class="lightbox__prev btn-slider"><span class="sr-only">Предыдущий слайд</span>
         <svg>
           <use href="./assets/sprite.svg#arrow_left_xs"></use>
         </svg>
       </button>
-      <button class="lightbox__next btn btn-slider"><span class="sr-only">Следующий слайд</span>
+      <button class="lightbox__next btn-slider"><span class="sr-only">Следующий слайд</span>
         <svg>
           <use href="./assets/sprite.svg#arrow_right_xs"></use>
         </svg>

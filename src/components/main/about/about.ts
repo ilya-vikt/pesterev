@@ -40,7 +40,7 @@ export const initPlayer = () => {
   window.Kinescope.IframePlayer.create('player', options).then(
     (player: KinescopePlayer) => {
       const startBtn = document.getElementById('start-btn');
-      const hiddenClass = 'main-about__btn--hidden';
+      const hiddenClass = 'btn--hidden';
       const playerPlaying = 'main-about__video--playing';
 
       player.on(player.Events.Ended, () => {
