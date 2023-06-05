@@ -16,19 +16,23 @@ body {
   line-height: 1.2;
   color: $cl-black;
   --padding-section: 80px;
+  --header-height: 250px;
 
   @include fhd {
-    @include responsive-font(1920, 1180, 20, 14);
     --padding-section: #{responsive(1920, 1180, 80, 40)};
+    --header-height: #{responsive(1920, 1180, 250, 170)};
+    @include responsive-font(1920, 1180, 20, 14);
   }
 
   @include tablet {
     --padding-section: 40px;
+    --header-height: 40px;
     font-size: 14px;
   }
 
   @include mobile {
     --padding-section: 20px;
+    --header-height: 20px;
   }
 }
 
@@ -81,19 +85,7 @@ body {
 }
 
 .header-compensation {
-  padding-top: 250px;
-
-  @include fhd {
-    padding-top: #{responsive(1920, 1180, 250, 170)};
-  }
-
-  @include tablet {
-    padding-top: 40px;
-  }
-
-  @include mobile {
-    padding-top: 20px;
-  }
+  padding-top: var(--header-height);
 }
 
 .main {
@@ -126,7 +118,7 @@ body {
 }
 
 .hero-compensation {
-  margin-top: max(100vh, $min-height);
+  margin-top: max(calc(100vh - var(--header-height)), $min-height);
 }
 
 .gap-bottom {

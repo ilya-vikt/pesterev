@@ -1,0 +1,52 @@
+.projectone-works {
+  padding-top: 70px;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 80px;
+
+    @include fhd {
+      column-gap: #{responsive(1920, 1180, 40, 20)};
+      row-gap: #{responsive(1920, 1180, 80, 40)};
+    }
+
+    @include tablet {
+      column-gap: 20px;
+      row-gap: 40px;
+    }
+  }
+
+  &__item {
+    height: 490px;
+
+    @include fhd {
+      height: #{responsive(1920, 1180, 490, 360)};
+    }
+
+    @include tablet {
+      height: 360px;
+    }
+
+    @include small-tablet {
+      height: 290px;
+    }
+  }
+
+  &__card {
+    height: 100%;
+  }
+
+  &__item--landscape {
+    grid-column: 1 / span 2;
+  }
+
+  @include fhd {
+    padding-top: #{responsive(1920, 1180, 70, 30)};
+  }
+
+  @include tablet {
+    padding-top: 30px;
+  }
+}

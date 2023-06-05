@@ -1,6 +1,6 @@
 .header {
   z-index: 3;
-  height: 250px;
+  height: var(--header-height);
   width: 100vw;
   padding-top: var(--padding-section);
 
@@ -48,14 +48,6 @@
     background-color: #000;
     transition: transform $animation, background-color $animation;
     pointer-events: none;
-  }
-
-  @include fhd {
-    height: #{responsive(1920, 1180, 250, 170)};
-  }
-
-  @include tablet {
-    height: 170px;
   }
 }
 
