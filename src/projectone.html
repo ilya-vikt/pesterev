@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('common/head.html', { "title": "Проект Имена" })
+  <body>
+    <script defer src="./js/app.min.js"></script>
+    <div
+      id="config-data"
+      class="wrapper scrollbar-compensation"
+      data-page-name="projectone"
+    >
+      @@include('components/preloader/preloader.html', {})
+      @@include('components/header/header-secondary/header-secondary.html', {})
+      <main id="main" class="main">
+        @@include('components/projectone/hero/hero.html', {})
+      </main>
+      @@include('components/footer/footer.html', {})
+    </div>
+  </body>
+</html>

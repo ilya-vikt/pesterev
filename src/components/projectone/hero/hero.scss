@@ -1,0 +1,69 @@
+.projectone-hero {
+  padding-bottom: 50px;
+
+  &__container {
+    height: 100%;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 40, 30)};
+    }
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__descr,
+  &__file {
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 20px;
+  }
+
+  &__file {
+    pointer-events: all;
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__inner {
+    flex-grow: 1;
+    margin-bottom: 20px;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 20, 0)};
+    }
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__slider,
+  &__slide {
+    height: 100%;
+  }
+
+  &__img {
+    height: 100%;
+    object-fit: cover;
+  }
+}

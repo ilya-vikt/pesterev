@@ -1,4 +1,5 @@
 import { mainInit } from '@/components/main/main-page';
+import { projectoneInit } from '@/components/projectone/projcetone-page';
 import { globalInit } from '@ts/global-init';
 
 globalInit();
@@ -10,4 +11,6 @@ switch (pageName) {
   case 'main':
     mainInit();
     break;
+  case 'projectone':
+    projectoneInit();
 }

@@ -1,0 +1,44 @@
+<section
+  id="hero"
+  class="projectone-hero hero header-compensation need-blur unselectable"
+>
+  <div class="projectone-hero__container container padding-h">
+    <div class="projectone-hero__top overlay overlay need-blur" ani-blur>
+      <h1 class="projectone-hero__title txt-1">Имена</h1>
+      <p class="projectone-hero__descr">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor.
+      </p>
+      <a class="projectone-hero__file txt-5-b link" href="#">
+        <span>Посмотреть каталог</span>
+        <svg width="18" height="18">
+          <use href="@assets/sprite.svg#download_xs"></use>
+        </svg>
+      </a>
+    </div>
+    <div class="projectone-hero__content layout-hero" ani-blur-and-zoom>
+      <div class="projectone-hero__inner">
+        <div id="hero-slider" class="swiper projectone-hero__slider">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide projectone-hero__slide">
+              <img
+                class="projectone-hero__img"
+                src="@img/project-one/1.jpg"
+                alt="слайд 1"
+              />
+            </div>
+            <div class="swiper-slide projectone-hero__slide">
+              <img
+                class="projectone-hero__img"
+                src="@img/project-one/1.jpg"
+                alt="слайд 2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      @@include('components/share/slider-btns/slider-btns.html', {class:
+      'projectone-hero__slider-btns'})
+    </div>
+  </div>
+</section>
