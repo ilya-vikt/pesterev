@@ -3,6 +3,7 @@
   --padding-h: 80px;
   padding-top: var(--padding-v, 40px);
   padding-bottom: var(--padding-v, 40px);
+  @extend .scrollbar-compensation;
 
   &__container,
   &__content,

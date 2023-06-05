@@ -1,4 +1,4 @@
-<section id="hero" class="main-hero section hero need-blur unselectable">
+<section id="hero" class="main-hero hero need-blur unselectable">
   <div class="container main-hero__container">
     <div class="main-hero__top scrollbar-compensation" ani-blur>
       <h1 class="main-hero__title txt-1">Александр Пестерев</h1>
@@ -22,9 +22,11 @@
           </div>
         </div>
       </div>
-
-      @@include('components/share/slider-btns/slider-btns.html', {class:
-      'main-hero__slider-btns'})
+      <!-- prettier-ignore -->
+      @@include('components/share/slider-btns/slider-btns.html',
+        {class:'main-hero__slider-btns slider-btns--align-right'}
+      )
+      <!-- prettier-ignore -->
     </div>
 
     <div class="main-hero__bottom scrollbar-compensation" ani-blur>
