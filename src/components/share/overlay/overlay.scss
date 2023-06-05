@@ -1,0 +1,38 @@
+.overlay {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  padding-right: 40px;
+  top: 0;
+  padding-top: 144px;
+  width: calc(
+    (
+        min(1920px, calc(100vw - var(--scrollbar-width))) -
+          var(--padding-section) * 2
+      ) / 3
+  );
+
+  @include fhd {
+    padding-top: #{responsive(1920, 1180, 144, 80)};
+  }
+
+  @include tablet {
+    position: relative;
+    width: 100%;
+    top: auto;
+    padding-right: 0;
+    padding-top: 40px;
+  }
+
+  &--shift {
+    padding-top: var(--padding-section);
+
+    @include fhd {
+      padding-top: var(--padding-section);
+    }
+
+    @include tablet {
+      padding-top: 0;
+    }
+  }
+}
