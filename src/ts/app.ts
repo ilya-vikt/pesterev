@@ -1,5 +1,5 @@
 import { mainInit } from '@/components/main/main-page';
-import { projectoneInit } from '@/components/projectone/projcetone-page';
+import { projectoneInit } from '@/components/projectone/projectone-page';
 import { globalInit } from '@ts/global-init';
 
 globalInit();
