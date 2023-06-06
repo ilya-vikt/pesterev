@@ -137,8 +137,12 @@ body {
   line-height: 1;
 }
 
-.align-txt {
+.txt-block {
   width: 50%;
+
+  p:not(:last-child) {
+    margin-bottom: 1em;
+  }
 
   @include tablet {
     width: 100%;

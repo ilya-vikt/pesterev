@@ -22,10 +22,6 @@
   &__text {
     margin-bottom: 80px;
 
-    p:not(:last-child) {
-      margin-bottom: 1em;
-    }
-
     @include fhd {
       margin-bottom: #{responsive(1920, 1180, 80, 40)};
     }
