@@ -118,7 +118,10 @@ body {
 }
 
 .hero-compensation {
-  margin-top: max(calc(100vh - var(--header-height)), $min-height);
+  margin-top: max(
+    calc(100vh - var(--header-height)),
+    $min-height - var(--header-height)
+  );
 }
 
 .gap-bottom {

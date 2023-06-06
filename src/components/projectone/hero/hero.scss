@@ -47,6 +47,7 @@
   &__inner {
     flex-grow: 1;
     margin-bottom: 20px;
+    overflow: hidden;
 
     @include fhd {
       margin-bottom: #{responsive(1920, 1180, 20, 0)};
@@ -64,6 +65,7 @@
 
   &__img {
     height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 }
