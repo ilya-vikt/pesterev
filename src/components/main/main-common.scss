@@ -1,13 +1,29 @@
 .main-projects,
 .main-about,
 .main-contacts {
-  padding-top: 250px;
+  // padding-top: 250px;
+  padding-top: 125px;
 
   @include fhd {
-    padding-top: #{responsive(1920, 1180, 250, 170)};
+    // padding-top: #{responsive(1920, 1180, 250, 170)};
+    padding-top: #{responsive(1920, 1180, 125, 85)};
   }
 
   @include tablet {
-    padding-top: 170px;
+    // padding-top: 170px;
+    padding-top: 85px;
+  }
+}
+
+.main-projects,
+.main-about {
+  padding-bottom: 125px;
+
+  @include fhd {
+    padding-bottom: #{responsive(1920, 1180, 125, 85)};
+  }
+
+  @include tablet {
+    padding-bottom: 85px;
   }
 }

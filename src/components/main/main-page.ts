@@ -28,13 +28,7 @@ const initHeroMenu = () => {
     const href = getHashFromLnk(lnk as HTMLLinkElement);
 
     if (!blockMap[href]) return;
-    const paddingTop = parseInt(
-      getComputedStyle(blockMap[href]).getPropertyValue('padding-top')
-    );
-    const y =
-      blockMap[href].getBoundingClientRect().top +
-      window.pageYOffset +
-      paddingTop / 2;
+    const y = blockMap[href].getBoundingClientRect().top + window.pageYOffset;
     smothScrollTo(y);
   });
 

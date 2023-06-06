@@ -1,5 +1,9 @@
 .main-projects {
-  margin-top: max(100vh, $min-height);
+  --padding-compensation: 128px;
+  margin-top: max(
+    100vh + var(--padding-compensation),
+    $min-height + var(--padding-compensation)
+  );
 
   &__list {
     margin-bottom: 80px;
@@ -57,5 +61,13 @@
     @include mouse-hover {
       color: $cl-red;
     }
+  }
+
+  @include fhd {
+    --padding-compensation: #{responsive(1920, 1180, 128, 85)};
+  }
+
+  @include tablet {
+    --padding-compensation: 85px;
   }
 }
