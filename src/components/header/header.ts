@@ -25,4 +25,7 @@ const toggleMenu = () => {
 
 export const headerInit = () => {
   document.querySelector('.header__btn')?.addEventListener('click', toggleMenu);
+  menu
+    .querySelectorAll('.menu__link')
+    ?.forEach((lnk) => lnk.addEventListener('click', toggleMenu));
 };
