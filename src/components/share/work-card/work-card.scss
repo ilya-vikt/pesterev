@@ -1,6 +1,7 @@
 .work-card {
   display: flex;
   flex-direction: column;
+  position: relative;
 
   &__img {
     display: flex;
@@ -24,10 +25,6 @@
     @include tablet {
       margin-bottom: 20px;
     }
-  }
-
-  &__wrapper {
-    position: relative;
   }
 
   &__title {

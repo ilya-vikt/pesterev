@@ -201,18 +201,42 @@ textarea {
   position: absolute;
   left: 0;
   top: 0;
-  width: 80px;
-  height: 80px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   background-color: $cl-red;
   background-image: url('@assets/sprite.svg#plus_s');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 30px;
+  background-size: 50px;
   transition: background-color $animation, opacity $animation, visibility 0s;
 
   @include mouse-hover {
     background-color: $cl-white;
+  }
+
+  @include fhd {
+    width: #{responsive(1920, 1180, 160, 120)};
+    height: #{responsive(1920, 1180, 160, 120)};
+    background-size: #{responsive(1920, 1180, 50, 30)};
+  }
+
+  @include tablet {
+    width: 120px;
+    height: 120px;
+    background-size: 30px;
+  }
+
+  @include mobile {
+    width: 100px;
+    height: 100px;
+    background-size: 25px;
+  }
+
+  @include small-mobile {
+    width: 80px;
+    height: 80px;
+    background-size: 20px;
   }
 
   &--play {
@@ -226,15 +250,20 @@ textarea {
       visibility 0s linear $delay;
   }
 
-  @include fhd {
-    width: #{responsive(1920, 1180, 80, 60)};
-    height: #{responsive(1920, 1180, 80, 60)};
-    background-size: #{responsive(1920, 1180, 30, 23)};
-  }
+  &--small {
+    width: 80px;
+    height: 80px;
 
-  @include tablet {
-    width: 60px;
-    height: 60px;
-    background-size: 23px;
+    @include fhd {
+      width: #{responsive(1920, 1180, 80, 60)};
+      height: #{responsive(1920, 1180, 80, 60)};
+      background-size: #{responsive(1920, 1180, 30, 23)};
+    }
+
+    @include tablet {
+      width: 60px;
+      height: 60px;
+      background-size: 23px;
+    }
   }
 }
