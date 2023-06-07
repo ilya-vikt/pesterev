@@ -50,7 +50,7 @@
   &__img {
     height: auto;
     width: 100%;
-    max-height: calc(max(100vh, $min-height) - var(--header-height) - 60px);
+    max-height: calc(max(100vh, $min-height) - 100px);
     object-fit: contain;
   }
 }
