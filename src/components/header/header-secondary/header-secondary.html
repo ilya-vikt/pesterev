@@ -5,16 +5,15 @@
     <nav class="header-secondary__navigate">
       <!-- prettier-ignore -->
       <div class="header-secondary__left">
-      <a id="go-back" class="header-secondary__back header-secondary__back link" href="#">
-        <svg width="30" height="20">
-          <use href="@assets/sprite.svg#arrow_left_xs"></use>
-        </svg>
-        <span>Назад</span>
-      </a>
-    </div>
-
+        <a id="go-back" class="header-secondary__back header-secondary__back link need-blur" href="#" ani-blur>
+          <svg width="30" height="20">
+            <use href="@assets/sprite.svg#arrow_left_xs"></use>
+          </svg>
+          <span>Назад</span>
+        </a>
+      </div>
       <!-- prettier-ignore-end -->
-      <ul class="header-secondary__menu">
+      <ul class="header-secondary__menu need-blur" ani-blur>
         <li class="header-secondary__item txt-5">
           <a href="allprojects.html" class="header-secondary__link link"
             >Проекты</a
@@ -32,14 +31,23 @@
       </ul>
       <div class="header-secondary__right">
         @@include('components/menu/menu.html', {})
-        <button id="menu-btn" class="header__btn header-secondary__btn">
+        <button
+          id="menu-btn"
+          class="header__btn header-secondary__btn"
+          ani-blur
+        >
           <span class="header__bar"></span>
           <span class="header__bar"></span>
           <span class="sr-only">Главное меню</span>
         </button>
-
-        @@include('components/share/socials/socials.html', {class:
-        'header-secondary__socials'})
+        <!-- prettier-ignore -->
+        @@include('components/share/socials/socials.html',
+          {
+            class:'header-secondary__socials need-blur',
+            attr: 'ani-blur'
+          }
+        )
+        <!-- prettier-ignore-end -->
       </div>
     </nav>
   </div>
