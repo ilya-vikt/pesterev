@@ -1,5 +1,5 @@
 .projectone-works {
-  padding-top: 70px;
+  padding-top: 120px;
 
   &__list {
     display: grid;
@@ -43,10 +43,14 @@
   }
 
   @include fhd {
-    padding-top: #{responsive(1920, 1180, 70, 30)};
+    padding-top: #{responsive(1920, 1180, 120, 80)};
   }
 
   @include tablet {
-    padding-top: 30px;
+    padding-top: 80px;
+  }
+
+  @include mobile {
+    padding-top: 90px;
   }
 }

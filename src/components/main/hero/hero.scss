@@ -1,4 +1,10 @@
 .main-hero {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  max-height: 100vh;
+  min-height: $min-height;
   --padding-v: 40px;
   --padding-h: 80px;
   padding-top: var(--padding-v, 40px);
