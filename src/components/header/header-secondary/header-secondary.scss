@@ -76,4 +76,10 @@
       display: flex;
     }
   }
+
+  &--no-goback {
+    .header-secondary__back {
+      display: none;
+    }
+  }
 }

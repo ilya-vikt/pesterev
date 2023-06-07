@@ -2,7 +2,8 @@
 <html lang="ru">
   @@include('common/head.html', { "title": "404 Страница не найдена" })
   <body>
-    @@include('components/header/header-secondary/header-secondary.html', {})
+    @@include('components/header/header-secondary/header-secondary.html',
+    {goback: false})
 
     <main></main>
     @@include('components/footer/footer.html', {})

@@ -9,7 +9,8 @@
       data-page-name="projectone"
     >
       @@include('components/preloader/preloader.html', {})
-      @@include('components/header/header-secondary/header-secondary.html', {})
+      @@include('components/header/header-secondary/header-secondary.html',
+      {goback: true})
       <main id="main" class="main">
         @@include('components/projectone/hero/hero.html', {})
         <div class="need-blur" ani-blur-slow>
