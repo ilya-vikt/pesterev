@@ -16,6 +16,10 @@
       column-gap: 20px;
       row-gap: 40px;
     }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__item {
@@ -40,6 +44,10 @@
 
   &__item--landscape {
     grid-column: 1 / span 2;
+
+    @include mobile {
+      grid-column: auto;
+    }
   }
 
   @include fhd {
