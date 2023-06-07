@@ -12,10 +12,6 @@
     overflow: hidden;
     cursor: pointer;
 
-    &:not(:hover) .work-card__btn {
-      @extend .btn--hidden;
-    }
-
     img {
       width: auto;
       height: 100%;
@@ -47,5 +43,14 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    @extend .btn--hidden;
+  }
+
+  @include mouse-hover {
+    .work-card__btn {
+      opacity: 1;
+      visibility: visible;
+      transition: background-color $animation, opacity $animation, visibility 0s;
+    }
   }
 }
