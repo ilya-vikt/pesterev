@@ -199,14 +199,16 @@ textarea {
 
 .btn {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   background-color: $cl-red;
   background-image: url('@assets/sprite.svg#plus_s');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 50px;
+  background-size: 30px;
   transition: background-color $animation, opacity $animation, visibility 0s;
 
   @include mouse-hover {
@@ -217,10 +219,6 @@ textarea {
     background-image: url('@assets/sprite.svg#play_s');
   }
 
-  &--full {
-    background-image: url('@assets/sprite.svg#increase_s');
-  }
-
   &--hidden {
     opacity: 0;
     visibility: hidden;
@@ -229,14 +227,14 @@ textarea {
   }
 
   @include fhd {
-    width: #{responsive(1920, 1180, 160, 120)};
-    height: #{responsive(1920, 1180, 160, 120)};
-    background-size: #{responsive(1920, 1180, 50, 30)};
+    width: #{responsive(1920, 1180, 80, 60)};
+    height: #{responsive(1920, 1180, 80, 60)};
+    background-size: #{responsive(1920, 1180, 30, 23)};
   }
 
   @include tablet {
-    width: 120px;
-    height: 120px;
-    background-size: 30px;
+    width: 60px;
+    height: 60px;
+    background-size: 23px;
   }
 }

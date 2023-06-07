@@ -4,7 +4,6 @@
 
   &__img {
     display: flex;
-    position: relative;
     justify-content: center;
     flex-grow: 1;
     margin-bottom: 30px;
@@ -27,6 +26,10 @@
     }
   }
 
+  &__wrapper {
+    position: relative;
+  }
+
   &__title {
     margin-bottom: 10px;
 
@@ -40,9 +43,6 @@
   }
 
   &__btn {
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     @extend .btn--hidden;
   }
 
