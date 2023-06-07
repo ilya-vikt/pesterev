@@ -22,6 +22,10 @@
     }
   }
 
+  &__descr {
+    color: $cl-grey;
+  }
+
   &__descr,
   &__file {
     @include tablet {
