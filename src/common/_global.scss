@@ -55,10 +55,7 @@ body {
 
 .no-scroll {
   overflow: hidden;
-
-  .main {
-    pointer-events: none;
-  }
+  pointer-events: none;
 }
 
 .unselectable {
