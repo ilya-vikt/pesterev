@@ -23,7 +23,7 @@ const initHeroMenu = () => {
 
   heroMenu.addEventListener('click', (e) => {
     const lnk = e.target as HTMLElement;
-    if (lnk.tagName !== 'A') return;
+    if (lnk.tagName !== 'A' || lnk.classList.contains('external')) return;
     e.preventDefault();
     const href = getHashFromLnk(lnk as HTMLLinkElement);
 
