@@ -51,3 +51,11 @@ export function smothScrollTo(to: number = 0, duration: number = 700): void {
 
   animateScroll();
 }
+
+export const disableBodyScroll = (): void => {
+  document.body.classList.add('no-scroll');
+};
+
+export const enableBodyScroll = (): void => {
+  document.body.classList.remove('no-scroll');
+};
