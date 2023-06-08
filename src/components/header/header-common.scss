@@ -3,6 +3,7 @@
   height: var(--header-height);
   width: 100vw;
   padding-top: var(--padding-section);
+  @extend .unselectable;
 
   &__socials {
     @include small-tablet {
