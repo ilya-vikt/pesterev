@@ -3,13 +3,35 @@
   flex-direction: column;
   position: relative;
 
+  &__inner {
+    flex-grow: 1;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30px;
+      height: 30px;
+      opacity: 0;
+      z-index: -1;
+      background-image: url('@assets/sprite.svg#plus_s');
+      background-size: 30px 30px;
+      background-repeat: no-repeat;
+      transition: opacity $animation 30ms;
+    }
+  }
+
   &__img {
     display: flex;
     justify-content: center;
-    flex-grow: 1;
-    margin-bottom: 30px;
-    background-color: $cl-light-grey;
+    height: 100%;
     overflow: hidden;
+    background-color: $cl-light-grey;
+    transition: transform $animation 30ms;
     cursor: pointer;
 
     img {
@@ -24,6 +46,15 @@
 
     @include tablet {
       margin-bottom: 20px;
+    }
+
+    @include mouse-hover {
+      .work-card__btn {
+        opacity: 1;
+        visibility: visible;
+        transition: background-color $animation, opacity $animation,
+          visibility 0s;
+      }
     }
   }
 
@@ -43,11 +74,14 @@
     @extend .btn--hidden;
   }
 
-  @include mouse-hover {
-    .work-card__btn {
-      opacity: 1;
-      visibility: visible;
-      transition: background-color $animation, opacity $animation, visibility 0s;
-    }
+  &--locked .work-card__img::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    width: 16px;
+    height: 16px;
+    background-size: 16px 16px;
+    background-image: url('@assets/sprite.svg#lock_xs');
   }
 }
