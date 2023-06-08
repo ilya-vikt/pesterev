@@ -75,13 +75,23 @@
   }
 
   &--locked .work-card__img::before {
+    --lock-size: 20px;
     content: '';
     position: absolute;
     top: 20px;
     left: 15px;
-    width: 16px;
-    height: 16px;
-    background-size: 16px 16px;
+    width: var(--lock-size);
+    height: var(--lock-size);
+    background-size: var(--lock-size) var(--lock-size);
     background-image: url('@assets/sprite.svg#lock_xs');
+    background-repeat: no-repeat;
+
+    @include fhd {
+      --lock-size: #{responsive(1920, 1180, 20, 16)};
+    }
+
+    @include tablet {
+      --lock-size: 16px;
+    }
   }
 }
