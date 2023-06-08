@@ -8,6 +8,7 @@
   bottom: 0;
   z-index: 3;
   backdrop-filter: blur(50px);
+  pointer-events: all;
 
   &__container {
     position: relative;
