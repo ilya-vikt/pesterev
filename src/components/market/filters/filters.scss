@@ -1,0 +1,46 @@
+.filters {
+  @extend .unselectable;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    align-items: flex-start;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 40, 20)};
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__caption {
+    color: $cl-grey;
+    margin-bottom: 20px;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 20, 10h)};
+    }
+
+    @include tablet {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__control {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: -4px;
+    margin-bottom: 6px;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 6, 1)};
+    }
+
+    @include tablet {
+      margin-bottom: 1px;
+    }
+  }
+}

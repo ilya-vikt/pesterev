@@ -1,0 +1,147 @@
+.market-goods {
+  &__title {
+    margin-bottom: 40px;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 40, 30)};
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__descr {
+    margin-bottom: 20px;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__btn {
+    pointer-events: all;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+    row-gap: 80px;
+
+    @include fhd {
+      column-gap: #{responsive(1920, 1180, 40, 20)};
+      row-gap: #{responsive(1920, 1180, 80, 40)};
+    }
+
+    @include tablet {
+      column-gap: 20px;
+      row-gap: 40px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    height: 524px;
+    @include mouse-hover {
+      .work-card__img {
+        transform: translateX(50px);
+      }
+      .work-card__inner::before {
+        opacity: 1;
+      }
+    }
+
+    @include mouse-hover {
+      .work-card__img {
+        transform: translateX();
+      }
+    }
+  }
+
+  &__item--landscape {
+    grid-column: 1 / span 2;
+
+    @include mobile {
+      grid-column: auto;
+    }
+  }
+
+  &__card {
+    margin-bottom: 5px;
+    height: calc(100% - 1.2em - 5px);
+  }
+
+  &__prices {
+    display: flex;
+    &--has-promo {
+      .market-goods__price {
+        color: $cl-red;
+        margin-right: 10px;
+      }
+
+      .market-goods__promo {
+        display: block;
+      }
+    }
+  }
+
+  &__promo {
+    display: none;
+  }
+
+  &__spinner {
+    margin-top: 40px;
+    display: none;
+
+    @include fhd {
+      margin-top: #{responsive(1920, 1180, 40, 30)};
+    }
+
+    @include mobile {
+      margin-top: 20px;
+    }
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__error {
+    display: none;
+    margin-top: 40px;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    button {
+      text-decoration-line: underline;
+      text-decoration-skip-ink: none;
+      text-underline-offset: 2px;
+      padding: 5px;
+    }
+
+    @include fhd {
+      margin-top: #{responsive(1920, 1180, 40, 30)};
+    }
+
+    @include mobile {
+      margin-top: 20px;
+    }
+
+    &--visible {
+      display: flex;
+    }
+  }
+}

@@ -20,7 +20,9 @@
 @import 'components/share/slider-btns/slider-btns';
 @import 'components/share/project-card/project-card';
 @import 'components/share/overlay/overlay';
+@import 'components/share/aside-panel/aside-panel';
 @import 'components/share/work-card/work-card';
+@import 'components/share/spinner/spinner';
 
 //common
 @import 'components/menu/menu';
@@ -38,3 +40,7 @@
 
 //all projects
 @import 'components/allprojects/projects/projects';
+
+//market
+@import 'components/market/goods/goods';
+@import 'components/market/filters/filters';

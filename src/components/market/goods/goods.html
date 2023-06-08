@@ -1,0 +1,127 @@
+<section class="market-goods">
+  <div class="container padding-h">
+    <div class="overlay overlay--shift need-blur" ani-blur>
+      <h1 class="market-goods__title txt-1">Магазин</h1>
+      <p class="market-goods__descr">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+        ligula eget dolor.
+      </p>
+      <button id="filters-btn" class="market-goods__btn link txt-5-b">
+        <span> Фильтры </span>
+        <svg width="30" height="20">
+          <use href="@assets/sprite.svg#filter_xs"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="layout need-blur" ani-blur-slow>
+      <ul class="market-goods__list">
+        <li class="market-goods__item market-goods__item--landscape">
+          <a class="market-goods__lnk" href="#">
+            <!-- prettier-ignore -->
+            @@include('components/share/work-card/work-card.html',
+            { title:'Название',
+              hasButton: false,
+              class: 'market-goods__card  work-card--locked',
+              idx: 0,
+              params: 'Холст / масло / 75 х 45 см',
+              img: 'https://dummyimage.com/800x800/000/fff.jpg',
+              imgAlt: 'work 1'
+            }
+          )
+            <!-- prettier-ignore-end -->
+            <div class="market-goods__prices market-goods__prices--has-promo">
+              <span class="market-goods__price">27 000 руб.</span>
+              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
+            </div>
+          </a>
+        </li>
+        <li class="market-goods__item">
+          <a class="market-goods__lnk" href="#">
+            <!-- prettier-ignore -->
+            @@include('components/share/work-card/work-card.html',
+            { title:'Название',
+              hasButton: false,
+              class: 'market-goods__card',
+              idx: 0,
+              params: 'Холст / масло / 75 х 45 см',
+              img: 'https://dummyimage.com/800x600/0f53/fff.jpg',
+              imgAlt: 'work 1'
+            }
+          )
+            <!-- prettier-ignore-end -->
+            <div class="market-goods__prices">
+              <span class="market-goods__price">27 000 руб.</span>
+              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
+            </div>
+          </a>
+        </li>
+        <li class="market-goods__item">
+          <a class="market-goods__lnk" href="#">
+            <!-- prettier-ignore -->
+            @@include('components/share/work-card/work-card.html',
+            { title:'Название',
+              hasButton: false,
+              class: 'market-goods__card',
+              idx: 0,
+              params: 'Холст / масло / 75 х 45 см',
+              img: 'https://dummyimage.com/800x800/000/fff.jpg',
+              imgAlt: 'work 1'
+            }
+          )
+            <!-- prettier-ignore-end -->
+            <div class="market-goods__prices">
+              <span class="market-goods__price">27 000 руб.</span>
+              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
+            </div>
+          </a>
+        </li>
+        <li class="market-goods__item market-goods__item--landscape">
+          <a class="market-goods__lnk" href="#">
+            <!-- prettier-ignore -->
+            @@include('components/share/work-card/work-card.html',
+            { title:'Название',
+              hasButton: false,
+              class: 'market-goods__card',
+              idx: 0,
+              params: 'Холст / масло / 75 х 45 см',
+              img: 'https://dummyimage.com/1000x700/555/fff.jpg',
+              imgAlt: 'work 1'
+            }
+          )
+            <!-- prettier-ignore-end -->
+            <div class="market-goods__prices">
+              <span class="market-goods__price">27 000 руб.</span>
+              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <div class="market-goods__spinner market-goods__spinner--visible">
+        @@include('components/share/spinner/spinner.html', {})
+      </div>
+      <div class="market-goods__error market-goods__error--visible">
+        <p>Не удалось загрузить данные. Попробуйте позже</p>
+        <button id="retry-btn" class="txt-5-b link" type="button">
+          Повторить
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="aside-panel" class="market-goods__filters aside-panel">
+    <div class="aside-panel__container container close-trigger">
+      <aside class="aside-panel__panel">
+        <div class="aside-panel__top">
+          <h4 class="txt-3">Фильтры</h4>
+          <button class="aside-panel__close close-trigger" type="button">
+            <svg width="30" height="30">
+              <use href="@assets/sprite.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="aside-panel__content">
+          @@include('components/market/filters/filters.html', {})
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
