@@ -197,6 +197,69 @@ textarea {
   resize: none;
 }
 
+.checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  & + label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      border: 2px solid $cl-grey;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 16px;
+    }
+  }
+
+  &:checked + label:before {
+    background-color: $cl-black;
+    border-color: $cl-black;
+    background-image: url('@assets/sprite.svg#check2_xs');
+  }
+}
+
+.radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  & + label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      border: 2px solid $cl-grey;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 16px;
+    }
+  }
+
+  &:checked + label:before {
+    background-color: $cl-white;
+    border: 4px solid $cl-black;
+  }
+}
+
 .btn {
   position: absolute;
   left: 0;
