@@ -22,6 +22,21 @@
   &__btn {
     pointer-events: all;
 
+    svg {
+      width: 20px;
+      height: 20px;
+
+      @include fhd {
+        width: #{responsive(1920, 1180, 20, 14)};
+        height: #{responsive(1920, 1180, 20, 14)};
+      }
+
+      @include tablet {
+        width: 14px;
+        height: 14px;
+      }
+    }
+
     @include tablet {
       margin-bottom: 40px;
     }
