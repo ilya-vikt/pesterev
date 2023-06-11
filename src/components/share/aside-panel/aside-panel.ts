@@ -13,6 +13,12 @@ export const showPanel = (): void => {
   panel.classList.add(showClass);
 };
 
+export const setTitle = (txt: string): void => {
+  const title = document.getElementById('aside-panel-title');
+  if (!title) return;
+  title.innerHTML = txt;
+};
+
 export const asidePanelInit = (): void => {
   panel = document.getElementById('aside-panel') as HTMLDivElement;
 
