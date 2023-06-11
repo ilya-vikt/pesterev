@@ -260,12 +260,14 @@ textarea {
   }
 }
 
+// Round Button
 .btn {
+  --size: 160px;
   position: absolute;
   left: 0;
   top: 0;
-  width: 160px;
-  height: 160px;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
   background-color: $cl-red;
   background-image: url('@assets/sprite.svg#plus_s');
@@ -279,26 +281,22 @@ textarea {
   }
 
   @include fhd {
-    width: #{responsive(1920, 1180, 160, 120)};
-    height: #{responsive(1920, 1180, 160, 120)};
+    --size: #{responsive(1920, 1180, 160, 120)};
     background-size: #{responsive(1920, 1180, 50, 30)};
   }
 
   @include tablet {
-    width: 120px;
-    height: 120px;
+    --size: 120px;
     background-size: 30px;
   }
 
   @include mobile {
-    width: 100px;
-    height: 100px;
+    --size: 100px;
     background-size: 25px;
   }
 
   @include small-mobile {
-    width: 80px;
-    height: 80px;
+    --size: 80px;
     background-size: 20px;
   }
 
@@ -314,18 +312,25 @@ textarea {
   }
 
   &--small {
-    width: 80px;
-    height: 80px;
+    --size: 80px;
 
     @include fhd {
-      width: #{responsive(1920, 1180, 80, 60)};
-      height: #{responsive(1920, 1180, 80, 60)};
+      --size: #{responsive(1920, 1180, 80, 60)};
       background-size: #{responsive(1920, 1180, 30, 23)};
     }
 
     @include tablet {
-      width: 60px;
-      height: 60px;
+      --size: 60px;
+      background-size: 23px;
+    }
+
+    @include mobile {
+      --size: 60px;
+      background-size: 23px;
+    }
+
+    @include small-mobile {
+      --size: 60px;
       background-size: 23px;
     }
   }
