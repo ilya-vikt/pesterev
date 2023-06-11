@@ -3,12 +3,12 @@ import { disableBodyScroll, enableBodyScroll } from '@/ts/modules/functions';
 let panel = null as HTMLDivElement;
 const showClass = 'aside-panel--visible';
 
-const closePanel = () => {
+const closePanel = (): void => {
   panel.classList.remove(showClass);
   enableBodyScroll();
 };
 
-export const showPanel = () => {
+export const showPanel = (): void => {
   disableBodyScroll();
   panel.classList.add(showClass);
 };
