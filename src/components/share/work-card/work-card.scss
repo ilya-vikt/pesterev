@@ -47,15 +47,6 @@
     @include tablet {
       margin-bottom: 20px;
     }
-
-    @include mouse-hover {
-      .work-card__btn {
-        opacity: 1;
-        visibility: visible;
-        transition: background-color $animation, opacity $animation,
-          visibility 0s;
-      }
-    }
   }
 
   &__title {
@@ -68,10 +59,6 @@
     @include tablet {
       margin-bottom: 5px;
     }
-  }
-
-  &__btn {
-    @extend .btn--hidden;
   }
 
   &--locked .work-card__img::before {
@@ -92,6 +79,17 @@
 
     @include tablet {
       --lock-size: 16px;
+    }
+  }
+}
+
+.work-card-hover-trigger {
+  @include mouse-hover {
+    .img-wrapper {
+      transform: translateX(50px);
+    }
+    .work-card__inner::before {
+      opacity: 1;
     }
   }
 }
