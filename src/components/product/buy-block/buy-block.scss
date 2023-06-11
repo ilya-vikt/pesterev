@@ -51,6 +51,10 @@
         )};
     }
 
+    @include tablet {
+      padding: 10px 20px;
+    }
+
     @include mouse-hover {
       background-color: $cl-red;
     }
