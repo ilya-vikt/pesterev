@@ -1,0 +1,14 @@
+.policy {
+  color: $cl-grey;
+
+  a {
+    transition: color $animation;
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 2px;
+
+    @include mouse-hover {
+      color: $cl-red;
+    }
+  }
+}
