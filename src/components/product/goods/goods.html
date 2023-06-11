@@ -1,0 +1,85 @@
+<section class="product-goods">
+  <div class="container padding-h">
+    <div class="overlay need-blur" ani-blur>
+      <h1 class="product-goods__title txt-1">Название в две строчки</h1>
+      <!-- prettier-ignore -->
+      @@include('components/product/buy-block/buy-block.html',
+        { 
+          "class": "product-goods__buy-overlay",
+          "price": "27 000 руб.",
+          "oldPrice": "30 000 руб."
+        }
+      )
+    </div>
+    <div class="layout need-blur" ani-blur-slow>
+      <div id="product-slider" class="swiper product-goods__slider">
+        <div class="swiper-wrapper">
+          <!-- prettier-ignore -->
+          @@include('components/share/img-wrapper/img-wrapper.html', 
+            { 
+              class: "swiper-slide product-goods__slide img-wrapper-hover-trigger",
+              img: "@img/product/product.jpg",
+              alt: "слайд 1",
+              hasGallery: true,
+              idx: 1
+            }
+          )
+
+          <!-- prettier-ignore -->
+          @@include('components/share/img-wrapper/img-wrapper.html', 
+            { 
+              class: "swiper-slide product-goods__slide img-wrapper-hover-trigger",
+              img: "https://dummyimage.com/640x480/000/fefefe.png",
+              alt: "слайд 1",
+              hasGallery: true,
+              idx: 1
+            }
+          )
+        </div>
+      </div>
+      @@include('components/share/slider-btns/slider-btns.html', {class:
+      'product-goods__slider-btns'})
+
+      <!-- prettier-ignore -->
+      @@include('components/product/buy-block/buy-block.html',
+        { 
+          "class": "product-goods__buy-content",
+          "price": "27 000 руб.",
+          "oldPrice": "30 000 руб."
+        }
+      )
+      <dl class="product-goods__description">
+        <dt>О работе</dt>
+        <dd>
+          Работа из проекта “След Галатеи”. Написана под влиянием произведения.
+          Работа из проекта “След Галатеи”. Написана под влиянием произведения.
+        </dd>
+        <dt>Год</dt>
+        <dd>2005</dd>
+        <dt>Материалы</dt>
+        <dd>Холст / масло</dd>
+        <dt>Размер</dt>
+        <dd>75 х 45 см</dd>
+        <dt>Дефекты</dt>
+        <dd>Нужна перетяжка подрамника</dd>
+      </dl>
+    </div>
+  </div>
+  <div id="aside-panel" class="market-goods__filters aside-panel">
+    <div class="aside-panel__container container close-trigger">
+      <aside class="aside-panel__panel">
+        <div class="aside-panel__top">
+          <h4 id="aside-panel-title" class="txt-3">Заявка на покупку</h4>
+          <button class="aside-panel__close close-trigger" type="button">
+            <svg width="30" height="30">
+              <use href="@assets/sprite.svg#cross"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="aside-panel__content">
+          @@include('components/product/purchase/purchase.html', {})
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+.purchase {
+  &__select {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__txt {
+    margin-bottom: 40px;
+  }
+
+  &__way:nth-child(2) {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__form {
+    display: none;
+    flex-direction: column;
+  }
+
+  &__send {
+    align-self: flex-start;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &__sending {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  &__result {
+    display: none;
+  }
+
+  &__msg {
+    p:not(:last-child) {
+      margin-bottom: 1em;
+    }
+  }
+
+  &__reset {
+    margin-top: 40px;
+    align-self: flex-start;
+  }
+
+  &--select {
+    .purchase__select {
+      display: flex;
+    }
+  }
+
+  &--prepare {
+    .purchase__form {
+      display: flex;
+    }
+  }
+
+  &--sending {
+    .purchase__sending {
+      display: flex;
+    }
+  }
+
+  &--sended {
+    .purchase__reset {
+      display: none;
+    }
+
+    .purchase__result {
+      display: block;
+    }
+  }
+
+  &--unsuccess {
+    .purchase__reset {
+      display: block;
+    }
+
+    .purchase__result {
+      display: block;
+    }
+  }
+}

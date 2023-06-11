@@ -1,5 +1,6 @@
 import { mainInit } from '@/components/main/main-page';
 import { marketInit } from '@/components/market/market';
+import { productInit } from '@/components/product/product';
 import { projectoneInit } from '@/components/projectone/projectone-page';
 import { globalInit } from '@ts/global-init';
 
@@ -16,4 +17,6 @@ switch (pageName) {
     projectoneInit();
   case 'market':
     marketInit();
+  case 'product':
+    productInit();
 }
