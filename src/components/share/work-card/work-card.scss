@@ -8,21 +8,6 @@
     margin-bottom: 30px;
     overflow: hidden;
     position: relative;
-
-    &::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 30px;
-      height: 30px;
-      opacity: 0;
-      z-index: -1;
-      background-image: url('@assets/sprite.svg#plus_s');
-      background-size: 30px 30px;
-      background-repeat: no-repeat;
-      transition: opacity $animation 30ms;
-    }
   }
 
   &__img {
@@ -79,17 +64,6 @@
 
     @include tablet {
       --lock-size: 16px;
-    }
-  }
-}
-
-.work-card-hover-trigger {
-  @include mouse-hover {
-    .img-wrapper {
-      transform: translateX(50px);
-    }
-    .work-card__inner::before {
-      opacity: 1;
     }
   }
 }
