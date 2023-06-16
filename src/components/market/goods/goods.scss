@@ -65,6 +65,18 @@
 
   &__item {
     height: 524px;
+
+    @include fhd {
+      height: #{responsive(1920, 1180, 524, 380)};
+    }
+
+    @include tablet {
+      height: 380px;
+    }
+
+    @include small-tablet {
+      height: 300px;
+    }
   }
 
   &__item--landscape {
