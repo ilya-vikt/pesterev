@@ -11,6 +11,10 @@
     }
   }
 
+  &__slider .swiper-wrapper {
+    height: 100%;
+  }
+
   &__slide {
     height: auto;
     max-height: calc(max(100vh, $min-height) - 40px);
@@ -61,8 +65,4 @@
       display: flex;
     }
   }
-}
-
-.swiper-wrapper {
-  height: 100%;
 }
