@@ -14,6 +14,12 @@
         <a href="market.html" class="menu__link">Магазин</a>
       </li>
     </ul>
-    @@include('components/share/socials/socials.html', {class: 'menu__social'})
+    <!-- prettier-ignore -->
+    @@include('components/share/socials/socials.html',
+      {
+        class: 'menu__social',
+        attr: ''
+      }
+    )
   </div>
 </nav>
