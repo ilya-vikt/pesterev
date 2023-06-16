@@ -1,11 +1,21 @@
 <form class="filters">
   <fieldset class="filters__group">
     <p class="filters__caption">Сортировка</p>
-    <input id="rb-1" class="radio" type="radio" name="cost" value="expensive" />
-    <label class="filters__control" for="rb-1">Сначала дороже</label>
+    <input
+      id="rb-1"
+      class="radio"
+      type="radio"
+      name="cost"
+      value="nosort"
+      checked
+    />
+    <label class="filters__control" for="rb-1">Без сортировки</label>
 
-    <input id="rb-2" class="radio" type="radio" name="cost" value="cheaper" />
-    <label class="filters__control" for="rb-2"> Сначала дешевле </label>
+    <input id="rb-2" class="radio" type="radio" name="cost" value="expensive" />
+    <label class="filters__control" for="rb-2">Сначала дороже</label>
+
+    <input id="rb-3" class="radio" type="radio" name="cost" value="cheaper" />
+    <label class="filters__control" for="rb-3"> Сначала дешевле </label>
   </fieldset>
 
   <fieldset class="filters__group">
