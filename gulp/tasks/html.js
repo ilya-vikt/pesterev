@@ -1,5 +1,6 @@
 import fileInclude from 'gulp-file-include';
 import versionNumber from 'gulp-version-number';
+import removeComments from 'gulp-remove-html-comments';
 
 export const html = () => {
   return app.gulp
@@ -36,6 +37,7 @@ export const html = () => {
         })
       )
     )
+    .pipe(app.plugins.if(app.isBuild, removeComments()))
     .pipe(app.gulp.dest(app.path.build.html))
     .pipe(app.plugins.browserSync.stream());
 };
