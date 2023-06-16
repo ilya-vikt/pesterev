@@ -5,7 +5,7 @@
     <nav class="header-secondary__navigate">
       <!-- prettier-ignore -->
       <div class="header-secondary__left">
-        <a id="go-back" class="header-secondary__back header-secondary__back link need-blur" href="#" ani-blur>
+        <a id="go-back" class="header-secondary__back header-secondary__back link popup-background" href="#" ani-blur>
           <svg width="30" height="20">
             <use href="@assets/sprite.svg#arrow_left_xs"></use>
           </svg>
@@ -13,7 +13,7 @@
         </a>
       </div>
       <!-- prettier-ignore-end -->
-      <ul class="header-secondary__menu need-blur" ani-blur>
+      <ul class="header-secondary__menu popup-background" ani-blur>
         <li class="header-secondary__item txt-5">
           <a href="allprojects.html" class="header-secondary__link link"
             >Проекты</a
@@ -43,7 +43,7 @@
         <!-- prettier-ignore -->
         @@include('components/share/socials/socials.html',
           {
-            class:'header-secondary__socials need-blur',
+            class:'header-secondary__socials popup-background',
             attr: 'ani-blur'
           }
         )

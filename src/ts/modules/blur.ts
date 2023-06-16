@@ -1,12 +1,12 @@
-const blocksToBlur = [...document.querySelectorAll('.need-blur')];
 const backdropSupport = CSS.supports('backdrop-filter', 'blur()');
+const configBlock = document.getElementById('config-data');
 const duration = 300;
 
 function fallbackBlur(direction: 'in' | 'out'): void {
   if (direction === 'in') {
-    blocksToBlur.forEach((block) => block.classList.add('blur'));
+    configBlock.classList.add('popup-backdrop-fallback');
   } else {
-    blocksToBlur.forEach((block) => block.classList.remove('blur'));
+    configBlock.classList.remove('popup-backdrop-fallback');
   }
 }
 
@@ -41,6 +41,12 @@ export async function setBlur(
   element: HTMLElement,
   direction: 'in' | 'out'
 ): Promise<true> {
+  if (direction === 'in') {
+    configBlock.classList.add('popup-active');
+  } else {
+    configBlock.classList.remove('popup-active');
+  }
+
   if (backdropSupport) {
     animateBackdrop(element, direction);
   } else {

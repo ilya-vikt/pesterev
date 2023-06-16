@@ -5,18 +5,21 @@ $duration: 1000ms;
     filter: blur(150px);
     transform: translate3d(0, 0, 0);
     opacity: 0;
+    transition: all 0s;
   }
 
   & [ani-blur-slow] {
     filter: blur(150px);
     opacity: 0;
     transform: translate3d(0, 0, 0);
+    transition: all 0s;
   }
 
   & [ani-blur-and-zoom] {
     filter: blur(150px);
     opacity: 0;
     transform: scale3d(0.6, 0.6, 0);
+    transition: all 0s;
   }
 }
 

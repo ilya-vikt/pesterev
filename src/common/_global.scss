@@ -44,8 +44,16 @@ body {
   flex-grow: 1;
 }
 
-.need-blur {
-  transition: filter $animation;
+.popup-background {
+  transition: filter $animation, opacity $animation;
+}
+
+.popup-active .popup-background {
+  opacity: 0.4;
+}
+
+.popup-backdrop-fallback .popup-background {
+  filter: blur(50px);
 }
 
 .scrollbar-compensation {
@@ -73,17 +81,9 @@ body {
   clip: rect(0 0 0 0);
 }
 
-.blur {
-  filter: blur(50px);
-}
-
 .container {
   max-width: 1920px;
   margin: 0 auto;
-}
-
-.main {
-  transition: filter $animation;
 }
 
 .padding-h {
