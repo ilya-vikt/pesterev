@@ -1,21 +1,21 @@
 $duration: 1000ms;
 
 .start-animation {
-  & [ani-blur] {
+  & [data-ani-blur] {
     filter: blur(150px);
     transform: translate3d(0, 0, 0);
     opacity: 0;
     transition: all 0s;
   }
 
-  & [ani-blur-slow] {
+  & [data-ani-blur-slow] {
     filter: blur(150px);
     opacity: 0;
     transform: translate3d(0, 0, 0);
     transition: all 0s;
   }
 
-  & [ani-blur-and-zoom] {
+  & [data-ani-blur-and-zoom] {
     filter: blur(150px);
     opacity: 0;
     transform: scale3d(0.6, 0.6, 0);
@@ -24,13 +24,13 @@ $duration: 1000ms;
 }
 
 .animating {
-  & [ani-blur] {
+  & [data-ani-blur] {
     transition: filter 500ms ease-out, opacity 500ms ease-out;
     filter: blur(0);
     opacity: 1;
   }
 
-  & [ani-blur-and-zoom] {
+  & [data-ani-blur-and-zoom] {
     transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
       transform $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
       opacity $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms;
@@ -39,7 +39,7 @@ $duration: 1000ms;
     transform: scale3d(1, 1, 1);
   }
 
-  & [ani-blur-slow] {
+  & [data-ani-blur-slow] {
     transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
       opacity $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms;
     opacity: 1;
