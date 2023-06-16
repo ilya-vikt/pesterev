@@ -37,20 +37,11 @@
   }
 
   &__slider .swiper-wrapper {
-    align-items: stretch;
+    height: 100%;
   }
 
   &__slide {
-    display: flex;
-    align-items: center;
     height: auto;
-    background-color: $cl-light-grey;
-  }
-
-  &__img {
-    height: auto;
-    width: 100%;
-    max-height: calc(max(100vh, $min-height) - 100px);
-    object-fit: contain;
+    max-height: calc(max(100vh, $min-height) - 40px);
   }
 }
