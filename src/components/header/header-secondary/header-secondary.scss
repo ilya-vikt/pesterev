@@ -1,20 +1,27 @@
 .header-secondary {
+  pointer-events: none;
+
   &__navigate {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    position: relative;
-    z-index: 2;
 
     @include tablet {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
+  &__back,
+  &__menu,
+  &__socials {
+    pointer-events: all;
+  }
+
   &__back {
     position: fixed;
     display: flex;
     align-items: center;
+    z-index: 3;
 
     svg {
       margin-right: 10px;
