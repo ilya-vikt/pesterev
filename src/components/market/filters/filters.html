@@ -1,115 +1,131 @@
 <form class="filters">
-  <fieldset class="filters__group">
-    <p class="filters__caption">Сортировка</p>
-    <input
-      id="rb-1"
-      class="radio"
-      type="radio"
-      name="cost"
-      value="nosort"
-      checked
-    />
-    <label class="filters__control" for="rb-1">Без сортировки</label>
+  <div class="filters__inner">
+    <fieldset class="filters__group">
+      <p class="filters__caption">Сортировка</p>
+      <input
+        id="rb-1"
+        class="radio"
+        type="radio"
+        name="cost"
+        value="nosort"
+        checked
+      />
+      <label class="filters__control" for="rb-1">Без сортировки</label>
 
-    <input id="rb-2" class="radio" type="radio" name="cost" value="expensive" />
-    <label class="filters__control" for="rb-2">Сначала дороже</label>
+      <input
+        id="rb-2"
+        class="radio"
+        type="radio"
+        name="cost"
+        value="expensive"
+      />
+      <label class="filters__control" for="rb-2">Сначала дороже</label>
 
-    <input id="rb-3" class="radio" type="radio" name="cost" value="cheaper" />
-    <label class="filters__control" for="rb-3"> Сначала дешевле </label>
-  </fieldset>
+      <input id="rb-3" class="radio" type="radio" name="cost" value="cheaper" />
+      <label class="filters__control" for="rb-3"> Сначала дешевле </label>
+    </fieldset>
 
-  <fieldset class="filters__group">
-    <p class="filters__caption">Техника</p>
-    <input
-      id="cb-1"
-      class="checkbox"
-      type="checkbox"
-      name="technique"
-      value="painting"
-    />
-    <label class="filters__control" for="cb-1">Живопись</label>
+    <fieldset class="filters__group">
+      <p class="filters__caption">Техника</p>
+      <input
+        id="cb-1"
+        class="checkbox"
+        type="checkbox"
+        name="technique"
+        value="painting"
+      />
+      <label class="filters__control" for="cb-1">Живопись</label>
 
-    <input
-      id="cb-2"
-      class="checkbox"
-      type="checkbox"
-      name="technique"
-      value="graphics"
-    />
-    <label class="filters__control" for="cb-2">Графика</label>
-  </fieldset>
+      <input
+        id="cb-2"
+        class="checkbox"
+        type="checkbox"
+        name="technique"
+        value="graphics"
+      />
+      <label class="filters__control" for="cb-2">Графика</label>
+    </fieldset>
 
-  <fieldset class="filters__group">
-    <p class="filters__caption">Размер</p>
-    <input id="cb-3" class="checkbox" type="checkbox" name="size" value="big" />
-    <label class="filters__control" for="cb-3">Большой</label>
+    <fieldset class="filters__group">
+      <p class="filters__caption">Размер</p>
+      <input
+        id="cb-3"
+        class="checkbox"
+        type="checkbox"
+        name="size"
+        value="big"
+      />
+      <label class="filters__control" for="cb-3">Большой</label>
 
-    <input
-      id="cb-4"
-      class="checkbox"
-      type="checkbox"
-      name="size"
-      value="medium"
-    />
-    <label class="filters__control" for="cb-4">Средний</label>
+      <input
+        id="cb-4"
+        class="checkbox"
+        type="checkbox"
+        name="size"
+        value="medium"
+      />
+      <label class="filters__control" for="cb-4">Средний</label>
 
-    <input
-      id="cb-5"
-      class="checkbox"
-      type="checkbox"
-      name="size"
-      value="small"
-    />
-    <label class="filters__control" for="cb-5">Маленький</label>
-  </fieldset>
+      <input
+        id="cb-5"
+        class="checkbox"
+        type="checkbox"
+        name="size"
+        value="small"
+      />
+      <label class="filters__control" for="cb-5">Маленький</label>
+    </fieldset>
 
-  <fieldset class="filters__group">
-    <p class="filters__caption">Тема</p>
-    <input
-      id="cb-6"
-      class="checkbox"
-      type="checkbox"
-      name="theme"
-      value="flowers"
-    />
-    <label class="filters__control" for="cb-6">Цветы</label>
-    <input
-      id="cb-7"
-      class="checkbox"
-      type="checkbox"
-      name="theme"
-      value="landscape"
-    />
-    <label class="filters__control" for="cb-7">Пейзаж</label>
-    <input
-      id="cb-8"
-      class="checkbox"
-      type="checkbox"
-      name="theme"
-      value="stilllife"
-    />
-    <label class="filters__control" for="cb-8">Натюрморт</label>
-    <input
-      id="cb-9"
-      class="checkbox"
-      type="checkbox"
-      name="theme"
-      value="abstraction"
-    />
-    <label class="filters__control" for="cb-9">Абстракция</label>
-    <input
-      id="cb-10"
-      class="checkbox"
-      type="checkbox"
-      name="theme"
-      value="projection"
-    />
-    <label class="filters__control" for="cb-10">Проекция</label>
-  </fieldset>
-  <button class="link txt-5-b">
-    Применить
-    <svg width="30" height="20">
-      <use href="@assets/sprite.svg#check_xs"></use>
-    </svg>
-  </button>
+    <fieldset class="filters__group">
+      <p class="filters__caption">Тема</p>
+      <input
+        id="cb-6"
+        class="checkbox"
+        type="checkbox"
+        name="theme"
+        value="flowers"
+      />
+      <label class="filters__control" for="cb-6">Цветы</label>
+      <input
+        id="cb-7"
+        class="checkbox"
+        type="checkbox"
+        name="theme"
+        value="landscape"
+      />
+      <label class="filters__control" for="cb-7">Пейзаж</label>
+      <input
+        id="cb-8"
+        class="checkbox"
+        type="checkbox"
+        name="theme"
+        value="stilllife"
+      />
+      <label class="filters__control" for="cb-8">Натюрморт</label>
+      <input
+        id="cb-9"
+        class="checkbox"
+        type="checkbox"
+        name="theme"
+        value="abstraction"
+      />
+      <label class="filters__control" for="cb-9">Абстракция</label>
+      <input
+        id="cb-10"
+        class="checkbox"
+        type="checkbox"
+        name="theme"
+        value="projection"
+      />
+      <label class="filters__control" for="cb-10">Проекция</label>
+    </fieldset>
+  </div>
+  <div class="filters__bottom">
+    <button class="link txt-5-b">
+      Применить
+      <svg width="30" height="20">
+        <use href="@assets/sprite.svg#check_xs"></use>
+      </svg>
+    </button>
+  </div>
 </form>

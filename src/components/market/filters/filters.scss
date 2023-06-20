@@ -1,5 +1,23 @@
 .filters {
   @extend .unselectable;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &__inner {
+    overflow-y: auto;
+    padding-left: var(--panel-padding);
+    padding-right: var(--panel-padding);
+    flex-grow: 1;
+  }
+
+  &__bottom {
+    background-color: rgba($cl-black, 0.05);
+    padding-left: var(--panel-padding);
+    padding-right: var(--panel-padding);
+    padding-top: 20px;
+    padding-bottom: var(--panel-padding);
+  }
 
   &__group {
     display: flex;
