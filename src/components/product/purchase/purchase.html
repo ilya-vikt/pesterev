@@ -1,67 +1,66 @@
-<div id="purchase" class="purchase purchase--select">
-  <div class="purchase__select">
-    <p class="purchase__txt">
-      Вы можете заказать работу на сайте либо написать в WhatsApp
-    </p>
+<div id="purchase" class="purchase purchase--filling">
+  <div class="purchase__filling">
+    <div class="purchase__top">
+      <p class="purchase__txt">
+        Вы можете заказать работу заполнив форму на сайте либо через в WhatsApp
+      </p>
+      <a
+        class="purchase__whatsapp txt-5-b link"
+        target="_blank"
+        href="https://wa.me/79212343489?text=Здравствуйте, хочу купить работу хххх"
+        ><span>Написать WhatsApp</span
+        ><svg width="20" height="20">
+          <use href="@assets/sprite.svg#watsapp_xs"></use>
+        </svg>
+      </a>
+    </div>
+    <form id="purchase-form" class="purchase__form">
+      <input
+        class="input"
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Имя"
+        required
+      />
 
-    <a
-      class="purchase__way txt-5-b link"
-      target="_blank"
-      href="https://wa.me/79212343489?text=Здравствуйте, хочу купить работу хххх"
-      >Написать WhatsApp</a
-    >
-    <button id="way-website" class="purchase__way txt-5-b link" type="button">
-      Оформить заявку на сайте
-    </button>
+      <input
+        class="input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="E-mail"
+        required
+      />
+
+      <input
+        class="input"
+        type="tel"
+        id="tel"
+        name="tel"
+        placeholder="Ваш номер телефона"
+        required
+      />
+
+      <input
+        class="input"
+        type="text"
+        id="address"
+        name="address"
+        placeholder="Адрес доставки"
+        required
+      />
+
+      <button id="send-btn" class="purchase__send link txt-5-b">
+        отправить
+        <svg width="30" height="20">
+          <use href="@assets/sprite.svg#check_xs"></use>
+        </svg>
+      </button>
+
+      @@include('components/share/policy/policy.html', {})
+    </form>
   </div>
-
-  <form id="purchase-form" class="purchase__form">
-    <input
-      class="input"
-      type="text"
-      id="name"
-      name="name"
-      placeholder="Имя"
-      required
-    />
-
-    <input
-      class="input"
-      type="email"
-      id="email"
-      name="email"
-      placeholder="E-mail"
-      required
-    />
-
-    <input
-      class="input"
-      type="tel"
-      id="tel"
-      name="tel"
-      placeholder="Ваш номер телефона"
-      required
-    />
-
-    <input
-      class="input"
-      type="text"
-      id="address"
-      name="address"
-      placeholder="Адрес доставки"
-      required
-    />
-
-    <button id="send-btn" class="purchase__send link txt-5-b">
-      отправить
-      <svg width="30" height="20">
-        <use href="@assets/sprite.svg#check_xs"></use>
-      </svg>
-    </button>
-
-    @@include('components/share/policy/policy.html', {})
-    <button class="purchase__reset txt-5-b link" type="button">Назад</button>
-  </form>
 
   <div class="purchase__sending">
     <span class="txt-4"
@@ -73,7 +72,7 @@
 
   <div class="purchase__result">
     <div id="purchase-msg" class="purchase__msg"></div>
-    <button id="purchase-result-reset" class="purchase__reset txt-5-b link">
+    <button id="purchase-to-start" class="purchase__unsuccess txt-5-b link">
       Ок
     </button>
   </div>

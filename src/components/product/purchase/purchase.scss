@@ -1,21 +1,39 @@
 .purchase {
-  &__select {
+  padding-left: var(--panel-padding);
+  padding-right: var(--panel-padding);
+  padding-bottom: var(--panel-padding);
+  max-height: 100%;
+  overflow-y: auto;
+
+  &__filling {
     display: none;
-    flex-direction: column;
-    align-items: flex-start;
+  }
+
+  &__top {
+    padding-bottom: 40px;
   }
 
   &__txt {
     margin-bottom: 40px;
   }
 
-  &__way:nth-child(2) {
-    display: block;
-    margin-bottom: 20px;
+  &__whatsapp svg {
+    width: 20px;
+    height: 20px;
+
+    @include fhd {
+      width: #{responsive(1920, 1180, 20, 14)};
+      height: #{responsive(1920, 1180, 20, 14)};
+    }
+
+    @include tablet {
+      width: 14px;
+      height: 14px;
+    }
   }
 
   &__form {
-    display: none;
+    display: flex;
     flex-direction: column;
   }
 
@@ -47,41 +65,25 @@
     }
   }
 
-  &__reset {
-    margin-top: 40px;
-    align-self: flex-start;
+  &__unsuccess {
+    display: none;
+    margin-top: 20px;
   }
 
-  &--select {
-    .purchase__select {
-      display: flex;
-    }
+  &--filling .purchase__filling {
+    display: block;
   }
 
-  &--prepare {
-    .purchase__form {
-      display: flex;
-    }
+  &--sending .purchase__sending {
+    display: flex;
   }
 
-  &--sending {
-    .purchase__sending {
-      display: flex;
-    }
-  }
-
-  &--sended {
-    .purchase__reset {
-      display: none;
-    }
-
-    .purchase__result {
-      display: block;
-    }
+  &--sended .purchase__result {
+    display: block;
   }
 
   &--unsuccess {
-    .purchase__reset {
+    .purchase__unsuccess {
       display: block;
     }
 
