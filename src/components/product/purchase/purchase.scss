@@ -91,4 +91,10 @@
       display: block;
     }
   }
+
+  & .input {
+    @include mouse-hover {
+      background-color: rgba($color: $cl-grey, $alpha: 0.2);
+    }
+  }
 }

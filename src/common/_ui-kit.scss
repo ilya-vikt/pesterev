@@ -172,20 +172,19 @@
   border-bottom: 2px solid $cl-black;
   background-color: transparent;
   transition: background-color $animation, border-color $animation;
-  outline-offset: 2px;
+  outline-offset: 4px;
+  outline-color: transparent;
 
   &::placeholder {
     color: $cl-grey;
   }
 
-  @include mouse-hover {
-    background-color: $cl-light-grey;
+  &:focus {
+    border-bottom-color: $cl-blue;
   }
 
-  &.input.input:focus {
-    border-bottom-color: $cl-blue;
-    background-color: transparent;
-    outline-color: transparent;
+  @include mouse-hover {
+    background-color: $cl-light-grey;
   }
 }
 
