@@ -29,21 +29,24 @@ function createSrcSet(img: TImgRecord, breakpoints: TImgBreakpoints) {
 function createMarkup(data: GalleryData) {
   let markup = `<div class="lightbox__container container">
   <button id="close-gallery" class="lightbox__close">
-    <svg>
-      <use href="./assets/sprite.svg#cross"></use>
-    </svg>
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1 1L19 19" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="2" />
+    <path d="M1 19L19 1" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-width="2" />
+  </svg>
   </button>
   <div class="lightbox__slider swiper">
     <div class="lightbox__controls">
       <button class="lightbox__prev btn-slider"><span class="sr-only">Предыдущий слайд</span>
-        <svg>
-          <use href="./assets/sprite.svg#arrow_left_xs"></use>
+        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1.33325 7L19.9999 7.00001" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/>
+          <path d="M7 1L1.5 7L7 13" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/>
         </svg>
       </button>
       <button class="lightbox__next btn-slider"><span class="sr-only">Следующий слайд</span>
-        <svg>
-          <use href="./assets/sprite.svg#arrow_right_xs"></use>
-        </svg>
+      <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 7L8.2016e-05 7" stroke-width="2" stroke="currentColor" vector-effect="non-scaling-stroke" />
+        <path d="M13 1L18.5 7L13 13" stroke-width="2" stroke="currentColor" vector-effect="non-scaling-stroke" />
+      </svg>
       </button>
     </div>
     <div class="swiper-wrapper">`;
