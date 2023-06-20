@@ -1,4 +1,4 @@
-import Swiper, { Navigation, Zoom, Lazy } from 'swiper';
+import Swiper, { Navigation, Zoom, Lazy, Keyboard } from 'swiper';
 import type { SwiperOptions } from 'swiper/types';
 import { setBlur } from '@/ts/modules/blur';
 
@@ -14,7 +14,7 @@ export interface GalleryData {
 
 let lightbox: HTMLElement | null = null;
 let slider: Swiper = null;
-Swiper.use([Navigation, Zoom, Lazy]);
+Swiper.use([Navigation, Zoom, Lazy, Keyboard]);
 
 function createSrcSet(img: TImgRecord, breakpoints: TImgBreakpoints) {
   let srcSet = 'data-srcset="';
@@ -95,6 +95,10 @@ export function createLightBox(data: GalleryData, slideId: number) {
       zoomedSlideClass: 'lightbox__slide--zoomed',
     },
     a11y: { enabled: false },
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+    },
     lazy: {
       loadOnTransitionStart: false,
       loadPrevNext: true,
@@ -107,4 +111,10 @@ export function createLightBox(data: GalleryData, slideId: number) {
   lightbox
     .querySelector('.lightbox__close')
     ?.addEventListener('click', destroyLightBox);
+
+  document.addEventListener('keydown', ({ key }) => {
+    if (key === 'Escape') {
+      destroyLightBox();
+    }
+  });
 }
