@@ -3,15 +3,11 @@
   @@include('common/head.html', { "title": "Проект Имена" })
   <body>
     <script defer src="./js/app.min.js"></script>
-    <div
-      id="config-data"
-      class="wrapper scrollbar-compensation"
-      data-page-name="projectone"
-    >
+    <div id="config-data" class="wrapper scrollbar-compensation">
       @@include('components/preloader/preloader.html', {})
       @@include('components/header/header-secondary/header-secondary.html',
       {goback: true})
-      <main id="main" class="main">
+      <main id="main" class="main" data-page-name="projectone">
         @@include('components/projectone/hero/hero.html', {})
         @@include('components/projectone/works/works.html', {})
       </main>

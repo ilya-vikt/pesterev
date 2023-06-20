@@ -3,14 +3,10 @@
   @@include('common/head.html', { "title": "Главная" })
   <body>
     <script defer src="./js/app.min.js"></script>
-    <div
-      id="config-data"
-      class="wrapper scrollbar-compensation"
-      data-page-name="main"
-    >
+    <div id="config-data" class="wrapper scrollbar-compensation">
       @@include('components/preloader/preloader.html', {})
       @@include('components/header/header-primary/header-primary.html', {})
-      <main id="main" class="main">
+      <main id="main" class="main" data-page-name="main">
         @@include('components/main/hero/hero.html', {})
         <div class="popup-background" data-ani-blur-slow>
           @@include('components/main/projects/projects.html', {})
