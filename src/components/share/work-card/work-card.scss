@@ -8,6 +8,14 @@
     margin-bottom: 30px;
     overflow: hidden;
     position: relative;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 30, 20)};
+    }
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
   }
 
   &__img {
