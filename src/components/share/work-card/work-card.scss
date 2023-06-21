@@ -30,22 +30,32 @@
     }
   }
 
-  &--locked .work-card__bla {
+  &__lock {
     position: absolute;
     left: 20px;
     bottom: 20px;
-    width: 20px;
-    height: 20px;
-    display: block;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $cl-white;
+    border-radius: 50%;
 
-    @include fhd {
-      width: #{responsive(1920, 1180, 20, 16)};
-      height: #{responsive(1920, 1180, 20, 16)};
-    }
+    svg {
+      width: 20px;
+      height: 20px;
+      margin-top: -2px;
 
-    @include tablet {
-      width: 16px;
-      height: 16px;
+      @include fhd {
+        width: #{responsive(1920, 1180, 20, 16)};
+        height: #{responsive(1920, 1180, 20, 16)};
+      }
+
+      @include tablet {
+        width: 16px;
+        height: 16px;
+      }
     }
   }
 }
