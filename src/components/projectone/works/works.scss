@@ -1,6 +1,35 @@
 .projectone-works {
   padding-top: 120px;
 
+  &__txt {
+    margin-bottom: 120px;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 120, 80)};
+    }
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__file {
+    margin-bottom: 80px;
+    display: none;
+
+    @include tablet {
+      display: flex;
+    }
+
+    @include small-tablet {
+      padding-left: 220px;
+    }
+
+    @include mobile {
+      padding-left: 0;
+    }
+  }
+
   &__list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
