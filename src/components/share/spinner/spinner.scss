@@ -5,10 +5,10 @@
   height: 50px;
 
   span {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
-    background-color: $cl-grey;
+    background-color: $cl-black;
     animation: bounce 0.7s ease-in-out infinite;
 
     &:not(:last-child) {
