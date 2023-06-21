@@ -1,3 +1,5 @@
+$duration: 200ms;
+
 .aside-panel {
   --panel-padding: 80px;
   --top-panel-height: 150px;
@@ -8,7 +10,7 @@
   width: 100vw;
   z-index: 4;
   visibility: hidden;
-  transition: visibility 0s linear $delay;
+  transition: visibility 0s linear $duration;
   pointer-events: all;
 
   &__container {
@@ -24,7 +26,7 @@
     width: 33%;
     margin-left: auto;
     transform: translate3d(100%, 0, 0);
-    transition: transform $animation;
+    transition: transform ease-out $duration;
 
     @include tablet {
       width: 50%;
