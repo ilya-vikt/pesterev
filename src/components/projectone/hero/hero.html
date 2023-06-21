@@ -19,18 +19,34 @@
     <div class="layout-hero popup-background" data-ani-blur-slow>
       <div id="hero-slider" class="swiper projectone-hero__slider">
         <div class="swiper-wrapper">
-          <div class="swiper-slide projectone-hero__slide">
-            <img src="@img/project-one/1.jpg" alt="Слайд 1" />
-          </div>
-          <div class="swiper-slide projectone-hero__slide">
-            <img
-              src="https://dummyimage.com/640x480/000/fefefe.png"
-              alt="Слайд 2"
-            />
-          </div>
-          <div class="swiper-slide projectone-hero__slide">
-            <img src="@img/product/product.jpg" alt="Слайд 3" />
-          </div>
+          <!-- prettier-ignore -->
+          @@include('components/share/img-wrapper/img-wrapper.html',
+            {
+              class: "swiper-slide projectone-hero__slide",
+              img: "@img/project-one/1.jpg",
+              alt: "слайд 1",
+              hasGallery: false,
+            }
+          )
+          <!-- prettier-ignore -->
+          @@include('components/share/img-wrapper/img-wrapper.html',
+            {
+              class: "swiper-slide projectone-hero__slide",
+              img: "https://dummyimage.com/640x480/000/fefefe.png",
+              alt: "слайд 2",
+              hasGallery: false,
+            }
+          )
+
+          <!-- prettier-ignore -->
+          @@include('components/share/img-wrapper/img-wrapper.html',
+            {
+              class: "swiper-slide projectone-hero__slide",
+              img: "@img/product/product.jpg",
+              alt: "слайд 3",
+              hasGallery: false,
+            }
+          )
         </div>
       </div>
       @@include('components/share/slider-btns/slider-btns.html', {class:

@@ -36,17 +36,12 @@
     pointer-events: all;
   }
 
-  &__slide {
-    position: relative;
-    padding-top: 56.25%;
+  &__slider .swiper-wrapper {
+    height: 100%;
+  }
 
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  &__slide {
+    height: auto;
+    max-height: calc(max(100vh, $min-height) - 40px);
   }
 }
