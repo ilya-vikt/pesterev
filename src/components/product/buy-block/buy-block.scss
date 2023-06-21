@@ -16,29 +16,26 @@
     }
   }
 
-  &__btn {
+  &__btn,
+  &__reserved {
     display: flex;
     align-items: center;
     padding: 15px 25px;
     margin-top: 20px;
-    background-color: $cl-black;
-    color: $cl-white;
-    @extend .txt-5-b;
-    pointer-events: all;
-    transition: background-color $animation;
 
     svg {
-      --size: 20px;
       margin-left: 10px;
-      width: var(--size);
-      height: var(--size);
+      width: 20px;
+      height: 20px;
 
       @include fhd {
-        --size: #{responsive(1920, 1180, 20, 14)};
+        width: #{responsive(1920, 1180, 20, 14)};
+        height: #{responsive(1920, 1180, 20, 14)};
       }
 
       @include tablet {
-        --size: 14px;
+        width: 14px;
+        height: 14px;
       }
     }
 
@@ -54,15 +51,21 @@
     @include tablet {
       padding: 10px 20px;
     }
+  }
+
+  &__btn {
+    background-color: $cl-black;
+    color: $cl-white;
+    @extend .txt-5-b;
+    pointer-events: all;
+    transition: background-color $animation;
 
     @include mouse-hover {
       background-color: $cl-red;
     }
   }
 
-  &__msg {
-    margin-top: 20px;
+  &__reserved {
     background-color: $cl-light-grey;
-    padding: 10px 10px;
   }
 }
