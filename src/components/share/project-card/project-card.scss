@@ -1,5 +1,7 @@
 .project-card {
   display: flex;
+  position: relative;
+  z-index: 2;
 
   &__img {
     flex: 0 0 50%;
