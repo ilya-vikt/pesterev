@@ -39,6 +39,7 @@ export const path = {
       `${srcFolder}/style.scss`,
     ],
     js: [
+      `${srcFolder}/api/**/*.ts`,
       `${srcFolder}/ts/**/*.ts`,
       `${srcFolder}/libs/**/*.ts`,
       `${srcFolder}/components/**/*.ts`,
