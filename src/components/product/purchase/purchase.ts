@@ -25,7 +25,7 @@ export const initPurchase = (): void => {
 
   if (!form) return;
 
-  initForm('purchase-form');
+  initForm(form);
 
   document
     .getElementById('purchase-to-start')

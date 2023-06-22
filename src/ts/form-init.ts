@@ -23,10 +23,7 @@ function restoreFormValues(form: HTMLFormElement): void {
   }
 }
 
-export const initForm = (id: string): void => {
-  const form = document.getElementById(id) as HTMLFormElement;
-  if (!form) return;
-
+export const initForm = (form: HTMLFormElement): void => {
   window.addEventListener('beforeunload', () => {
     saveFormOnUnload(form);
   });
