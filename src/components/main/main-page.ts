@@ -40,6 +40,7 @@ const initHeroMenu = () => {
     const hash = '#' + id;
     activeMenuItem && activeMenuItem.classList.remove(activeClass);
     if (!menuMap[hash]) return;
+
     menuMap[hash].classList.add(activeClass);
     activeMenuItem = menuMap[hash];
   };
@@ -65,9 +66,9 @@ const initHeroMenu = () => {
 };
 
 export const mainInit = () => {
-  initHeroMenu();
   initSlider();
   initGallery();
   initPlayer();
   initContactsForm();
+  setTimeout(initHeroMenu, 1000);
 };
