@@ -1,19 +1,22 @@
-<div id="purchase" class="purchase purchase--filling">
-  <div class="purchase__filling">
-    <div class="purchase__top">
-      <p class="purchase__txt">
-        Вы можете заказать работу заполнив форму на сайте либо через WhatsApp
-      </p>
-      <a
-        class="purchase__whatsapp txt-5-b link"
-        target="_blank"
-        href="https://wa.me/79212343489?text=Здравствуйте, хочу купить работу хххх"
-        ><span>Заказать в WhatsApp</span
-        ><svg width="20" height="20">
-          <use href="@assets/sprite.svg#watsapp_xs"></use>
-        </svg>
-      </a>
-    </div>
+<div id="purchase" class="purchase">
+  <div class="purchase__top">
+    <p class="purchase__txt">
+      Вы можете заказать работу заполнив форму на сайте либо через WhatsApp
+    </p>
+    <a
+      class="purchase__whatsapp txt-5-b link"
+      target="_blank"
+      href="https://wa.me/79212343489?text=Здравствуйте, хочу купить работу хххх"
+      ><span>Заказать в WhatsApp</span
+      ><svg width="20" height="20">
+        <use href="@assets/sprite.svg#watsapp_xs"></use>
+      </svg>
+    </a>
+  </div>
+  <div
+    id="purchase-request"
+    class="purchase__request purchase__request--filling"
+  >
     <form id="purchase-form" class="purchase__form">
       <input
         class="input"
@@ -60,20 +63,22 @@
 
       @@include('components/share/policy/policy.html', {})
     </form>
-  </div>
+    <div class="purchase__sending">
+      <span class="txt-4">Заявка отправляется</span>
+      @@include('components/share/spinner/spinner.html', {})
+    </div>
 
-  <div class="purchase__sending">
-    <span class="txt-4"
-      >Заявка отправляется<br />
-      Пожалуйста, подождите</span
-    >
-    @@include('components/share/spinner/spinner.html', {})
-  </div>
-
-  <div class="purchase__result">
-    <div id="purchase-msg" class="purchase__msg"></div>
-    <button id="purchase-to-start" class="purchase__unsuccess txt-5-b link">
-      Ок
-    </button>
+    <div class="purchase__result">
+      <div id="purchase-msg" class="purchase__msg">
+        <p>Сообщение отправлено</p>
+        <p>
+          Если по какой то причине вы не получили ответ в течение дня,
+          пожалуйста, напишите в WhatsApp.
+        </p>
+      </div>
+      <button id="purchase-to-start" class="purchase__ok txt-5-b link">
+        Ок
+      </button>
+    </div>
   </div>
 </div>

@@ -1,37 +1,42 @@
-import { setTitle } from '@/components/share/aside-panel/aside-panel';
 import type { IOrder } from '@/api/send-order';
 import { sendOrder } from '@/api/send-order';
 import { initForm } from '@/ts/form-init';
 
-const purchase = document.getElementById('purchase') as HTMLDivElement;
-const purchaseResultTxt = document.getElementById('purchase-msg');
-const form = document.getElementById('purchase-form') as HTMLFormElement;
-
-const stages = {
-  filling: 'purchase--filling',
-  sending: 'purchase--sending',
-  sended: 'purchase--sended',
-  unsuccess: 'purchase--unsuccess',
-} as const;
-
-const setStage = (stage: keyof typeof stages): void => {
-  purchase?.classList.remove(...Object.values(stages));
-  purchase?.classList.add(stages[stage]);
-  setTitle('Заявка на покупку');
-};
-
 export const initPurchase = (): void => {
+  const drover = document.getElementById('aside-panel');
   const form = document.getElementById('purchase-form') as HTMLFormElement;
+  const purchaseRequest = document.getElementById(
+    'purchase-request'
+  ) as HTMLDivElement;
+  const msgBlock = document.getElementById('purchase-msg') as HTMLDivElement;
+  const sendBtn = form.querySelector('#send-btn') as HTMLButtonElement;
+  const toStartBtn = document.getElementById(
+    'purchase-to-start'
+  ) as HTMLButtonElement;
 
-  if (!form) return;
+  if ([form, msgBlock, sendBtn, toStartBtn, drover].some((el) => !el)) {
+    return;
+  }
 
   initForm(form);
 
-  document
-    .getElementById('purchase-to-start')
-    ?.addEventListener('click', toStart);
+  const stages = {
+    filling: 'purchase__request--filling',
+    sending: 'purchase__request--sending',
+    sended: 'purchase__request--sended',
+    fail: 'purchase__request--fail',
+  } as const;
 
-  document.getElementById('send-btn')?.addEventListener('click', () => {
+  const setStage = (stage: keyof typeof stages): void => {
+    purchaseRequest.classList.remove(...Object.values(stages));
+    purchaseRequest.classList.add(stages[stage]);
+  };
+
+  toStartBtn.addEventListener('click', () => {
+    setStage('filling');
+  });
+
+  sendBtn.addEventListener('click', async () => {
     form.classList.add('check');
     if (form.checkValidity()) {
       const order: IOrder = {
@@ -42,25 +47,22 @@ export const initPurchase = (): void => {
         orderID: 1,
       };
 
-      sendPurchase(order);
+      form.classList.remove('check');
+      setStage('sending');
+      drover.classList.add('aside-panel--lock');
+      const result = await sendOrder(order);
+
+      msgBlock.innerHTML = result.msg;
+      if (result.success) {
+        form.reset();
+        setStage('sended');
+        document
+          .querySelectorAll('.buy-block')
+          .forEach((el) => el.classList.add('buy-block--reserved'));
+      } else {
+        setStage('fail');
+      }
+      drover.classList.remove('aside-panel--lock');
     }
   });
-};
-
-export const sendPurchase = async (order: IOrder) => {
-  setStage('sending');
-  const result = await sendOrder(order);
-  if (result.success) {
-    setStage('sended');
-    form.reset();
-  } else {
-    setStage('unsuccess');
-  }
-
-  setTitle(result.status);
-  purchaseResultTxt.innerHTML = result.msg;
-};
-
-export const toStart = () => {
-  setStage('filling');
 };

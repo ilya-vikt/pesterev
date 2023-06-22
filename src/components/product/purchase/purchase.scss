@@ -5,8 +5,25 @@
   max-height: 100%;
   overflow-y: auto;
 
-  &__filling {
-    display: none;
+  &__request {
+    position: relative;
+    &--sending .purchase__sending {
+      display: flex;
+    }
+
+    &--sended .purchase__result {
+      display: flex;
+    }
+
+    &--fail {
+      .purchase__ok {
+        display: block;
+      }
+
+      .purchase__result {
+        display: flex;
+      }
+    }
   }
 
   &__top {
@@ -43,53 +60,35 @@
     margin-bottom: 40px;
   }
 
-  &__sending {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    & > span {
-      margin-bottom: 40px;
-      text-align: center;
-    }
-  }
-
+  &__sending,
   &__result {
     display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: #e8e8e8;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__sending > span {
+    margin-bottom: 40px;
   }
 
   &__msg {
-    p:not(:last-child) {
+    p:not(:last-of-type) {
       margin-bottom: 1em;
     }
   }
 
-  &__unsuccess {
-    display: none;
-    margin-top: 20px;
-  }
-
-  &--filling .purchase__filling {
-    display: block;
-  }
-
-  &--sending .purchase__sending {
-    display: flex;
-  }
-
-  &--sended .purchase__result {
-    display: block;
-  }
-
-  &--unsuccess {
-    .purchase__unsuccess {
-      display: block;
-    }
-
-    .purchase__result {
-      display: block;
-    }
+  &__ok {
+    margin-top: 35px;
+    padding: 5px;
   }
 
   & .input {
