@@ -114,4 +114,8 @@ $duration: 200ms;
   @include mobile {
     --panel-padding: 20px;
   }
+
+  &--lock {
+    pointer-events: none;
+  }
 }
