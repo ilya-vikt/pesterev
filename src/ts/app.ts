@@ -15,8 +15,11 @@ switch (pageName) {
     break;
   case 'projectone':
     projectoneInit();
+    break;
   case 'market':
     marketInit();
+    break;
   case 'product':
     productInit();
+    break;
 }
