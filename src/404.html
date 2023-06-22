@@ -2,11 +2,13 @@
 <html lang="ru">
   @@include('common/head.html', { "title": "404 Страница не найдена" })
   <body>
-    @@include('components/header/header-secondary/header-secondary.html',
-    {goback: false})
-
-    <main></main>
-    @@include('components/footer/footer.html', {})
+    <script defer src="./js/app.min.js"></script>
+    <div id="config-data" class="wrapper scrollbar-compensation">
+      @@include('components/preloader/preloader.html', {})
+      @@include('components/header/header-secondary/header-secondary.html',
+      {goback: false})
+      <main>@@include('components/p404/p404.html', {})</main>
+    </div>
     <script src="./js/app.min.js"></script>
   </body>
 </html>
