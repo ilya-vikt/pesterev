@@ -95,10 +95,13 @@
   }
 
   &__msg {
-    margin-bottom: 40px;
+    p:not(:last-of-type) {
+      margin-bottom: 1em;
+    }
   }
 
   &__ok {
+    margin-top: 35px;
     padding: 5px;
   }
 }
