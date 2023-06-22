@@ -3,22 +3,8 @@
   flex-direction: column;
   align-items: flex-start;
 
-  &--has-promo .buy-block__price {
-    color: $cl-red;
-    margin-bottom: 10px;
-
-    @include fhd {
-      margin-bottom: #{responsive(1920, 1180, 10, 5)};
-    }
-
-    @include tablet {
-      margin-bottom: 5px;
-    }
-  }
-
   &__btn,
   &__reserved {
-    display: flex;
     align-items: center;
     justify-content: center;
     padding: 15px 25px;
@@ -59,6 +45,7 @@
   }
 
   &__btn {
+    display: flex;
     background-color: $cl-black;
     color: $cl-white;
     @extend .txt-5-b;
@@ -71,6 +58,30 @@
   }
 
   &__reserved {
+    display: none;
     background-color: $cl-light-grey;
+  }
+
+  &--has-promo .buy-block__price {
+    color: $cl-red;
+    margin-bottom: 10px;
+
+    @include fhd {
+      margin-bottom: #{responsive(1920, 1180, 10, 5)};
+    }
+
+    @include tablet {
+      margin-bottom: 5px;
+    }
+  }
+
+  &--reserved {
+    .buy-block__btn {
+      display: none;
+    }
+
+    .buy-block__reserved {
+      display: flex;
+    }
   }
 }
