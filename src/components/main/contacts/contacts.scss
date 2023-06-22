@@ -45,6 +45,18 @@
     }
   }
 
+  &__communicator {
+    position: relative;
+
+    &--sending .main-contacts__sending {
+      display: flex;
+    }
+
+    &--sended .main-contacts__result {
+      display: flex;
+    }
+  }
+
   &__form {
     display: flex;
     flex-direction: column;
@@ -59,5 +71,39 @@
       height: 16px;
       width: 16px;
     }
+  }
+
+  &__sending,
+  &__result {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: $cl-light-grey;
+    flex-direction: column;
+  }
+
+  &__sending {
+    align-items: center;
+    justify-content: center;
+    span {
+      display: block;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__result {
+    align-items: flex-start;
+  }
+
+  &__msg {
+    margin-bottom: 40px;
+  }
+
+  &__ok {
+    padding: 5px;
   }
 }
