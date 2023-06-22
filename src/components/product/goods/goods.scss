@@ -24,15 +24,15 @@
     }
   }
 
-  &__slider-btns {
-    margin-bottom: 80px;
+  &__props {
+    padding-top: 80px;
 
     @include fhd {
-      margin-bottom: #{responsive(1920, 1180, 80, 40)};
+      padding-top: #{responsive(1920, 1180, 80, 40)};
     }
 
     @include tablet {
-      margin-bottom: 40px;
+      padding-top: 40px;
     }
   }
 

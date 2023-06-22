@@ -11,7 +11,7 @@
         }
       )
     </div>
-    <div class="layout popup-background" data-ani-blur-slow>
+    <div class="layout-hero popup-background" data-ani-blur-slow>
       <div id="product-slider" class="swiper product-goods__slider">
         <div class="swiper-wrapper">
           <!-- prettier-ignore -->
@@ -39,7 +39,8 @@
       </div>
       @@include('components/share/slider-btns/slider-btns.html', {class:
       'product-goods__slider-btns'})
-
+    </div>
+    <div class="product-goods__props layout">
       <!-- prettier-ignore -->
       @@include('components/product/buy-block/buy-block.html',
         { 
@@ -48,6 +49,7 @@
           "oldPrice": "30 000 руб."
         }
       )
+      <!-- prettier-ignore-end -->
       <dl class="product-goods__description">
         <dt>О работе</dt>
         <dd>
@@ -65,6 +67,7 @@
       </dl>
     </div>
   </div>
+
   <div id="aside-panel" class="market-goods__filters aside-panel">
     <div class="aside-panel__container container close-trigger">
       <aside class="aside-panel__panel">
@@ -76,6 +79,7 @@
             </svg>
           </button>
         </div>
+
         <div class="aside-panel__content">
           @@include('components/product/purchase/purchase.html', {})
         </div>
