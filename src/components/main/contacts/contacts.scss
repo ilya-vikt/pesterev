@@ -46,6 +46,7 @@
   }
 
   &__communicator {
+    margin-bottom: 40px;
     position: relative;
 
     &--sending .main-contacts__sending {
@@ -63,7 +64,7 @@
   }
 
   &__send {
-    margin: 40px 0;
+    margin-top: 40px;
     display: inline-block;
     align-self: flex-start;
 
@@ -84,19 +85,13 @@
     padding: 20px;
     background-color: $cl-light-grey;
     flex-direction: column;
-  }
-
-  &__sending {
-    align-items: center;
+    text-align: center;
     justify-content: center;
-    span {
-      display: block;
-      margin-bottom: 40px;
-    }
+    align-items: center;
   }
 
-  &__result {
-    align-items: flex-start;
+  &__sending > span {
+    margin-bottom: 40px;
   }
 
   &__msg {

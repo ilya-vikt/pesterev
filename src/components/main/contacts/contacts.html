@@ -62,22 +62,18 @@
                 <use href="@assets/sprite.svg#check_xs"></use>
               </svg>
             </button>
-            @@include('components/share/policy/policy.html', {})
           </form>
           <div class="main-contacts__sending">
-            <span class="txt-4">
-              Сообщение отправляется<br />
-              Пожалуйста, подождите
-            </span>
+            <span> Сообщение отправляется</span>
             @@include('components/share/spinner/spinner.html', {})
           </div>
 
           <div class="main-contacts__result">
             <div id="contacts-msg" class="main-contacts__msg">
-              <p>Сообщение успешно отправлено.</p>
+              <p>Сообщение отправлено.</p>
               <p>
-                Скоро художник свяжется с вами. Если по какой-то причине долго
-                нет ответа, напишите нам в WhatsApp
+                Если по какой то причине вы не получили ответ в течение дня,
+                пожалуйста, напишите в WhatsApp.
               </p>
             </div>
             <button
@@ -88,6 +84,7 @@
             </button>
           </div>
         </div>
+        @@include('components/share/policy/policy.html', {})
       </div>
     </div>
   </div>

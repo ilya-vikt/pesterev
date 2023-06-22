@@ -3,6 +3,7 @@ import { initForm } from '@/ts/form-init';
 import { autoResize } from '@/ts/modules/functions';
 
 export const initContactsForm = () => {
+  let messageText = '';
   const form = document.getElementById('contacts-form') as HTMLFormElement;
   const communicator = document.getElementById(
     'contacts-communicator'
@@ -12,8 +13,15 @@ export const initContactsForm = () => {
   const toStartBtn = document.getElementById(
     'contacts-to-start'
   ) as HTMLButtonElement;
+  const textarea = form.querySelector('#message') as HTMLTextAreaElement;
 
-  if (!form || !communicator || !msgBlock || !sendBtn || !toStartBtn) return;
+  if (
+    [form, communicator, msgBlock, sendBtn, toStartBtn, textarea].some(
+      (el) => !el
+    )
+  ) {
+    return;
+  }
 
   initForm(form);
 
@@ -29,6 +37,10 @@ export const initContactsForm = () => {
   };
 
   toStartBtn.addEventListener('click', () => {
+    if (messageText) {
+      textarea.value = messageText;
+      textarea.dispatchEvent(new Event('input'));
+    }
     setStage('filling');
   });
 
@@ -41,12 +53,17 @@ export const initContactsForm = () => {
         message: (form.elements.namedItem('message') as HTMLInputElement).value,
       };
 
+      messageText = textarea.value;
+      textarea.value = ' ';
+      textarea.dispatchEvent(new Event('input'));
+      form.classList.remove('check');
+
       setStage('sending');
       const result = await sendMessage(order);
       msgBlock.innerHTML = result.msg;
       if (result.success) {
         form.reset();
-        form.classList.remove('check');
+        messageText = '';
       }
       setStage('sended');
     }
