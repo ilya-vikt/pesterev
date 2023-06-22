@@ -1,4 +1,5 @@
 $duration: 1000ms;
+$fast-duration: 500ms;
 
 .start-animation {
   & [data-ani-blur] {
@@ -25,23 +26,23 @@ $duration: 1000ms;
 
 .animating {
   & [data-ani-blur] {
-    transition: filter 500ms ease-out, opacity 500ms ease-out;
+    transition: filter $fast-duration ease-out, opacity $fast-duration ease-out;
     filter: blur(0);
     opacity: 1;
   }
 
   & [data-ani-blur-and-zoom] {
-    transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
-      transform $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
-      opacity $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms;
+    transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) $fast-duration,
+      transform $duration cubic-bezier(0.25, 1, 0.5, 1) $fast-duration,
+      opacity $duration cubic-bezier(0.25, 1, 0.5, 1) $fast-duration;
     filter: blur(0);
     opacity: 1;
     transform: scale3d(1, 1, 1);
   }
 
   & [data-ani-blur-slow] {
-    transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms,
-      opacity $duration cubic-bezier(0.25, 1, 0.5, 1) 500ms;
+    transition: filter $duration cubic-bezier(0.25, 1, 0.5, 1) $fast-duration,
+      opacity $duration cubic-bezier(0.25, 1, 0.5, 1) $fast-duration;
     opacity: 1;
     filter: blur(0);
   }
