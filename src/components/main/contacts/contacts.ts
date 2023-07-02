@@ -47,10 +47,14 @@ export const initContactsForm = () => {
   sendBtn.addEventListener('click', async () => {
     form.classList.add('check');
     if (form.checkValidity()) {
+      const formData = new FormData(form);
       const order: IMsg = {
         email: (form.elements.namedItem('email') as HTMLInputElement).value,
         name: (form.elements.namedItem('name') as HTMLInputElement).value,
         message: (form.elements.namedItem('message') as HTMLInputElement).value,
+        city: (form.elements.namedItem('city') as HTMLInputElement).value,
+        _wpnonce: (form.elements.namedItem('_wpnonce') as HTMLInputElement)
+          .value,
       };
 
       messageText = textarea.value;
