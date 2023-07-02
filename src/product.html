@@ -12,5 +12,28 @@
       </main>
       @@include('components/footer/footer.html', {})
     </div>
+    <script>
+      window.communicatorConfig = {
+        url: `http://localhost:85/wp-json/pesterevart/v1/getgoods/`,
+      };
+      window.galleries = {
+        slider: {
+          resolutions: [640, 1920, 2048],
+          stub: './assets/stub.png',
+          images: [
+            {
+              640: 'https://dummyimage.com/640x480/000/fefefe.png',
+              1920: 'https://dummyimage.com/1920x1080/000/fefefe.png',
+              2048: 'https://dummyimage.com/2048x2048/000/fefefe.png',
+            },
+            {
+              640: 'https://dummyimage.com/640x480/6b256b/fff.png',
+              1920: 'https://dummyimage.com/1920x1080/6b256b/fff.png',
+              2048: 'https://dummyimage.com/2048x2048/6b256b/fff.png',
+            },
+          ],
+        },
+      };
+    </script>
   </body>
 </html>
