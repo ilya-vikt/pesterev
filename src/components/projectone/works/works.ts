@@ -33,7 +33,9 @@ export const initWorks = () => {
     .querySelectorAll('.work-card__img')
     ?.forEach((workCard: HTMLElement) => {
       workCard.addEventListener('click', () => {
-        createLightBox(mockImg, Number(workCard.dataset.idx) || 0);
+        const sliderData = window.galleries['works'];
+        sliderData &&
+          createLightBox(sliderData, Number(workCard.dataset.idx) || 0);
       });
     });
 };
