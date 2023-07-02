@@ -16,10 +16,14 @@ let lightbox: HTMLElement | null = null;
 let slider: Swiper = null;
 Swiper.use([Navigation, Zoom, Lazy, Keyboard]);
 
-function createSrcSet(img: TImgRecord, breakpoints: TImgBreakpoints) {
-  let srcSet = 'data-srcset="';
+function createSrcSet(
+  img: TImgRecord,
+  breakpoints: TImgBreakpoints,
+  zoom: number = 1
+) {
+  let srcSet = `data-srcset${zoom === 1 ? '' : '-zoom'}="`;
   breakpoints.forEach((breakpoint, idx) => {
-    srcSet += `${img[breakpoint]} ${breakpoint}w${
+    srcSet += `${img[breakpoint]} ${Math.floor(breakpoint / zoom)}w${
       idx === breakpoints.length - 1 ? '"' : ', '
     }`;
   });
@@ -58,7 +62,12 @@ function createMarkup(data: GalleryData) {
       <span class="swiper-lazy-preloader loader-spinner"></span>
       <img class="swiper-lazy" data-src="${img[maxResolution]}" srcset="${
       data.stub
-    }"  ${createSrcSet(img, data.resolutions)}>
+    }"  ${createSrcSet(img, data.resolutions)} ${createSrcSet(
+      img,
+      data.resolutions,
+      3
+    )}
+    }>
     </div>
   </div>`;
   });
@@ -77,13 +86,26 @@ async function destroyLightBox() {
   document.body.classList.remove('no-scroll');
 }
 
+function zoomHandler(
+  slider: Swiper,
+  scale: number,
+  imageEl: HTMLElement
+): void {
+  const tmp = imageEl.getAttribute('srcset');
+  imageEl.setAttribute('srcset', imageEl.dataset.srcsetZoom);
+  imageEl.dataset.srcsetZoom = tmp;
+  slider.allowTouchMove = scale === 1;
+}
+
 export function createLightBox(data: GalleryData, slideId: number) {
   lightbox = document.createElement('div');
   lightbox.classList.add('lightbox', 'lightbox--visible');
   lightbox.innerHTML = createMarkup(data);
   document.body.classList.add('no-scroll');
   document.body.append(lightbox);
+
   setBlur(lightbox, 'in');
+
   const params: SwiperOptions = {
     navigation: {
       nextEl: '.lightbox__next',
@@ -102,6 +124,9 @@ export function createLightBox(data: GalleryData, slideId: number) {
     lazy: {
       loadOnTransitionStart: false,
       loadPrevNext: true,
+    },
+    on: {
+      zoomChange: zoomHandler,
     },
     loop: true,
   };
