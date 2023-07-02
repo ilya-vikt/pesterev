@@ -9,6 +9,7 @@ import {
 declare global {
   interface Window {
     videoUrl: string;
+    galleries: Record<string, GalleryData>;
   }
 }
 
@@ -58,8 +59,6 @@ export const initPlayer = () => {
 
 export const initGallery = () => {
   document.getElementById('gallery-btn')?.addEventListener('click', () => {
-    console.log('gallery');
-
-    createLightBox(mockImg, 0);
+    createLightBox(window.galleries['about'], 0);
   });
 };
