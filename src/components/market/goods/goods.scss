@@ -94,20 +94,17 @@
 
   &__prices {
     display: flex;
+
     &--has-promo {
       .market-goods__price {
-        color: $cl-red;
-        margin-right: 10px;
-      }
-
-      .market-goods__promo {
-        display: block;
+        @extend .txt-5-c;
       }
     }
   }
 
   &__promo {
-    display: none;
+    margin-right: 10px;
+    color: $cl-red;
   }
 
   &__spinner {
@@ -155,6 +152,15 @@
 
     &--visible {
       display: flex;
+    }
+  }
+
+  &__empty {
+    text-align: center;
+    background-color: $cl-light-grey;
+    padding: 20px;
+    p:not(:last-child) {
+      margin-bottom: 10px;
     }
   }
 }

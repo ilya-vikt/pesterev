@@ -14,24 +14,24 @@
       </button>
     </div>
     <div class="layout popup-background" data-ani-blur-slow>
-      <ul class="market-goods__list">
+      <ul id="goods-list" class="market-goods__list">
         <li class="market-goods__item market-goods__item--landscape">
           <a class="market-goods__lnk" href="product.html">
             <!-- prettier-ignore -->
             @@include('components/share/work-card/work-card.html',
             { title:'Название',
-              hasGallery: true,
+              hasGallery: false,
               class: 'market-goods__card  work-card--locked',
               idx: 0,
               params: 'Холст / масло / 75 х 45 см',
               img: 'https://dummyimage.com/800x800/000/fff.jpg',
-              imgAlt: 'work 1'
+              alt: 'work 1',
             }
           )
             <!-- prettier-ignore-end -->
             <div class="market-goods__prices market-goods__prices--has-promo">
+              <span class="market-goods__promo">30 000 руб.</span>
               <span class="market-goods__price">27 000 руб.</span>
-              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
             </div>
           </a>
         </li>
@@ -40,18 +40,18 @@
             <!-- prettier-ignore -->
             @@include('components/share/work-card/work-card.html',
             { title:'Название',
-              hasGallery: true,
+              hasGallery: false,
               class: 'market-goods__card',
               idx: 1,
               params: 'Холст / масло / 75 х 45 см',
               img: 'https://dummyimage.com/800x600/0f53/fff.jpg',
-              imgAlt: 'work 1'
+              alt: 'work 1',
             }
           )
             <!-- prettier-ignore-end -->
             <div class="market-goods__prices">
+              <span class="market-goods__promo">30 000 руб.</span>
               <span class="market-goods__price">27 000 руб.</span>
-              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
             </div>
           </a>
         </li>
@@ -60,18 +60,18 @@
             <!-- prettier-ignore -->
             @@include('components/share/work-card/work-card.html',
             { title:'Название',
-              hasGallery: true,
+              hasGallery: false,
               class: 'market-goods__card',
               idx: 2,
               params: 'Холст / масло / 75 х 45 см',
               img: 'https://dummyimage.com/800x800/000/fff.jpg',
-              imgAlt: 'work 1'
+              alt: 'work 1',
             }
           )
             <!-- prettier-ignore-end -->
             <div class="market-goods__prices">
+              <span class="market-goods__promo">30 000 руб.</span>
               <span class="market-goods__price">27 000 руб.</span>
-              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
             </div>
           </a>
         </li>
@@ -80,30 +80,35 @@
             <!-- prettier-ignore -->
             @@include('components/share/work-card/work-card.html',
             { title:'Название',
-              hasGallery: true,
+              hasGallery: false,
               class: 'market-goods__card',
               idx: 3,
               params: 'Холст / масло / 75 х 45 см',
               img: 'https://dummyimage.com/1000x700/555/fff.jpg',
-              imgAlt: 'work 1'
+              alt: 'work 1',
             }
           )
             <!-- prettier-ignore-end -->
             <div class="market-goods__prices">
+              <span class="market-goods__promo">30 000 руб.</span>
               <span class="market-goods__price">27 000 руб.</span>
-              <span class="market-goods__promo txt-5-c">30 000 руб.</span>
             </div>
           </a>
         </li>
       </ul>
-      <div class="market-goods__spinner market-goods__spinner--visible">
+      <div id="load-observer"></div>
+      <div id="spinner" class="market-goods__spinner">
         @@include('components/share/spinner/spinner.html', {})
       </div>
-      <div class="market-goods__error market-goods__error--visible">
+      <div id="error-block" class="market-goods__error">
         <p>Не удалось загрузить данные. Попробуйте позже</p>
         <button id="retry-btn" class="txt-5-b link" type="button">
           Повторить
         </button>
+      </div>
+      <div class="market-goods__empty">
+        <p>К сожалению, по вашему запросу ничего не нашлось.</p>
+        <p>Попробуйте изменить фильтры.</p>
       </div>
     </div>
   </div>
@@ -125,3 +130,34 @@
     </div>
   </div>
 </section>
+
+<template id="goods-tamplate">
+  <li class="market-goods__item">
+    <a class="market-goods__lnk" href="">
+      <div class="work-card market-goods__card">
+        <div class="work-card__inner">
+          <div
+            class="work-card__img img-wrapper img-wrapper--loading unselectable"
+          >
+            <img src="" alt="" srcset="assets/stub.png" data-srcset="" />
+          </div>
+
+          <span class="work-card__lock" title="Товар забронирован">
+            <svg width="30" height="20">
+              <use href="assets/sprite.svg#lock_xs"></use>
+            </svg>
+          </span>
+        </div>
+        <div class="work-card__descr">
+          <h3 class="work-card__title txt-4"></h3>
+          <p class="work-card__params txt-5"></p>
+        </div>
+      </div>
+
+      <div class="market-goods__prices">
+        <span class="market-goods__promo"></span>
+        <span class="market-goods__price"></span>
+      </div>
+    </a>
+  </li>
+</template>
