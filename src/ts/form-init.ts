@@ -1,11 +1,10 @@
-function saveFormOnUnload(form: HTMLFormElement): void {
+function saveFormOnUnload(form: HTMLFormElement, fields: string[] = []): void {
   const formData = new FormData(form);
   const data: Record<string, string> = {};
-
-  for (const [key, value] of formData.entries()) {
-    data[key] = value as string;
-  }
-
+  const fieldToSave = fields || Array.from(formData.keys());
+  fieldToSave.forEach(
+    (field) => (data[field] = formData.get(field).toString())
+  );
   localStorage.setItem('formData', JSON.stringify(data));
 }
 
@@ -23,9 +22,12 @@ function restoreFormValues(form: HTMLFormElement): void {
   }
 }
 
-export const initForm = (form: HTMLFormElement): void => {
+export const initForm = (
+  form: HTMLFormElement,
+  fieldToSave: string[] = []
+): void => {
   window.addEventListener('beforeunload', () => {
-    saveFormOnUnload(form);
+    saveFormOnUnload(form, fieldToSave);
   });
 
   if (document.readyState === 'complete') {
