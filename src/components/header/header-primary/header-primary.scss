@@ -10,5 +10,15 @@
 
   &__socials {
     pointer-events: all;
+
+    @include small-tablet {
+      display: none;
+    }
+  }
+
+  &__btn {
+    @include small-tablet {
+      display: flex;
+    }
   }
 }

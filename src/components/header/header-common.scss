@@ -6,12 +6,6 @@
   padding-top: var(--padding-section);
   @extend .unselectable;
 
-  &__socials {
-    @include small-tablet {
-      display: none;
-    }
-  }
-
   &__btn {
     position: fixed;
     z-index: 4;
@@ -32,10 +26,6 @@
       .header__bar:nth-child(2) {
         transform: translateY(-7px) rotate(-45deg);
       }
-    }
-
-    @include small-tablet {
-      display: flex;
     }
 
     @include mouse-hover {
