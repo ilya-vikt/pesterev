@@ -1,9 +1,22 @@
 export interface IOrder {
+  id: number;
   name: string;
   email: string;
   tel: string;
   address: string;
-  orderID: number;
+  _wpnonce: string;
+}
+
+type TPurchaseConfig = {
+  url: string;
+  success: string;
+  unsuccess: string;
+};
+
+declare global {
+  interface Window {
+    purchaseConfig: TPurchaseConfig;
+  }
 }
 
 export type TOrderResult = {
@@ -12,15 +25,20 @@ export type TOrderResult = {
 };
 
 export const sendOrder = async (order: IOrder): Promise<TOrderResult> => {
-  return new Promise((resolve) => {
-    const res = {
-      success: true,
-      msg: `<p>Заявка отправлена</p>
-      <p>Если по какой то причине вы не получили ответ в течение дня пожалуйста, напишите в WhatsApp.</p>`,
-    };
-
-    setTimeout(() => {
-      resolve(res);
-    }, 2000);
-  });
+  let result;
+  try {
+    const response = await fetch(window.purchaseConfig.url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify(order),
+    });
+    result = response.ok;
+  } catch {
+    result = false;
+  }
+  return result
+    ? { success: true, msg: window.purchaseConfig.success }
+    : { success: false, msg: window.purchaseConfig.unsuccess };
 };
