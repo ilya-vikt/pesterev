@@ -16,6 +16,13 @@
       </main>
       @@include('components/footer/footer.html', {})
     </div>
+    <script>
+      window.communicatorConfig = {
+        url: `http://localhost:85/wp-json/pesterevart/v1/sendmsg/`,
+        success: `<p>Письмо успешно отправлено</p>`,
+        unsuccess: `<p>Письмо не удалось отправить</p>`,
+      };
+    </script>
     <script src="https://player.kinescope.io/latest/iframe.player.js"></script>
   </body>
 </html>
