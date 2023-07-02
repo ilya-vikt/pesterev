@@ -9,7 +9,7 @@ export const initPurchase = (): void => {
     'purchase-request'
   ) as HTMLDivElement;
   const msgBlock = document.getElementById('purchase-msg') as HTMLDivElement;
-  const sendBtn = form.querySelector('#send-btn') as HTMLButtonElement;
+  const sendBtn = document.getElementById('send-btn') as HTMLButtonElement;
   const toStartBtn = document.getElementById(
     'purchase-to-start'
   ) as HTMLButtonElement;
@@ -18,7 +18,7 @@ export const initPurchase = (): void => {
     return;
   }
 
-  initForm(form);
+  initForm(form, ['address', 'email', 'name', 'tel']);
 
   const stages = {
     filling: 'purchase__request--filling',
@@ -40,11 +40,15 @@ export const initPurchase = (): void => {
     form.classList.add('check');
     if (form.checkValidity()) {
       const order: IOrder = {
+        id: parseInt(
+          (form.elements.namedItem('goods') as HTMLInputElement).value
+        ),
         address: (form.elements.namedItem('address') as HTMLInputElement).value,
         email: (form.elements.namedItem('email') as HTMLInputElement).value,
         name: (form.elements.namedItem('name') as HTMLInputElement).value,
         tel: (form.elements.namedItem('tel') as HTMLInputElement).value,
-        orderID: 1,
+        _wpnonce: (form.elements.namedItem('_wpnonce') as HTMLInputElement)
+          .value,
       };
 
       form.classList.remove('check');
