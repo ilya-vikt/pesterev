@@ -1,7 +1,7 @@
 import Swiper, { Navigation, Autoplay } from 'swiper';
 import type { SwiperOptions } from 'swiper/types';
 
-export const initSlider = (id: string): void => {
+export const initSlider = (id: string): Swiper => {
   const swiperConfig: SwiperOptions = {
     slidesPerView: 1,
     spaceBetween: 32,
@@ -19,4 +19,5 @@ export const initSlider = (id: string): void => {
   const slider = new Swiper(id, swiperConfig);
   slider.autoplay.pause();
   // setTimeout(slider.autoplay.run, START_ANIMATION_DURATION);
+  return slider;
 };
