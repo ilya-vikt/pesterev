@@ -186,6 +186,14 @@
   @include mouse-hover {
     background-color: $cl-light-grey;
   }
+
+  &[name='city'] {
+    position: absolute;
+    z-index: -1;
+    width: 1px;
+    height: 1px;
+    visibility: hidden;
+  }
 }
 
 form.check .input.input:invalid {
