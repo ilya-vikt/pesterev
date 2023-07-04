@@ -56,7 +56,7 @@
 
 @mixin mouse-hover {
   @media (hover: hover) {
-    &:hover:not(button[disabled]) {
+    &:hover:not(button:disabled) {
       @content;
     }
   }
@@ -68,22 +68,29 @@
   $maxFontSize,
   $minFontSize
 ) {
+  $diffFontSize: $maxFontSize - $minFontSize;
+  $diffViewportWidth: $maxViewportWidth - $minViewportWidth;
+
+  $k: math.div($diffFontSize, $diffViewportWidth);
+
   font-size: calc(
-    #{$maxFontSize + px} + (#{$maxFontSize} - #{$minFontSize}) / (
-        #{$maxViewportWidth} - #{$minViewportWidth}
-      ) * (100vw - #{$maxViewportWidth + px})
+    #{$maxFontSize + px} + #{$k} * (100vw - #{$maxViewportWidth + px})
   );
 }
 
+/*
+ result = maxValue + (maxValue - minValue) / (maxViewportWidth - minViewportWidth) * (100vw - maxViewportWidth)
+*/
 @function responsive(
   $maxViewportWidth,
   $minViewportWidth,
-  $maxPadding,
-  $minPadding
+  $maxValue,
+  $minValue
 ) {
-  @return calc(
-    #{$maxPadding + px} + (#{$maxPadding} - #{$minPadding}) / (
-        #{$maxViewportWidth} - #{$minViewportWidth}
-      ) * (100vw - #{$maxViewportWidth + px})
-  );
+  $diffValue: $maxValue - $minValue;
+  $diffViewportWidth: $maxViewportWidth - $minViewportWidth;
+
+  $k: math.div($diffValue, $diffViewportWidth);
+
+  @return calc(#{$maxValue + px} + #{$k} * (100vw - #{$maxViewportWidth + px}));
 }
