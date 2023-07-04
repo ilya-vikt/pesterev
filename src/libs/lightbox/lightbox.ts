@@ -1,6 +1,7 @@
 import Swiper, { Navigation, Zoom, Lazy, Keyboard } from 'swiper';
 import type { SwiperOptions } from 'swiper/types';
 import { setBlur } from '@/ts/modules/blur';
+import { disableBodyScroll, enableBodyScroll } from '@/ts/modules/functions';
 
 type TImgRecord = Record<number, string>;
 type TBreakpoint = number;
@@ -14,6 +15,9 @@ export interface GalleryData {
 
 let lightbox: HTMLElement | null = null;
 let slider: Swiper = null;
+let zoomInBtn: HTMLButtonElement;
+let zoomOutBtn: HTMLButtonElement;
+
 Swiper.use([Navigation, Zoom, Lazy, Keyboard]);
 
 function createSrcSet(
@@ -72,7 +76,12 @@ function createMarkup(data: GalleryData) {
   </div>`;
   });
 
-  markup += '</div></div></div>';
+  markup += `</div>
+  <div class="lightbox__zoom">
+  <button class="lightbox__zoom-in"><span class="sr-only">Увеличить масштаб</span></button>
+  <button class="lightbox__zoom-out" disabled><span class="sr-only">Уменьшить масштаб</span></button>
+  </div>
+  </div></div>`;
   return markup;
 }
 
@@ -83,7 +92,7 @@ async function destroyLightBox() {
   await setBlur(lightbox, 'out');
   lightbox.remove();
   lightbox = null;
-  document.body.classList.remove('no-scroll');
+  enableBodyScroll();
 }
 
 function zoomHandler(
@@ -94,15 +103,22 @@ function zoomHandler(
   const tmp = imageEl.getAttribute('srcset');
   imageEl.setAttribute('srcset', imageEl.dataset.srcsetZoom);
   imageEl.dataset.srcsetZoom = tmp;
-  slider.allowTouchMove = scale === 1;
+  slider.params.touchRatio = scale === 1 ? 1 : 0;
+  zoomInBtn.disabled = scale !== 1;
+  zoomOutBtn.disabled = scale === 1;
 }
 
 export function createLightBox(data: GalleryData, slideId: number) {
+  //Create Markup for the LightBox
   lightbox = document.createElement('div');
   lightbox.classList.add('lightbox', 'lightbox--visible');
   lightbox.innerHTML = createMarkup(data);
-  document.body.classList.add('no-scroll');
   document.body.append(lightbox);
+
+  disableBodyScroll();
+
+  zoomInBtn = document.querySelector('.lightbox__zoom-in');
+  zoomOutBtn = document.querySelector('.lightbox__zoom-out');
 
   setBlur(lightbox, 'in');
 
@@ -132,7 +148,7 @@ export function createLightBox(data: GalleryData, slideId: number) {
   };
 
   slider = new Swiper('.lightbox__slider', params);
-  slider.slideTo(+slideId + 1, 0);
+  slider.slideTo(1 + Number(slideId), 0);
   lightbox
     .querySelector('.lightbox__close')
     ?.addEventListener('click', destroyLightBox);
@@ -141,5 +157,13 @@ export function createLightBox(data: GalleryData, slideId: number) {
     if (key === 'Escape') {
       destroyLightBox();
     }
+  });
+
+  zoomInBtn?.addEventListener('click', () => {
+    slider.zoom.in();
+  });
+
+  zoomOutBtn?.addEventListener('click', () => {
+    slider.zoom.out();
   });
 }

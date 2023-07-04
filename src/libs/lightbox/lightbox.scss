@@ -12,16 +12,7 @@
   &__container {
     position: relative;
     height: 100%;
-    padding: 40px 0;
     opacity: 0;
-
-    @include fhd {
-      padding: #{responsive(1920, 1180, 40, 20)} 0;
-    }
-
-    @include tablet {
-      padding: 20px 0;
-    }
   }
 
   &__slider {
@@ -34,15 +25,20 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0 calc(var(--padding-h) + var(--padding-slide));
+    padding-right: calc(var(--padding-h) + var(--padding-slide));
+    padding-left: calc(var(--padding-h) + var(--padding-slide));
+    padding-top: 40px;
+    padding-bottom: 80px;
+    overflow: hidden;
 
     img {
       object-fit: contain;
       height: 100%;
-      max-height: 90vh;
     }
 
-    &--zoomed {
+    &--zoomed.lightbox__slide {
+      padding-top: 0px;
+      padding-bottom: 0px;
       cursor: grab;
       &:active {
         cursor: grabbing;
@@ -51,10 +47,12 @@
 
     @include fhd {
       --padding-slide: #{responsive(1920, 1180, 60, 40)};
+      padding-top: #{responsive(1920, 1180, 40, 20)};
     }
 
     @include tablet {
       --padding-slide: 40px;
+      padding-top: 20px;
     }
 
     @include mobile {
@@ -156,6 +154,69 @@
     }
   }
 
+  &__zoom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__zoom-in,
+  &__zoom-out {
+    width: 50px;
+    height: 40px;
+    background-color: $cl-white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:disabled {
+      cursor: auto;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      background-color: $cl-black;
+      height: 2px;
+      position: absolute;
+      width: 14px;
+      transition: background-color $animation;
+    }
+
+    &:disabled {
+      &::before,
+      &::after {
+        background-color: $cl-grey;
+      }
+    }
+
+    @include mouse-hover {
+      &::before,
+      &::after {
+        background-color: $cl-red;
+      }
+    }
+  }
+
+  &__zoom-in {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-right: 1px solid #e6e6e6;
+
+    &::after {
+      transform: rotateZ(90deg);
+    }
+  }
+
+  &__zoom-out {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left: 1px solid #e6e6e6;
+  }
   @include fhd {
     --padding-h: #{responsive(1920, 1180, 80, 40)};
   }
