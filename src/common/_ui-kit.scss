@@ -2,6 +2,7 @@
   font-size: 65px;
   text-transform: uppercase;
   line-height: 1;
+  word-wrap: break-word;
 
   @include fhd {
     @include responsive-font(1920, 1180, 65, 40);
